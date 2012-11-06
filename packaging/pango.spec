@@ -24,7 +24,6 @@ BuildRequires:  pkgconfig(harfbuzz) >= 0.9.3
 BuildRequires:  pkgconfig(libthai) >= 0.1.9
 BuildRequires:  pkgconfig(xft) >= 2.0.0
 BuildRequires:  pkgconfig(xrender)
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 Pango is a library for layout and rendering of text, with an emphasis
