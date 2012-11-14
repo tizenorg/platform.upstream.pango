@@ -109,7 +109,6 @@ make %{?_smp_mflags}
 
 %install
 %make_install
-find %{buildroot}%{_libdir} -name '*.la' -type f -delete -print
 mkdir -p %{buildroot}%{_sysconfdir}/pango/
 touch %{buildroot}%{_libdir}/pango/%{pango_binary_version}/pango.modules
 %if "%{_lib}" == "lib64"
@@ -118,6 +117,13 @@ mv %{buildroot}%{_bindir}/pango-querymodules %{buildroot}%{_bindir}/pango-querym
 # Install rpm macros
 mkdir -p %{buildroot}%{_sysconfdir}/rpm
 cp %{SOURCE2} %{buildroot}%{_sysconfdir}/rpm
+# Convenient %%define for the scriplets
+%if "%{_lib}" == "lib64"
+%define _pango_querymodules %{_bindir}/pango-querymodules-64
+%else
+%define _pango_querymodules %{_bindir}/pango-querymodules
+%endif
+%define _pango_querymodules_update_cache %{_pango_querymodules} --update-cache
 
 %post -n libpango
 /sbin/ldconfig
