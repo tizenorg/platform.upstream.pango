@@ -46,11 +46,11 @@ is needed.
 
 Pango forms the core of text and font handling for GTK+.
 
-%package -n typelib-1_0-Pango-1_0
+%package -n typelib-Pango
 Summary:        Library for Layout and Rendering of Text -- Introspection bindings
 Group:          System/Libraries
 
-%description -n typelib-1_0-Pango-1_0
+%description -n typelib-Pango
 Pango is a library for layout and rendering of text, with an emphasis
 on internationalization. It can be used anywhere that text layout
 is needed.
@@ -88,7 +88,7 @@ Pango forms the core of text and font handling for GTK+.
 Summary:        Library for Layout and Rendering of Text -- Development Files
 Group:          Development/Libraries/GNOME
 Requires:       libpango = %{version}
-Requires:       typelib-1_0-Pango-1_0 = %{version}
+Requires:       typelib-Pango = %{version}
 
 %description devel
 Pango is a library for layout and rendering of text, with an emphasis
@@ -178,7 +178,7 @@ fi
 %{_libdir}/lib*.so.*
 %dir %{_sysconfdir}/pango
 
-%files -n typelib-1_0-Pango-1_0
+%files -n typelib-Pango
 %defattr(-,root,root)
 %{_libdir}/girepository-1.0/Pango-1.0.typelib
 %{_libdir}/girepository-1.0/PangoCairo-1.0.typelib
