@@ -1,5 +1,6 @@
 # When updating the binary version, do not forget to also update baselibs.conf
 %define pango_binary_version 1.8.0
+%define enable_introspection 0
 
 Name:           pango
 Version:        1.32.1
@@ -12,14 +13,16 @@ Source:         http://download.gnome.org/sources/pango/1.32/%{name}-%{version}.
 Source2:        macros.pango
 Source99:       baselibs.conf
 BuildRequires:  gcc-c++
-BuildRequires:  gtk-doc
+#BuildRequires:  gtk-doc
 BuildRequires:  pkg-config
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(glib-2.0) >= 2.33.12
 BuildRequires:  pkgconfig(gobject-2.0)
+%if 0%{?enable_introspection}
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
+%endif
 BuildRequires:  pkgconfig(harfbuzz) >= 0.9.3
 BuildRequires:  pkgconfig(libthai) >= 0.1.9
 BuildRequires:  pkgconfig(xft) >= 2.0.0
@@ -165,6 +168,10 @@ if [ $1 == 1 ]; then
   fi
 fi
 
+
+
+%docs_package 
+
 %files -n libpango
 %defattr(-,root,root)
 %doc COPYING
@@ -180,17 +187,18 @@ fi
 
 %files -n typelib-Pango
 %defattr(-,root,root)
+%if 0%{?enable_introspection}
 %{_libdir}/girepository-1.0/Pango-1.0.typelib
 %{_libdir}/girepository-1.0/PangoCairo-1.0.typelib
 %{_libdir}/girepository-1.0/PangoFT2-1.0.typelib
 %{_libdir}/girepository-1.0/PangoXft-1.0.typelib
+%endif
+
 
 %files tools
 %defattr(-, root, root)
 %{_bindir}/pango-querymodules*
 %{_bindir}/pango-view
-%doc %{_mandir}/man1/pango-querymodules.1*
-%doc %{_mandir}/man1/pango-view.1*
 
 # We have this module in a subpackage because it requires additional libraries.
 
@@ -203,6 +211,8 @@ fi
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/pango-1.0/
+%if 0%{?enable_introspection}
 %{_datadir}/gir-1.0/*.gir
+%endif
 %doc %{_datadir}/gtk-doc/html/pango/
 %{_sysconfdir}/rpm/macros.pango
