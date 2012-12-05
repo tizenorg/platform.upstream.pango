@@ -1,6 +1,6 @@
 # When updating the binary version, do not forget to also update baselibs.conf
 %define pango_binary_version 1.8.0
-%define enable_introspection 0
+%bcond_with introspection
 
 Name:           pango
 Version:        1.32.1
@@ -20,7 +20,7 @@ BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(glib-2.0) >= 2.33.12
 BuildRequires:  pkgconfig(gobject-2.0)
-%if 0%{?enable_introspection}
+%if %{with introspection}
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
 %endif
 BuildRequires:  pkgconfig(harfbuzz) >= 0.9.3
@@ -91,7 +91,9 @@ Pango forms the core of text and font handling for GTK+.
 Summary:        Library for Layout and Rendering of Text -- Development Files
 Group:          Development/Libraries/GNOME
 Requires:       libpango = %{version}
+%if %{with introspection}
 Requires:       typelib-Pango = %{version}
+%endif
 
 %description devel
 Pango is a library for layout and rendering of text, with an emphasis
@@ -185,9 +187,9 @@ fi
 %{_libdir}/lib*.so.*
 %dir %{_sysconfdir}/pango
 
+%if %{with introspection}
 %files -n typelib-Pango
 %defattr(-,root,root)
-%if 0%{?enable_introspection}
 %{_libdir}/girepository-1.0/Pango-1.0.typelib
 %{_libdir}/girepository-1.0/PangoCairo-1.0.typelib
 %{_libdir}/girepository-1.0/PangoFT2-1.0.typelib
@@ -211,7 +213,7 @@ fi
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/pango-1.0/
-%if 0%{?enable_introspection}
+%if %{with introspection}
 %{_datadir}/gir-1.0/*.gir
 %endif
 %doc %{_datadir}/gtk-doc/html/pango/
