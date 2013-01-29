@@ -3,8 +3,8 @@
 %bcond_with introspection
 
 Name:           pango
-Version:        1.32.1
-Release:        2.3
+Version:        1.32.6
+Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
 Url:            http://www.pango.org/
@@ -13,7 +13,6 @@ Source:         http://download.gnome.org/sources/pango/1.32/%{name}-%{version}.
 Source2:        macros.pango
 Source99:       baselibs.conf
 BuildRequires:  gcc-c++
-#BuildRequires:  gtk-doc
 BuildRequires:  pkg-config
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(fontconfig)
@@ -176,7 +175,7 @@ fi
 
 %files -n libpango
 %defattr(-,root,root)
-%doc COPYING
+%license COPYING
 %dir %{_libdir}/pango
 %dir %{_libdir}/pango/%{pango_binary_version}
 %ghost %{_libdir}/pango/%{pango_binary_version}/pango.modules
