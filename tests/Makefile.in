@@ -53,27 +53,29 @@ host_triplet = @host@
 @HAVE_XFT_TRUE@am__append_1 = -DHAVE_X -DHAVE_XFT
 @HAVE_FREETYPE_TRUE@am__append_2 = -DHAVE_FREETYPE
 @HAVE_WIN32_TRUE@am__append_3 = -DHAVE_WIN32
-@CROSS_COMPILING_FALSE@TESTS = runtests.sh
-noinst_PROGRAMS = gen-all-unicode$(EXEEXT) dump-boundaries$(EXEEXT)
+@CROSS_COMPILING_FALSE@TESTS = $(check_PROGRAMS)
 check_PROGRAMS = testboundaries$(EXEEXT) testboundaries_ucd$(EXEEXT) \
 	testcolor$(EXEEXT) testscript$(EXEEXT) $(am__EXEEXT_1) \
 	$(am__EXEEXT_2) $(am__EXEEXT_3)
-@HAVE_CAIRO_TRUE@am__append_4 = testiter
+@HAVE_CAIRO_TRUE@am__append_4 = testiter test-pangocairo-threads
 @HAVE_FREETYPE_TRUE@am__append_5 = test-ot-tags
 @HAVE_CXX_TRUE@am__append_6 = cxx-test
+noinst_PROGRAMS = $(check_PROGRAMS) gen-all-unicode$(EXEEXT) \
+	dump-boundaries$(EXEEXT)
 subdir = tests
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
-	$(srcdir)/runtests.sh.in $(top_srcdir)/depcomp
+	$(top_srcdir)/depcomp
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
-	$(top_srcdir)/configure.in
+	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = runtests.sh
+CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-@HAVE_CAIRO_TRUE@am__EXEEXT_1 = testiter$(EXEEXT)
+@HAVE_CAIRO_TRUE@am__EXEEXT_1 = testiter$(EXEEXT) \
+@HAVE_CAIRO_TRUE@	test-pangocairo-threads$(EXEEXT)
 @HAVE_FREETYPE_TRUE@am__EXEEXT_2 = test-ot-tags$(EXEEXT)
 @HAVE_CXX_TRUE@am__EXEEXT_3 = cxx-test$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
@@ -87,34 +89,35 @@ am__v_lt_1 =
 dump_boundaries_SOURCES = dump-boundaries.c
 dump_boundaries_OBJECTS = dump-boundaries.$(OBJEXT)
 am__DEPENDENCIES_1 =
-am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) \
-	../pango/libpango-$(PANGO_API_VERSION).la
-dump_boundaries_DEPENDENCIES = $(am__DEPENDENCIES_2)
+dump_boundaries_DEPENDENCIES = $(TEST_PANGO_LIBS) \
+	$(am__DEPENDENCIES_1)
 gen_all_unicode_SOURCES = gen-all-unicode.c
 gen_all_unicode_OBJECTS = gen-all-unicode.$(OBJEXT)
 gen_all_unicode_DEPENDENCIES = $(am__DEPENDENCIES_1)
 test_ot_tags_SOURCES = test-ot-tags.c
 test_ot_tags_OBJECTS = test-ot-tags.$(OBJEXT)
-am__DEPENDENCIES_3 = $(am__DEPENDENCIES_2) \
-	../pango/libpangoft2-$(PANGO_API_VERSION).la
-test_ot_tags_DEPENDENCIES = $(am__DEPENDENCIES_3)
+test_ot_tags_DEPENDENCIES = $(TEST_PANGOFT2_LIBS) \
+	$(am__DEPENDENCIES_1)
+test_pangocairo_threads_SOURCES = test-pangocairo-threads.c
+test_pangocairo_threads_OBJECTS = test-pangocairo-threads.$(OBJEXT)
+test_pangocairo_threads_DEPENDENCIES = $(TEST_PANGOCAIRO_LIBS) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 testboundaries_SOURCES = testboundaries.c
 testboundaries_OBJECTS = testboundaries.$(OBJEXT)
-testboundaries_DEPENDENCIES = $(am__DEPENDENCIES_2)
+testboundaries_DEPENDENCIES = $(TEST_PANGO_LIBS) $(am__DEPENDENCIES_1)
 testboundaries_ucd_SOURCES = testboundaries_ucd.c
 testboundaries_ucd_OBJECTS = testboundaries_ucd.$(OBJEXT)
-testboundaries_ucd_DEPENDENCIES = $(am__DEPENDENCIES_2)
+testboundaries_ucd_DEPENDENCIES = $(TEST_PANGO_LIBS) \
+	$(am__DEPENDENCIES_1)
 testcolor_SOURCES = testcolor.c
 testcolor_OBJECTS = testcolor.$(OBJEXT)
-testcolor_DEPENDENCIES = $(am__DEPENDENCIES_2)
+testcolor_DEPENDENCIES = $(TEST_PANGO_LIBS) $(am__DEPENDENCIES_1)
 testiter_SOURCES = testiter.c
 testiter_OBJECTS = testiter.$(OBJEXT)
-am__DEPENDENCIES_4 = $(am__DEPENDENCIES_2) \
-	../pango/libpangocairo-$(PANGO_API_VERSION).la
-testiter_DEPENDENCIES = $(am__DEPENDENCIES_4)
+testiter_DEPENDENCIES = $(TEST_PANGOCAIRO_LIBS) $(am__DEPENDENCIES_1)
 testscript_SOURCES = testscript.c
 testscript_OBJECTS = testscript.$(OBJEXT)
-testscript_DEPENDENCIES = $(am__DEPENDENCIES_2)
+testscript_DEPENDENCIES = $(TEST_PANGO_LIBS) $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -168,11 +171,11 @@ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
 SOURCES = $(cxx_test_SOURCES) dump-boundaries.c gen-all-unicode.c \
-	test-ot-tags.c testboundaries.c testboundaries_ucd.c \
-	testcolor.c testiter.c testscript.c
+	test-ot-tags.c test-pangocairo-threads.c testboundaries.c \
+	testboundaries_ucd.c testcolor.c testiter.c testscript.c
 DIST_SOURCES = $(cxx_test_SOURCES) dump-boundaries.c gen-all-unicode.c \
-	test-ot-tags.c testboundaries.c testboundaries_ucd.c \
-	testcolor.c testiter.c testscript.c
+	test-ot-tags.c test-pangocairo-threads.c testboundaries.c \
+	testboundaries_ucd.c testcolor.c testiter.c testscript.c
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -365,12 +368,11 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 EXTRA_DIST = \
-	all-unicode.txt		\
 	boundaries.utf8		\
-	runtests.sh
+	GraphemeBreakTest.txt
 
 CLEANFILES = pangorc
-DISTCLEANFILES = all-unicode.txt runtests.log
+DISTCLEANFILES = all-unicode.txt
 INCLUDES = -I$(top_srcdir) $(PANGO_DEBUG_FLAGS) $(GLIB_CFLAGS) \
 	$(XFT_CFLAGS) $(CAIRO_CFLAGS) $(FREETYPE_CFLAGS) $(X_CFLAGS) \
 	$(am__append_1) $(am__append_2) $(am__append_3)
@@ -378,17 +380,18 @@ TESTS_ENVIRONMENT = \
    srcdir=$(srcdir)                    \
    PANGO_RC_FILE=./pangorc
 
-TEST_PANGO_LIBS = $(GLIB_LIBS) ../pango/libpango-$(PANGO_API_VERSION).la
+TEST_PANGO_LIBS = ../pango/libpango-$(PANGO_API_VERSION).la
 TEST_PANGOFT2_LIBS = $(TEST_PANGO_LIBS) ../pango/libpangoft2-$(PANGO_API_VERSION).la
 TEST_PANGOCAIRO_LIBS = $(TEST_PANGO_LIBS) ../pango/libpangocairo-$(PANGO_API_VERSION).la
 gen_all_unicode_LDADD = $(GLIB_LIBS)
-testboundaries_LDADD = $(TEST_PANGO_LIBS)
-testboundaries_ucd_LDADD = $(TEST_PANGO_LIBS)
-testcolor_LDADD = $(TEST_PANGO_LIBS)
-testiter_LDADD = $(TEST_PANGOCAIRO_LIBS)
-testscript_LDADD = $(TEST_PANGO_LIBS)
-test_ot_tags_LDADD = $(TEST_PANGOFT2_LIBS)
-dump_boundaries_LDADD = $(TEST_PANGO_LIBS)
+testboundaries_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+testboundaries_ucd_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+testcolor_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+testiter_LDADD = $(TEST_PANGOCAIRO_LIBS) $(GLIB_LIBS)
+testscript_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+test_ot_tags_LDADD = $(TEST_PANGOFT2_LIBS) $(GLIB_LIBS)
+test_pangocairo_threads_LDADD = $(TEST_PANGOCAIRO_LIBS) $(CAIRO_LIBS) $(GLIB_LIBS)
+dump_boundaries_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
 cxx_test_SOURCES = cxx-test.C
 all: all-am
 
@@ -424,8 +427,6 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-runtests.sh: $(top_builddir)/config.status $(srcdir)/runtests.sh.in
-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 clean-checkPROGRAMS:
 	@list='$(check_PROGRAMS)'; test -n "$$list" || exit 0; \
@@ -456,6 +457,9 @@ gen-all-unicode$(EXEEXT): $(gen_all_unicode_OBJECTS) $(gen_all_unicode_DEPENDENC
 test-ot-tags$(EXEEXT): $(test_ot_tags_OBJECTS) $(test_ot_tags_DEPENDENCIES) $(EXTRA_test_ot_tags_DEPENDENCIES) 
 	@rm -f test-ot-tags$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_ot_tags_OBJECTS) $(test_ot_tags_LDADD) $(LIBS)
+test-pangocairo-threads$(EXEEXT): $(test_pangocairo_threads_OBJECTS) $(test_pangocairo_threads_DEPENDENCIES) $(EXTRA_test_pangocairo_threads_DEPENDENCIES) 
+	@rm -f test-pangocairo-threads$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_pangocairo_threads_OBJECTS) $(test_pangocairo_threads_LDADD) $(LIBS)
 testboundaries$(EXEEXT): $(testboundaries_OBJECTS) $(testboundaries_DEPENDENCIES) $(EXTRA_testboundaries_DEPENDENCIES) 
 	@rm -f testboundaries$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(testboundaries_OBJECTS) $(testboundaries_LDADD) $(LIBS)
@@ -482,6 +486,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dump-boundaries.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gen-all-unicode.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ot-tags.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pangocairo-threads.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testboundaries.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testboundaries_ucd.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/testcolor.Po@am__quote@

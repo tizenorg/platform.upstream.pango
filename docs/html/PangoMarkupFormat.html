@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Text Attribute Markup</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.77.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
 <link rel="home" href="index.html" title="Pango Reference Manual">
 <link rel="up" href="pango.html" title="Basic Pango Interfaces">
 <link rel="prev" href="pango-Tab-Stops.html" title="Tab Stops">
@@ -46,8 +46,9 @@ position.
 The solution is to include the text attributes in the string to be
 translated. Pango provides this feature with a small markup language.
 You can parse a marked-up string into the string text plus a
-<a class="link" href="pango-Text-Attributes.html#PangoAttrList">PangoAttrList</a> using the function
-<a class="link" href="pango-Text-Attributes.html#pango-parse-markup" title="pango_parse_markup ()">pango_parse_markup()</a>.
+<a class="link" href="pango-Text-Attributes.html#PangoAttrList">PangoAttrList</a> using either of
+<a class="link" href="pango-Text-Attributes.html#pango-parse-markup" title="pango_parse_markup ()">pango_parse_markup()</a> or
+<a class="link" href="pango-Text-Attributes.html#pango-markup-parser-new" title="pango_markup_parser_new ()">pango_markup_parser_new()</a>.
 </p>
 <p>
 A simple example of a marked-up string might be:
@@ -73,7 +74,7 @@ tags. &lt;span&gt; has the following attributes:
 </colgroup>
 <tbody>
 <tr>
-<td><p><span class="term">font<a href="#ftn.since_1_21" class="footnote"><sup class="footnote"><a name="since_1_21"></a>[1]</sup></a>, </span><span class="term">font_desc</span></p></td>
+<td><p><span class="term">font<a href="#ftn.since_1_21" class="footnote" name="since_1_21"><sup class="footnote">[1]</sup></a>, </span><span class="term">font_desc</span></p></td>
 <td><p>
 A font description string, such as "Sans Italic 12". See
 <a class="link" href="pango-Fonts.html#pango-font-description-from-string" title="pango_font_description_from_string ()">pango_font_description_from_string()</a>
@@ -289,7 +290,7 @@ Underline
 </p>
 </div>
 <div class="footnotes">
-<br><hr style="width:100; align:left;">
+<br><hr style="width:100; text-align:left;margin-left: 0">
 <div id="ftn.since_1_21" class="footnote"><p><a href="#since_1_21" class="para"><sup class="para">[1] </sup></a>Since 1.21</p></div>
 </div>
 </div>

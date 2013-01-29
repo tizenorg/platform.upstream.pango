@@ -2,7 +2,7 @@ dnl Process this file with autoconf to create configure.
 AC_PREREQ(2.56)
 
 dnl ==========================================================================
-dnl                               Versioning              
+dnl                               Versioning
 dnl ==========================================================================
 
 dnl Making releases:
@@ -22,7 +22,7 @@ dnl
 dnl The triplet
 m4_define([pango_version_major], [1])
 m4_define([pango_version_minor], [32])
-m4_define([pango_version_micro], [1])
+m4_define([pango_version_micro], [6])
 
 m4_define([pango_version],
           [pango_version_major.pango_version_minor.pango_version_micro])
@@ -54,7 +54,7 @@ dnl -Wno-portability tells automake to stop complaining about the
 dnl usage of GNU Make specific features.
 AM_INIT_AUTOMAKE(1.9 gnits dist-xz no-dist-gzip -Wno-portability)
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
-AM_CONFIG_HEADER([config.h])
+AC_CONFIG_HEADERS([config.h])
 
 
 PANGO_VERSION_MAJOR=pango_version_major()
@@ -225,7 +225,7 @@ AM_CONDITIONAL(CROSS_COMPILING, [test $cross_compiling = yes])
 # Checks for HarfBuzz
 #
 have_harfbuzz=false
-PKG_CHECK_MODULES(HARFBUZZ, harfbuzz >= 0.9.3, have_harfbuzz=true, AC_MSG_RESULT([no]))
+PKG_CHECK_MODULES(HARFBUZZ, harfbuzz >= 0.9.9, have_harfbuzz=true, AC_MSG_RESULT([no]))
 AM_CONDITIONAL(HAVE_HARFBUZZ, $have_harfbuzz)
 
 #
@@ -233,7 +233,7 @@ AM_CONDITIONAL(HAVE_HARFBUZZ, $have_harfbuzz)
 #
 have_fontconfig=false
 if $have_harfbuzz ; then
-  PKG_CHECK_MODULES(FONTCONFIG, fontconfig >= 2.5.0, have_fontconfig=true, AC_MSG_RESULT([no]))
+  PKG_CHECK_MODULES(FONTCONFIG, fontconfig >= 2.10.91, have_fontconfig=true, AC_MSG_RESULT([no]))
 fi
 
 #
@@ -454,7 +454,7 @@ fi
 # Checks for GLib
 #
 GLIB_REQUIRED_VERSION=2.33.12
-GLIB_MODULES="glib-2.0 >= $GLIB_REQUIRED_VERSION gobject-2.0 gmodule-no-export-2.0"
+GLIB_MODULES="glib-2.0 >= $GLIB_REQUIRED_VERSION gobject-2.0 gmodule-no-export-2.0 gthread-2.0"
 
 PKG_CHECK_MODULES(GLIB, $GLIB_MODULES, :,
   AC_MSG_ERROR([
@@ -464,11 +464,6 @@ PKG_CHECK_MODULES(GLIB, $GLIB_MODULES, :,
 # Setup GLIB_MKENUMS to use glib-mkenums even if GLib is uninstalled.
 GLIB_MKENUMS=`$PKG_CONFIG --variable=glib_mkenums glib-2.0`
 AC_SUBST(GLIB_MKENUMS)
-
-
-# Add in gthread-2.0 to CFLAGS but not to LIBS so we get any
-# necesary defines for thread-safety.
-GLIB_CFLAGS=`$PKG_CONFIG --cflags $GLIB_MODULES gthread-2.0`
 
 #
 # Checks for LibThai
@@ -652,6 +647,27 @@ else
 fi
 AC_SUBST(LIBRARY_LIBTOOL_OPTIONS)
 AC_SUBST(MODULE_LIBTOOL_OPTIONS)
+
+dnl
+dnl Check for -Bsymbolic-functions linker flag used to avoid
+dnl intra-library PLT jumps, if available.
+dnl
+AC_ARG_ENABLE(Bsymbolic,
+              [AS_HELP_STRING([--disable-Bsymbolic],
+                              [avoid linking with -Bsymbolic])],,
+              [SAVED_LDFLAGS="${LDFLAGS}"
+               AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
+               LDFLAGS=-Wl,-Bsymbolic-functions
+               AC_TRY_LINK([], [int main (void) { return 0; }],
+                           AC_MSG_RESULT(yes)
+                           enable_Bsymbolic=yes,
+                           AC_MSG_RESULT(no)
+                           enable_Bsymbolic=no)
+               LDFLAGS="${SAVED_LDFLAGS}"])
+
+if test "x${enable_Bsymbolic}" = "xyes"; then
+  LIBRARY_LIBTOOL_OPTIONS="$LIBRARY_LIBTOOL_OPTIONS -Wl,-Bsymbolic-functions"
+fi
 
 dnl ********************************************************
 dnl * See whether we need to load our modules as .la files *
@@ -932,9 +948,6 @@ pangocairo-uninstalled.pc
 pango-zip.sh
 config.h.win32
 ])
-
-AC_CONFIG_FILES([tests/runtests.sh],
-	        [chmod +x tests/runtests.sh])
 
 AC_OUTPUT
 

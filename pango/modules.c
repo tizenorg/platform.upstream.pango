@@ -450,11 +450,23 @@ process_module_file (FILE *module_file, const gchar *module_file_dir)
 	  switch (i)
 	    {
 	    case 0:
-	      if (!g_path_is_absolute (tmp_buf->str)) {
-		const gchar *abs_file_name = g_build_filename (module_file_dir, tmp_buf->str, NULL);
-		g_string_assign (tmp_buf, abs_file_name);
-		g_free ((gpointer) abs_file_name);
-	      }
+	      if (!g_path_is_absolute (tmp_buf->str)
+#ifdef __APPLE__
+	          && strncmp (tmp_buf->str, "@executable_path/", 17)
+	          && strncmp (tmp_buf->str, "@loader_path/", 13)
+	          && strncmp (tmp_buf->str, "@rpath/", 7)
+#endif
+	         )
+		{
+		  const gchar *lib_dir = pango_get_lib_subdirectory ();
+		  const gchar *abs_file_name = g_build_filename (lib_dir,
+								 MODULE_VERSION,
+								 "modules",
+								 tmp_buf->str,
+								 NULL);
+		  g_string_assign (tmp_buf, abs_file_name);
+		  g_free ((gpointer) abs_file_name);
+		}
 	      pair->module = find_or_create_module (tmp_buf->str);
 	      break;
 	    case 1:
@@ -590,8 +602,10 @@ init_modules (void)
 
   if (g_once_init_enter (&init))
     {
+#if !GLIB_CHECK_VERSION (2, 35, 3)
       /* Make sure that the type system is initialized */
       g_type_init ();
+#endif
 
       for (i = 0; _pango_included_lang_modules[i].list; i++)
         pango_module_register (&_pango_included_lang_modules[i]);

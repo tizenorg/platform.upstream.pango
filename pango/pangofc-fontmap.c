@@ -227,7 +227,9 @@ static PangoFcPatterns *pango_fc_patterns_new   (FcPattern       *pat,
 static PangoFcPatterns *pango_fc_patterns_ref   (PangoFcPatterns *pats);
 static void             pango_fc_patterns_unref (PangoFcPatterns *pats);
 static FcPattern       *pango_fc_patterns_get_pattern      (PangoFcPatterns *pats);
-static FcPattern       *pango_fc_patterns_get_font_pattern (PangoFcPatterns *pats, int i);
+static FcPattern       *pango_fc_patterns_get_font_pattern (PangoFcPatterns *pats,
+							    int              i,
+							    gboolean        *prepare);
 
 static FcPattern *uniquify_pattern (PangoFcFontMap *fcfontmap,
 				    FcPattern      *pattern);
@@ -751,7 +753,7 @@ pango_fc_patterns_get_pattern (PangoFcPatterns *pats)
 }
 
 static FcPattern *
-pango_fc_patterns_get_font_pattern (PangoFcPatterns *pats, int i)
+pango_fc_patterns_get_font_pattern (PangoFcPatterns *pats, int i, gboolean *prepare)
 {
   if (i == 0)
     {
@@ -759,10 +761,19 @@ pango_fc_patterns_get_font_pattern (PangoFcPatterns *pats, int i)
       if (!pats->match && !pats->fontset)
         {
 	  pats->match = FcFontMatch (NULL, pats->pattern, &result);
+#ifdef FC_PATTERN
+	  /* The FC_PATTERN element, which points back to our the original
+	   * pattern defeats our hash tables.
+	   */
+	  FcPatternDel (pats->match, FC_PATTERN);
+#endif /* FC_PATTERN */
 	}
 
       if (pats->match)
-	return pats->match;
+	{
+	  *prepare = FALSE;
+	  return pats->match;
+	}
     }
   else
     {
@@ -778,6 +789,7 @@ pango_fc_patterns_get_font_pattern (PangoFcPatterns *pats, int i)
 	}
     }
 
+  *prepare = TRUE;
   if (pats->fontset && i < pats->fontset->nfont)
     return pats->fontset->fonts[i];
   else
@@ -840,30 +852,36 @@ pango_fc_fontset_load_next_font (PangoFcFontset *fontset)
 {
   FcPattern *pattern, *font_pattern;
   PangoFont *font;
+  gboolean prepare;
 
-  pattern = pango_fc_patterns_get_pattern (fontset->patterns),
+  pattern = pango_fc_patterns_get_pattern (fontset->patterns);
   font_pattern = pango_fc_patterns_get_font_pattern (fontset->patterns,
-						     fontset->patterns_i++);
+						     fontset->patterns_i++,
+						     &prepare);
   if (G_UNLIKELY (!font_pattern))
     return NULL;
 
-  font_pattern = FcFontRenderPrepare (NULL, pattern, font_pattern);
+  if (prepare)
+    {
+      font_pattern = FcFontRenderPrepare (NULL, pattern, font_pattern);
 
-  if (G_UNLIKELY (!font_pattern))
-    return NULL;
+      if (G_UNLIKELY (!font_pattern))
+	return NULL;
 
 #ifdef FC_PATTERN
-    /* The FC_PATTERN element, which points back to our the original
-     * pattern defeats our hash tables.
-     */
-    FcPatternDel (font_pattern, FC_PATTERN);
+	/* The FC_PATTERN element, which points back to our the original
+	 * pattern defeats our hash tables.
+	 */
+	FcPatternDel (font_pattern, FC_PATTERN);
 #endif /* FC_PATTERN */
+    }
 
   font = pango_fc_font_map_new_font (fontset->key->fontmap,
 				     fontset->key,
 				     font_pattern);
 
-  FcPatternDestroy (font_pattern);
+  if (prepare)
+    FcPatternDestroy (font_pattern);
 
   return font;
 }

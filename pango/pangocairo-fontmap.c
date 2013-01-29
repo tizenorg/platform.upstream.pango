@@ -66,9 +66,6 @@ pango_cairo_font_map_default_init (PangoCairoFontMapIface *iface)
 PangoFontMap *
 pango_cairo_font_map_new (void)
 {
-  /* Make sure that the type system is initialized */
-  g_type_init ();
-
 #if defined(HAVE_CORE_TEXT) && defined (HAVE_CAIRO_QUARTZ)
   return g_object_new (PANGO_TYPE_CAIRO_CORE_TEXT_FONT_MAP, NULL);
 #elif defined(HAVE_CAIRO_WIN32)
@@ -102,9 +99,6 @@ pango_cairo_font_map_new (void)
 PangoFontMap *
 pango_cairo_font_map_new_for_font_type (cairo_font_type_t fonttype)
 {
-  /* Make sure that the type system is initialized */
-  g_type_init ();
-
   switch ((int) fonttype)
   {
 #if defined(HAVE_CORE_TEXT) && defined (HAVE_CAIRO_QUARTZ)
@@ -124,7 +118,7 @@ pango_cairo_font_map_new_for_font_type (cairo_font_type_t fonttype)
   }
 }
 
-static PangoFontMap *default_font_map = NULL; /* MT-safe */
+static GPrivate default_font_map = G_PRIVATE_INIT (g_object_unref); /* MT-safe */
 
 /**
  * pango_cairo_font_map_get_default:
@@ -141,18 +135,27 @@ static PangoFontMap *default_font_map = NULL; /* MT-safe */
  * change the Cairo font backend that the default fontmap
  * uses for example.
  *
- * Return value: (transfer none): the default Cairo fontmap
- *  for Pango. This object is owned by Pango and must not be freed.
+ * Note that since Pango 1.32.6, the default fontmap is per-thread.
+ * Each thread gets its own default fontmap.  In this way,
+ * PangoCairo can be used safely from multiple threads.
+ *
+ * Return value: (transfer none): the default PangoCairo fontmap
+ *  for the current thread. This object is owned by Pango and must not be freed.
  *
  * Since: 1.10
  **/
 PangoFontMap *
 pango_cairo_font_map_get_default (void)
 {
-  if (g_once_init_enter ((gsize*)&default_font_map))
-    g_once_init_leave((gsize*)&default_font_map, (gsize)pango_cairo_font_map_new ());
+  PangoFontMap *fontmap = g_private_get (&default_font_map);
 
-  return default_font_map;
+  if (G_UNLIKELY (!fontmap))
+    {
+      fontmap = pango_cairo_font_map_new ();
+      g_private_replace (&default_font_map, fontmap);
+    }
+
+  return fontmap;
 }
 
 /**
@@ -165,6 +168,12 @@ pango_cairo_font_map_get_default (void)
  * default fontmap uses for example.  The old default font map
  * is unreffed and the new font map referenced.
  *
+ * Note that since Pango 1.32.6, the default fontmap is per-thread.
+ * This function only changes the default fontmap for
+ * the current thread.   Default fontmaps of exisiting threads
+ * are not changed.  Default fontmaps of any new threads will
+ * still be created using pango_cairo_font_map_new().
+ *
  * A value of %NULL for @fontmap will cause the current default
  * font map to be released and a new default font
  * map to be created on demand, using pango_cairo_font_map_new().
@@ -174,21 +183,12 @@ pango_cairo_font_map_get_default (void)
 void
 pango_cairo_font_map_set_default (PangoCairoFontMap *fontmap)
 {
-  PangoCairoFontMap *def;
-
   g_return_if_fail (fontmap == NULL || PANGO_IS_CAIRO_FONT_MAP (fontmap));
-
-retry:
-  def = g_atomic_pointer_get (&default_font_map);
-
-  if (!g_atomic_pointer_compare_and_exchange (&default_font_map, def, fontmap))
-    goto retry;
 
   if (fontmap)
     g_object_ref (fontmap);
 
-  if (def)
-    g_object_unref (def);
+  g_private_replace (&default_font_map, fontmap);
 }
 
 /**

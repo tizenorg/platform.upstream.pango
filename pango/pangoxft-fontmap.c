@@ -41,6 +41,8 @@ struct _PangoXftFontMap
 {
   PangoFcFontMap parent_instance;
 
+  guint serial;
+
   Display *display;
   int screen;
 
@@ -59,6 +61,7 @@ struct _PangoXftFontMapClass
   PangoFcFontMapClass parent_class;
 };
 
+static guint         pango_xft_font_map_get_serial         (PangoFontMap         *fontmap);
 static void          pango_xft_font_map_default_substitute (PangoFcFontMap       *fcfontmap,
 							    FcPattern            *pattern);
 static PangoFcFont * pango_xft_font_map_new_font           (PangoFcFontMap       *fcfontmap,
@@ -74,16 +77,21 @@ static void
 pango_xft_font_map_class_init (PangoXftFontMapClass *class)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (class);
+  PangoFontMapClass *fontmap_class = PANGO_FONT_MAP_CLASS (class);
   PangoFcFontMapClass *fcfontmap_class = PANGO_FC_FONT_MAP_CLASS (class);
 
   gobject_class->finalize  = pango_xft_font_map_finalize;
+
+  fontmap_class->get_serial = pango_xft_font_map_get_serial;
+
   fcfontmap_class->default_substitute = pango_xft_font_map_default_substitute;
   fcfontmap_class->new_font = pango_xft_font_map_new_font;
 }
 
 static void
-pango_xft_font_map_init (PangoXftFontMap *xftfontmap G_GNUC_UNUSED)
+pango_xft_font_map_init (PangoXftFontMap *xftfontmap)
 {
+  xftfontmap->serial = 1;
 }
 
 static void
@@ -104,6 +112,14 @@ pango_xft_font_map_finalize (GObject *object)
   G_OBJECT_CLASS (pango_xft_font_map_parent_class)->finalize (object);
 }
 
+
+static guint
+pango_xft_font_map_get_serial (PangoFontMap *fontmap)
+{
+  PangoXftFontMap *xftfontmap = PANGO_XFT_FONT_MAP (fontmap);
+
+  return xftfontmap->serial;
+}
 
 static PangoFontMap *
 pango_xft_find_font_map (Display *display,
@@ -143,8 +159,9 @@ close_display_cb (Display   *display,
   GSList *tmp_list;
 
   G_LOCK (fontmaps);
+  tmp_list = g_slist_copy (fontmaps);
+  G_UNLOCK (fontmaps);
 
-  tmp_list = fontmaps;
   while (tmp_list)
     {
       PangoXftFontMap *xftfontmap = tmp_list->data;
@@ -154,9 +171,9 @@ close_display_cb (Display   *display,
 	pango_xft_shutdown_display (display, xftfontmap->screen);
     }
 
-  registered_displays = g_slist_remove (registered_displays, display);
+  g_slist_free (tmp_list);
 
-  G_UNLOCK (fontmaps);
+  registered_displays = g_slist_remove (registered_displays, display);
 
   return 0;
 }
@@ -205,8 +222,10 @@ pango_xft_get_font_map (Display *display,
   if (fontmap)
     return fontmap;
 
+#if !GLIB_CHECK_VERSION (2, 35, 3)
   /* Make sure that the type system is initialized */
   g_type_init ();
+#endif
 
   xftfontmap = (PangoXftFontMap *)g_object_new (PANGO_TYPE_XFT_FONT_MAP, NULL);
 
@@ -282,6 +301,10 @@ pango_xft_set_default_substitute (Display                *display,
 {
   PangoXftFontMap *xftfontmap = (PangoXftFontMap *)pango_xft_get_font_map (display, screen);
 
+  xftfontmap->serial++;
+  if (xftfontmap->serial == 0)
+    xftfontmap->serial++;
+
   if (xftfontmap->substitute_destroy)
     xftfontmap->substitute_destroy (xftfontmap->substitute_data);
 
@@ -311,6 +334,9 @@ pango_xft_substitute_changed (Display *display,
 {
   PangoXftFontMap *xftfontmap = (PangoXftFontMap *)pango_xft_get_font_map (display, screen);
 
+  xftfontmap->serial++;
+  if (xftfontmap->serial == 0)
+    xftfontmap->serial++;
   pango_fc_font_map_cache_clear (PANGO_FC_FONT_MAP (xftfontmap));
 }
 

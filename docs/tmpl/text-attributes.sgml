@@ -209,6 +209,28 @@ set font size.
 @Returns: 
 
 
+<!-- ##### FUNCTION pango_markup_parser_new ##### -->
+<para>
+
+</para>
+
+@accel_marker: 
+@Returns: 
+
+
+<!-- ##### FUNCTION pango_markup_parser_finish ##### -->
+<para>
+
+</para>
+
+@context: 
+@attr_list: 
+@text: 
+@accel_char: 
+@error: 
+@Returns: 
+
+
 <!-- ##### FUNCTION pango_attr_type_register ##### -->
 <para>
 

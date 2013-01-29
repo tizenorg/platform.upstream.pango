@@ -1,12 +1,11 @@
 ## Process this file with automake to create Makefile.in.
 
 EXTRA_DIST = 			\
-	all-unicode.txt		\
 	boundaries.utf8		\
-	runtests.sh
+	GraphemeBreakTest.txt
 
 CLEANFILES = pangorc
-DISTCLEANFILES = all-unicode.txt runtests.log
+DISTCLEANFILES = all-unicode.txt
 
 INCLUDES =					\
 	-I$(top_srcdir)				\
@@ -34,36 +33,35 @@ endif
 if CROSS_COMPILING
 TESTS=
 else
-TESTS=runtests.sh
+TESTS=$(check_PROGRAMS)
 endif
 
 TESTS_ENVIRONMENT =                    \
    srcdir=$(srcdir)                    \
    PANGO_RC_FILE=./pangorc
 
-noinst_PROGRAMS = gen-all-unicode dump-boundaries 
-
 check_PROGRAMS = testboundaries testboundaries_ucd testcolor testscript
 
 if HAVE_CAIRO
-check_PROGRAMS += testiter
+check_PROGRAMS += testiter test-pangocairo-threads
 endif
 if HAVE_FREETYPE
 check_PROGRAMS += test-ot-tags
 endif
 
-TEST_PANGO_LIBS = $(GLIB_LIBS) ../pango/libpango-$(PANGO_API_VERSION).la
+TEST_PANGO_LIBS = ../pango/libpango-$(PANGO_API_VERSION).la
 TEST_PANGOFT2_LIBS = $(TEST_PANGO_LIBS) ../pango/libpangoft2-$(PANGO_API_VERSION).la
 TEST_PANGOCAIRO_LIBS = $(TEST_PANGO_LIBS) ../pango/libpangocairo-$(PANGO_API_VERSION).la
 
 gen_all_unicode_LDADD = $(GLIB_LIBS)
-testboundaries_LDADD = $(TEST_PANGO_LIBS)
-testboundaries_ucd_LDADD = $(TEST_PANGO_LIBS)
-testcolor_LDADD = $(TEST_PANGO_LIBS)
-testiter_LDADD = $(TEST_PANGOCAIRO_LIBS)
-testscript_LDADD = $(TEST_PANGO_LIBS)
-test_ot_tags_LDADD = $(TEST_PANGOFT2_LIBS)
-dump_boundaries_LDADD = $(TEST_PANGO_LIBS)
+testboundaries_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+testboundaries_ucd_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+testcolor_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+testiter_LDADD = $(TEST_PANGOCAIRO_LIBS) $(GLIB_LIBS)
+testscript_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
+test_ot_tags_LDADD = $(TEST_PANGOFT2_LIBS) $(GLIB_LIBS)
+test_pangocairo_threads_LDADD = $(TEST_PANGOCAIRO_LIBS) $(CAIRO_LIBS) $(GLIB_LIBS)
+dump_boundaries_LDADD = $(TEST_PANGO_LIBS) $(GLIB_LIBS)
 
 if HAVE_CXX
 check_PROGRAMS += cxx-test
@@ -77,5 +75,7 @@ pangorc: $(srcdir)/../modules/pangorc
 	cp $(srcdir)/../modules/pangorc $@
 
 $(noinst_PROGRAMS) $(check_PROGRAMS): pangorc
+
+noinst_PROGRAMS = $(check_PROGRAMS) gen-all-unicode dump-boundaries
 
 -include $(top_srcdir)/git.mk

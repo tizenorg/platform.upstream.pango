@@ -172,7 +172,7 @@ attrs_equal (PangoLogAttr *attrs1,
        * multiple bits set, and as long as attr&bitmask is not zero, it
        * counts as being set */
       if (((a.bits & bits.bits) && !(b.bits & bits.bits)) ||
-          !(a.bits & bits.bits) && (b.bits & bits.bits))
+          (!(a.bits & bits.bits) && (b.bits & bits.bits)))
         return FALSE;
     }
 
@@ -244,6 +244,7 @@ do_test (gchar *filename,
 	  exit (1);
 	}
     }
+  g_print ("Testing %s.\n", filename);
 
   i = 1;
   for (;;)

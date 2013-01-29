@@ -17,6 +17,8 @@ pango_item_split
 pango_reorder_items
 <SUBSECTION>
 pango_context_new
+pango_context_changed
+pango_context_get_serial
 pango_context_set_font_map
 pango_context_get_font_map
 pango_context_get_font_description
@@ -259,6 +261,7 @@ pango_font_map_load_font
 pango_font_map_load_fontset
 pango_font_map_list_families
 pango_font_map_get_shape_engine_type
+pango_font_map_get_serial
 <SUBSECTION>
 PangoFontset
 PANGO_TYPE_FONTSET
@@ -332,6 +335,8 @@ PangoAttrFontDesc
 PangoAttrShape
 PangoAttrSize
 pango_parse_markup
+pango_markup_parser_new
+pango_markup_parser_finish
 pango_attr_type_register
 pango_attr_type_get_name
 pango_attribute_init
@@ -440,6 +445,7 @@ pango_layout_copy
 
 pango_layout_get_context
 pango_layout_context_changed
+pango_layout_get_serial
 
 pango_layout_set_text
 pango_layout_get_text

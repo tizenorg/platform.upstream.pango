@@ -362,6 +362,9 @@ basic_engine_shape (PangoEngineShape    *engine G_GNUC_UNUSED,
   hb_buffer_set_direction (hb_buffer, hb_direction);
   hb_buffer_set_script (hb_buffer, hb_glib_script_to_script (analysis->script));
   hb_buffer_set_language (hb_buffer, hb_language_from_string (pango_language_to_string (analysis->language), -1));
+  hb_buffer_set_flags (hb_buffer,
+		       (item_offset == 0 ? HB_BUFFER_FLAG_BOT : 0) |
+		       (item_offset + item_length == paragraph_length ? HB_BUFFER_FLAG_EOT : 0));
 
   hb_buffer_add_utf8 (hb_buffer, paragraph_text, paragraph_length, item_offset, item_length);
   hb_shape (hb_font, hb_buffer, NULL, 0);
@@ -387,11 +390,10 @@ basic_engine_shape (PangoEngineShape    *engine G_GNUC_UNUSED,
   if (context.vertical)
     for (i = 0; i < num_glyphs; i++)
       {
-	/* XXX
+        unsigned int advance = hb_position->y_advance;
 	if (is_hinted)
 	  advance = PANGO_UNITS_ROUND (advance);
-	  */
-	glyphs->glyphs[i].geometry.width    = hb_position->y_advance;
+	glyphs->glyphs[i].geometry.width    = advance;
 	/* XXX */
 	glyphs->glyphs[i].geometry.x_offset = hb_position->y_offset;
 	glyphs->glyphs[i].geometry.y_offset = -hb_position->x_offset;
@@ -400,11 +402,10 @@ basic_engine_shape (PangoEngineShape    *engine G_GNUC_UNUSED,
   else /* horizontal */
     for (i = 0; i < num_glyphs; i++)
       {
-	/* XXX
+        unsigned int advance = hb_position->x_advance;
 	if (is_hinted)
 	  advance = PANGO_UNITS_ROUND (advance);
-	  */
-	glyphs->glyphs[i].geometry.width    = hb_position->x_advance;
+	glyphs->glyphs[i].geometry.width    = advance;
 	glyphs->glyphs[i].geometry.x_offset = hb_position->x_offset;
 	glyphs->glyphs[i].geometry.y_offset = hb_position->y_offset;
 	hb_position++;

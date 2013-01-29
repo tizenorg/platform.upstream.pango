@@ -656,7 +656,7 @@ pango_default_break (const gchar   *text,
 	switch ((int) type)
 	  {
 	  case G_UNICODE_FORMAT:
-	    if (wc == 0x200C && wc == 0x200D)
+	    if (wc == 0x200C || wc == 0x200D)
 	      {
 		GB_type = GB_Extend; /* U+200C and U+200D are Other_Grapheme_Extend */
 		break;
@@ -665,21 +665,22 @@ pango_default_break (const gchar   *text,
 	  case G_UNICODE_CONTROL:
 	  case G_UNICODE_LINE_SEPARATOR:
 	  case G_UNICODE_PARAGRAPH_SEPARATOR:
+	  case G_UNICODE_SURROGATE:
 	    GB_type = GB_ControlCRLF;
 	    break;
+
+	  case G_UNICODE_UNASSIGNED:
+	    /* Unassigned default ignorables */
+	    if ((wc >= 0xFFF0 && wc <= 0xFFF8) ||
+		(wc >= 0xE0000 && wc <= 0xE0FFF))
+	      {
+		GB_type = GB_ControlCRLF;
+		break;
+	      }
 
 	  case G_UNICODE_OTHER_LETTER:
 	    if (makes_hangul_syllable)
 	      GB_type = GB_InHangulSyllable;
-	    else if ((wc & 0x0E00) == 0x0E00)
-	      {
-	        /* Thai and Lao stuff hardcoded in UAX#29 */
-		if ((wc >= 0x0E40 && wc <= 0x0E44) || (wc >= 0x0EC0 && wc <= 0x0EC4))
-		  GB_type = GB_Prepend; /* Prepend */
-		else if (wc == 0x0E30 || wc == 0x0E32 || wc == 0x0E33 || wc == 0x0E45 ||
-			 wc == 0x0EB0 || wc == 0x0EB2 || wc == 0x0EB3)
-		  GB_type = GB_Extend; /* Exceptions in the Extend definition */
-	      }
 	    break;
 
 	  case G_UNICODE_MODIFIER_LETTER:
@@ -761,7 +762,7 @@ pango_default_break (const gchar   *text,
 		case 0xFF:
 		  if (wc == 0xFF70)
 		    WB_type = WB_Katakana; /* Katakana exceptions */
-		  else if (wc >= 0xFF9E || wc <= 0xFF9F)
+		  else if (wc >= 0xFF9E && wc <= 0xFF9F)
 		    WB_type = WB_ExtendFormat; /* Other_Grapheme_Extend */
 		  break;
 		case 0x05:
@@ -995,7 +996,8 @@ pango_default_break (const gchar   *text,
 	      break;
 
 	    case G_UNICODE_BREAK_SURROGATE:
-	      g_assert_not_reached ();
+	      /* Undefined according to UTR#14, but ALLOWED in test data. */
+	      break_op = BREAK_ALLOWED;
 	      break;
 
 	    default:
@@ -1031,7 +1033,8 @@ pango_default_break (const gchar   *text,
 		  break;
 
 		case G_UNICODE_BREAK_SURROGATE:
-		  g_assert_not_reached ();
+		  /* Undefined according to UTR#14, but ALLOWED in test data. */
+		  break_op = BREAK_ALLOWED;
 		  break;
 
 		/* Hangul additions are from Unicode 4.1 UAX#14 */

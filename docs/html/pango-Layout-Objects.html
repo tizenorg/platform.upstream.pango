@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Layout Objects</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.77.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
 <link rel="home" href="index.html" title="Pango Reference Manual">
 <link rel="up" href="pango.html" title="Basic Pango Interfaces">
 <link rel="prev" href="PangoMarkupFormat.html" title="Text Attribute Markup">
@@ -45,19 +45,20 @@
 <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="returnvalue">PangoLayout</span></a> *       <a class="link" href="pango-Layout-Objects.html#pango-layout-copy" title="pango_layout_copy ()">pango_layout_copy</a>                   (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *src</code></em>);
 <a class="link" href="pango-Text-Processing.html#PangoContext"><span class="returnvalue">PangoContext</span></a> *      <a class="link" href="pango-Layout-Objects.html#pango-layout-get-context" title="pango_layout_get_context ()">pango_layout_get_context</a>            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-context-changed" title="pango_layout_context_changed ()">pango_layout_context_changed</a>        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="pango-Layout-Objects.html#pango-layout-get-serial" title="pango_layout_get_serial ()">pango_layout_get_serial</a>             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-text" title="pango_layout_set_text ()">pango_layout_set_text</a>               (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *text</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> length</code></em>);
 const <span class="returnvalue">char</span> *        <a class="link" href="pango-Layout-Objects.html#pango-layout-get-text" title="pango_layout_get_text ()">pango_layout_get_text</a>               (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="pango-Layout-Objects.html#pango-layout-get-character-count" title="pango_layout_get_character_count ()">pango_layout_get_character_count</a>    (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+<span class="returnvalue">gint</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-get-character-count" title="pango_layout_get_character_count ()">pango_layout_get_character_count</a>    (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-markup" title="pango_layout_set_markup ()">pango_layout_set_markup</a>             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *markup</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> length</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-markup-with-accel" title="pango_layout_set_markup_with_accel ()">pango_layout_set_markup_with_accel</a>  (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *markup</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> length</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> accel_marker</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> *accel_char</code></em>);
+                                                         <em class="parameter"><code><span class="type">gunichar</span> accel_marker</code></em>,
+                                                         <em class="parameter"><code><span class="type">gunichar</span> *accel_char</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-attributes" title="pango_layout_set_attributes ()">pango_layout_set_attributes</a>         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a> *attrs</code></em>);
 <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="returnvalue">PangoAttrList</span></a> *     <a class="link" href="pango-Layout-Objects.html#pango-layout-get-attributes" title="pango_layout_get_attributes ()">pango_layout_get_attributes</a>         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
@@ -74,13 +75,13 @@ const <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-wrap" title="pango_layout_set_wrap ()">pango_layout_set_wrap</a>               (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoWrapMode"><span class="type">PangoWrapMode</span></a> wrap</code></em>);
 <a class="link" href="pango-Layout-Objects.html#PangoWrapMode"><span class="returnvalue">PangoWrapMode</span></a>       <a class="link" href="pango-Layout-Objects.html#pango-layout-get-wrap" title="pango_layout_get_wrap ()">pango_layout_get_wrap</a>               (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-is-wrapped" title="pango_layout_is_wrapped ()">pango_layout_is_wrapped</a>             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-is-wrapped" title="pango_layout_is_wrapped ()">pango_layout_is_wrapped</a>             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 enum                <a class="link" href="pango-Layout-Objects.html#PangoWrapMode-enum" title="enum PangoWrapMode">PangoWrapMode</a>;
 #define             <a class="link" href="pango-Layout-Objects.html#PANGO-TYPE-WRAP-MODE:CAPS" title="PANGO_TYPE_WRAP_MODE">PANGO_TYPE_WRAP_MODE</a>
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-ellipsize" title="pango_layout_set_ellipsize ()">pango_layout_set_ellipsize</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoEllipsizeMode"><span class="type">PangoEllipsizeMode</span></a> ellipsize</code></em>);
 <a class="link" href="pango-Layout-Objects.html#PangoEllipsizeMode"><span class="returnvalue">PangoEllipsizeMode</span></a>  <a class="link" href="pango-Layout-Objects.html#pango-layout-get-ellipsize" title="pango_layout_get_ellipsize ()">pango_layout_get_ellipsize</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-is-ellipsized" title="pango_layout_is_ellipsized ()">pango_layout_is_ellipsized</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-is-ellipsized" title="pango_layout_is_ellipsized ()">pango_layout_is_ellipsized</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 enum                <a class="link" href="pango-Layout-Objects.html#PangoEllipsizeMode-enum" title="enum PangoEllipsizeMode">PangoEllipsizeMode</a>;
 #define             <a class="link" href="pango-Layout-Objects.html#PANGO-TYPE-ELLIPSIZE-MODE:CAPS" title="PANGO_TYPE_ELLIPSIZE_MODE">PANGO_TYPE_ELLIPSIZE_MODE</a>
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-indent" title="pango_layout_set_indent ()">pango_layout_set_indent</a>             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
@@ -90,11 +91,11 @@ enum                <a class="link" href="pango-Layout-Objects.html#PangoEllipsi
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-spacing" title="pango_layout_set_spacing ()">pango_layout_set_spacing</a>            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> spacing</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-justify" title="pango_layout_set_justify ()">pango_layout_set_justify</a>            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> justify</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-justify" title="pango_layout_get_justify ()">pango_layout_get_justify</a>            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+                                                         <em class="parameter"><code><span class="type">gboolean</span> justify</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-justify" title="pango_layout_get_justify ()">pango_layout_get_justify</a>            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-auto-dir" title="pango_layout_set_auto_dir ()">pango_layout_set_auto_dir</a>           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> auto_dir</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-auto-dir" title="pango_layout_get_auto_dir ()">pango_layout_get_auto_dir</a>           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+                                                         <em class="parameter"><code><span class="type">gboolean</span> auto_dir</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-auto-dir" title="pango_layout_get_auto_dir ()">pango_layout_get_auto_dir</a>           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-alignment" title="pango_layout_set_alignment ()">pango_layout_set_alignment</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoAlignment"><span class="type">PangoAlignment</span></a> alignment</code></em>);
 <a class="link" href="pango-Layout-Objects.html#PangoAlignment"><span class="returnvalue">PangoAlignment</span></a>      <a class="link" href="pango-Layout-Objects.html#pango-layout-get-alignment" title="pango_layout_get_alignment ()">pango_layout_get_alignment</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
@@ -103,8 +104,8 @@ enum                <a class="link" href="pango-Layout-Objects.html#PangoEllipsi
 <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="returnvalue">PangoTabArray</span></a> *     <a class="link" href="pango-Layout-Objects.html#pango-layout-get-tabs" title="pango_layout_get_tabs ()">pango_layout_get_tabs</a>               (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-set-single-paragraph-mode" title="pango_layout_set_single_paragraph_mode ()">pango_layout_set_single_paragraph_mode</a>
                                                         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> setting</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-single-paragraph-mode" title="pango_layout_get_single_paragraph_mode ()">pango_layout_get_single_paragraph_mode</a>
+                                                         <em class="parameter"><code><span class="type">gboolean</span> setting</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-single-paragraph-mode" title="pango_layout_get_single_paragraph_mode ()">pango_layout_get_single_paragraph_mode</a>
                                                         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 enum                <a class="link" href="pango-Layout-Objects.html#PangoAlignment-enum" title="enum PangoAlignment">PangoAlignment</a>;
 #define             <a class="link" href="pango-Layout-Objects.html#PANGO-TYPE-ALIGNMENT:CAPS" title="PANGO_TYPE_ALIGNMENT">PANGO_TYPE_ALIGNMENT</a>
@@ -112,19 +113,19 @@ enum                <a class="link" href="pango-Layout-Objects.html#PangoAlignme
                                                         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-get-log-attrs" title="pango_layout_get_log_attrs ()">pango_layout_get_log_attrs</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Text-Processing.html#PangoLogAttr" title="PangoLogAttr"><span class="type">PangoLogAttr</span></a> **attrs</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *n_attrs</code></em>);
+                                                         <em class="parameter"><code><span class="type">gint</span> *n_attrs</code></em>);
 const <a class="link" href="pango-Text-Processing.html#PangoLogAttr" title="PangoLogAttr"><span class="returnvalue">PangoLogAttr</span></a> * <a class="link" href="pango-Layout-Objects.html#pango-layout-get-log-attrs-readonly" title="pango_layout_get_log_attrs_readonly ()">pango_layout_get_log_attrs_readonly</a>
                                                         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *n_attrs</code></em>);
+                                                         <em class="parameter"><code><span class="type">gint</span> *n_attrs</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-index-to-pos" title="pango_layout_index_to_pos ()">pango_layout_index_to_pos</a>           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> index_</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *pos</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-index-to-line-x" title="pango_layout_index_to_line_x ()">pango_layout_index_to_line_x</a>        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> index_</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> trailing</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> trailing</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *line</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *x_pos</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-xy-to-index" title="pango_layout_xy_to_index ()">pango_layout_xy_to_index</a>            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-xy-to-index" title="pango_layout_xy_to_index ()">pango_layout_xy_to_index</a>            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> x</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> y</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *index_</code></em>,
@@ -134,7 +135,7 @@ const <a class="link" href="pango-Text-Processing.html#PangoLogAttr" title="Pang
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *strong_pos</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *weak_pos</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-move-cursor-visually" title="pango_layout_move_cursor_visually ()">pango_layout_move_cursor_visually</a>   (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> strong</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> strong</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> old_index</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> old_trailing</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> direction</code></em>,
@@ -158,16 +159,16 @@ const <a class="link" href="pango-Text-Processing.html#PangoLogAttr" title="Pang
                                                          <em class="parameter"><code><span class="type">int</span> line</code></em>);
 <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="returnvalue">PangoLayoutLine</span></a> *   <a class="link" href="pango-Layout-Objects.html#pango-layout-get-line-readonly" title="pango_layout_get_line_readonly ()">pango_layout_get_line_readonly</a>      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> line</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-lines" title="pango_layout_get_lines ()">pango_layout_get_lines</a>              (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-lines-readonly" title="pango_layout_get_lines_readonly ()">pango_layout_get_lines_readonly</a>     (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-lines" title="pango_layout_get_lines ()">pango_layout_get_lines</a>              (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
+<span class="returnvalue">GSList</span> *            <a class="link" href="pango-Layout-Objects.html#pango-layout-get-lines-readonly" title="pango_layout_get_lines_readonly ()">pango_layout_get_lines_readonly</a>     (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="returnvalue">PangoLayoutIter</span></a> *   <a class="link" href="pango-Layout-Objects.html#pango-layout-get-iter" title="pango_layout_get_iter ()">pango_layout_get_iter</a>               (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);
 <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="returnvalue">PangoLayoutIter</span></a> *   <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-copy" title="pango_layout_iter_copy ()">pango_layout_iter_copy</a>              (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-free" title="pango_layout_iter_free ()">pango_layout_iter_free</a>              (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-run" title="pango_layout_iter_next_run ()">pango_layout_iter_next_run</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-char" title="pango_layout_iter_next_char ()">pango_layout_iter_next_char</a>         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-cluster" title="pango_layout_iter_next_cluster ()">pango_layout_iter_next_cluster</a>      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-line" title="pango_layout_iter_next_line ()">pango_layout_iter_next_line</a>         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-at-last-line" title="pango_layout_iter_at_last_line ()">pango_layout_iter_at_last_line</a>      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-run" title="pango_layout_iter_next_run ()">pango_layout_iter_next_run</a>          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-char" title="pango_layout_iter_next_char ()">pango_layout_iter_next_char</a>         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-cluster" title="pango_layout_iter_next_cluster ()">pango_layout_iter_next_cluster</a>      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-next-line" title="pango_layout_iter_next_line ()">pango_layout_iter_next_line</a>         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-at-last-line" title="pango_layout_iter_at_last_line ()">pango_layout_iter_at_last_line</a>      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
 <span class="returnvalue">int</span>                 <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-get-index" title="pango_layout_iter_get_index ()">pango_layout_iter_get_index</a>         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
 <span class="returnvalue">int</span>                 <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-get-baseline" title="pango_layout_iter_get_baseline ()">pango_layout_iter_get_baseline</a>      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
 <a class="link" href="pango-Layout-Objects.html#PangoLayoutRun" title="PangoLayoutRun"><span class="returnvalue">PangoLayoutRun</span></a> *    <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-get-run" title="pango_layout_iter_get_run ()">pango_layout_iter_get_run</a>           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);
@@ -207,9 +208,9 @@ typedef             <a class="link" href="pango-Layout-Objects.html#PangoLayoutR
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *logical_rect</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Layout-Objects.html#pango-layout-line-index-to-x" title="pango_layout_line_index_to_x ()">pango_layout_line_index_to_x</a>        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a> *line</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> index_</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> trailing</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> trailing</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *x_pos</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Layout-Objects.html#pango-layout-line-x-to-index" title="pango_layout_line_x_to_index ()">pango_layout_line_x_to_index</a>        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a> *line</code></em>,
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Layout-Objects.html#pango-layout-line-x-to-index" title="pango_layout_line_x_to_index ()">pango_layout_line_x_to_index</a>        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a> *line</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> x_pos</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *index_</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *trailing</code></em>);
@@ -223,7 +224,7 @@ typedef             <a class="link" href="pango-Layout-Objects.html#PangoLayoutR
 <div class="refsect1">
 <a name="pango-Layout-Objects.object-hierarchy"></a><h2>Object Hierarchy</h2>
 <pre class="synopsis">
-  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+  GObject
    +----PangoLayout
 </pre>
 <pre class="synopsis">
@@ -323,7 +324,7 @@ default values for a particular <a class="link" href="pango-Text-Processing.html
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>, with a reference
 count of one, which should be freed with
-<a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</td>
+<code class="function">g_object_unref()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -352,7 +353,7 @@ value.
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>,
 with a reference count of one, which should be freed
-with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+with <code class="function">g_object_unref()</code>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -407,6 +408,42 @@ to creating the layout.
 </td>
 </tr></tbody>
 </table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="pango-layout-get-serial"></a><h3>pango_layout_get_serial ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>               pango_layout_get_serial             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<p>
+Returns the current serial number of <em class="parameter"><code>layout</code></em>.  The serial number is
+initialized to an small number  larger than zero when a new layout
+is created and is increased whenever the layout is changed using any
+of the setter functions, or the <a class="link" href="pango-Text-Processing.html#PangoContext"><span class="type">PangoContext</span></a> it uses has changed.
+The serial may wrap, but will never have the value 0. Since it
+can wrap, never compare it with "less than", always use "not equals".
+</p>
+<p>
+This can be used to automatically detect changes to a <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>, and
+is useful for example to decide whether a layout needs redrawing.
+To force the serial to be increased, use <a class="link" href="pango-Layout-Objects.html#pango-layout-context-changed" title="pango_layout_context_changed ()"><code class="function">pango_layout_context_changed()</code></a>.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>layout</code></em> :</span></p></td>
+<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>The current serial number of <em class="parameter"><code>layout</code></em>.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since 1.32.4</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -479,7 +516,7 @@ be freed or modified.
 <hr>
 <div class="refsect2">
 <a name="pango-layout-get-character-count"></a><h3>pango_layout_get_character_count ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                pango_layout_get_character_count    (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gint</span>                pango_layout_get_character_count    (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Returns the number of Unicode characters in the
 the text of <em class="parameter"><code>layout</code></em>.
@@ -544,8 +581,8 @@ null-terminated</td>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_set_markup_with_accel  (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *markup</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> length</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> accel_marker</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> *accel_char</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gunichar</span> accel_marker</code></em>,
+                                                         <em class="parameter"><code><span class="type">gunichar</span> *accel_char</code></em>);</pre>
 <p>
 Sets the layout text and attribute list from marked-up text (see
 <a href="PangoMarkupFormat.html">markup format</a>). Replaces
@@ -588,7 +625,7 @@ null-terminated</td>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>accel_char</code></em> :</span></p></td>
 <td>return location
-for first located accelerator, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+for first located accelerator, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -616,7 +653,7 @@ References <em class="parameter"><code>attrs</code></em>, so the caller can unre
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>attrs</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, can be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, can be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -671,7 +708,7 @@ the layout's context is used.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
-<td>the new <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to unset the
+<td>the new <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to unset the
 current font description. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -700,7 +737,7 @@ Gets the font description for the layout, if any.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to the layout's font description,
-or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the font description from the layout's
+or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the font description from the layout's
 context is inherited. This value is owned by the layout
 and must not be modified or freed.</td>
 </tr>
@@ -900,12 +937,12 @@ were actually wrapped.
 <hr>
 <div class="refsect2">
 <a name="pango-layout-is-wrapped"></a><h3>pango_layout_is_wrapped ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_is_wrapped             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_is_wrapped             (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Queries whether the layout had to wrap any paragraphs.
 </p>
 <p>
-This returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if a positive width is set on <em class="parameter"><code>layout</code></em>,
+This returns <code class="literal">TRUE</code> if a positive width is set on <em class="parameter"><code>layout</code></em>,
 ellipsization mode of <em class="parameter"><code>layout</code></em> is set to <a class="link" href="pango-Layout-Objects.html#PANGO-ELLIPSIZE-NONE:CAPS"><code class="literal">PANGO_ELLIPSIZE_NONE</code></a>,
 and there are paragraphs exceeding the layout width that have
 to be wrapped.
@@ -924,7 +961,7 @@ to be wrapped.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if any paragraphs had to be wrapped, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+<code class="literal">TRUE</code> if any paragraphs had to be wrapped, <code class="literal">FALSE</code>
 otherwise.</td>
 </tr>
 </tbody>
@@ -974,7 +1011,7 @@ enough space for a full word.
 <pre class="programlisting">#define PANGO_TYPE_WRAP_MODE (pango_wrap_mode_get_type ())
 </pre>
 <p>
-The <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> type for <a class="link" href="pango-Layout-Objects.html#PangoWrapMode"><span class="type">PangoWrapMode</span></a>.
+The <span class="type">GObject</span> type for <a class="link" href="pango-Layout-Objects.html#PangoWrapMode"><span class="type">PangoWrapMode</span></a>.
 </p>
 </div>
 <hr>
@@ -1048,12 +1085,12 @@ were actually ellipsized.</td>
 <hr>
 <div class="refsect2">
 <a name="pango-layout-is-ellipsized"></a><h3>pango_layout_is_ellipsized ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_is_ellipsized          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_is_ellipsized          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Queries whether the layout had to ellipsize any paragraphs.
 </p>
 <p>
-This returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the ellipsization mode for <em class="parameter"><code>layout</code></em>
+This returns <code class="literal">TRUE</code> if the ellipsization mode for <em class="parameter"><code>layout</code></em>
 is not <a class="link" href="pango-Layout-Objects.html#PANGO-ELLIPSIZE-NONE:CAPS"><code class="literal">PANGO_ELLIPSIZE_NONE</code></a>, a positive width is set on <em class="parameter"><code>layout</code></em>,
 and there are paragraphs exceeding that width that have to be
 ellipsized.
@@ -1072,7 +1109,7 @@ ellipsized.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if any paragraphs had to be ellipsized, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>
+<code class="literal">TRUE</code> if any paragraphs had to be ellipsized, <code class="literal">FALSE</code>
 otherwise.</td>
 </tr>
 </tbody>
@@ -1131,7 +1168,7 @@ with an ellipsis.
 <pre class="programlisting">#define PANGO_TYPE_ELLIPSIZE_MODE (pango_ellipsize_mode_get_type ())
 </pre>
 <p>
-The <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> type for <a class="link" href="pango-Layout-Objects.html#PangoEllipsizeMode"><span class="type">PangoEllipsizeMode</span></a>.
+The <span class="type">GObject</span> type for <a class="link" href="pango-Layout-Objects.html#PangoEllipsizeMode"><span class="type">PangoEllipsizeMode</span></a>.
 </p>
 </div>
 <hr>
@@ -1247,7 +1284,7 @@ layout.
 <div class="refsect2">
 <a name="pango-layout-set-justify"></a><h3>pango_layout_set_justify ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_set_justify            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> justify</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gboolean</span> justify</code></em>);</pre>
 <p>
 Sets whether each complete line should be stretched to
 fill the entire width of the layout. This stretching is typically
@@ -1280,7 +1317,7 @@ older than 1.18.
 <hr>
 <div class="refsect2">
 <a name="pango-layout-get-justify"></a><h3>pango_layout_get_justify ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_get_justify            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_get_justify            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Gets whether each complete line should be stretched to fill the entire
 width of the layout.
@@ -1307,7 +1344,7 @@ width of the layout.
 <div class="refsect2">
 <a name="pango-layout-set-auto-dir"></a><h3>pango_layout_set_auto_dir ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_set_auto_dir           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> auto_dir</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gboolean</span> auto_dir</code></em>);</pre>
 <p>
 Sets whether to calculate the bidirectional base direction
 for the layout according to the contents of the layout;
@@ -1319,7 +1356,7 @@ have left-to-right layout. Paragraphs with only neutral
 characters get their direction from the surrounding paragraphs.
 </p>
 <p>
-When <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, the choice between left-to-right and
+When <code class="literal">FALSE</code>, the choice between left-to-right and
 right-to-left layout is done according to the base direction
 of the layout's <a class="link" href="pango-Text-Processing.html#PangoContext"><span class="type">PangoContext</span></a>. (See <a class="link" href="pango-Text-Processing.html#pango-context-set-base-dir" title="pango_context_set_base_dir ()"><code class="function">pango_context_set_base_dir()</code></a>).
 </p>
@@ -1341,7 +1378,7 @@ base direction of the context, the interpretation of
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>auto_dir</code></em> :</span></p></td>
-<td>if <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, compute the bidirectional base direction
+<td>if <code class="literal">TRUE</code>, compute the bidirectional base direction
 from the layout's contents.</td>
 </tr>
 </tbody>
@@ -1351,7 +1388,7 @@ from the layout's contents.</td>
 <hr>
 <div class="refsect2">
 <a name="pango-layout-get-auto-dir"></a><h3>pango_layout_get_auto_dir ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_get_auto_dir           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_get_auto_dir           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Gets whether to calculate the bidirectional base direction
 for the layout according to the contents of the layout.
@@ -1371,8 +1408,8 @@ See <a class="link" href="pango-Layout-Objects.html#pango-layout-set-auto-dir" t
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the bidirectional base direction
-is computed from the layout's contents, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+<code class="literal">TRUE</code> if the bidirectional base direction
+is computed from the layout's contents, <code class="literal">FALSE</code> otherwise.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1438,7 +1475,7 @@ positioned within the horizontal space available.
                                                          <em class="parameter"><code><a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a> *tabs</code></em>);</pre>
 <p>
 Sets the tabs to use for <em class="parameter"><code>layout</code></em>, overriding the default tabs
-(by default, tabs are every 8 spaces). If <em class="parameter"><code>tabs</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the default
+(by default, tabs are every 8 spaces). If <em class="parameter"><code>tabs</code></em> is <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>, the default
 tabs are reinstated. <em class="parameter"><code>tabs</code></em> is copied into the layout; you must
 free your copy of <em class="parameter"><code>tabs</code></em> yourself.
 </p>
@@ -1455,7 +1492,7 @@ free your copy of <em class="parameter"><code>tabs</code></em> yourself.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>tabs</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>a <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1468,7 +1505,7 @@ free your copy of <em class="parameter"><code>tabs</code></em> yourself.
 <p>
 Gets the current <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a> used by this layout. If no
 <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a> has been set, then the default tabs are in use
-and <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned. Default tabs are every 8 spaces.
+and <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> is returned. Default tabs are every 8 spaces.
 The return value should be freed with <a class="link" href="pango-Tab-Stops.html#pango-tab-array-free" title="pango_tab_array_free ()"><code class="function">pango_tab_array_free()</code></a>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -1484,7 +1521,7 @@ The return value should be freed with <a class="link" href="pango-Tab-Stops.html
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a copy of the tabs for this layout, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>a copy of the tabs for this layout, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1494,9 +1531,9 @@ The return value should be freed with <a class="link" href="pango-Tab-Stops.html
 <a name="pango-layout-set-single-paragraph-mode"></a><h3>pango_layout_set_single_paragraph_mode ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_set_single_paragraph_mode
                                                         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> setting</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gboolean</span> setting</code></em>);</pre>
 <p>
-If <em class="parameter"><code>setting</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, do not treat newlines and similar characters
+If <em class="parameter"><code>setting</code></em> is <code class="literal">TRUE</code>, do not treat newlines and similar characters
 as paragraph separators; instead, keep all text in a single paragraph,
 and display a glyph for paragraph separator characters. Used when
 you want to allow editing of newlines on a single text line.
@@ -1522,7 +1559,7 @@ you want to allow editing of newlines on a single text line.
 <hr>
 <div class="refsect2">
 <a name="pango-layout-get-single-paragraph-mode"></a><h3>pango_layout_get_single_paragraph_mode ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_get_single_paragraph_mode
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_get_single_paragraph_mode
                                                         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Obtains the value set by <a class="link" href="pango-Layout-Objects.html#pango-layout-set-single-paragraph-mode" title="pango_layout_set_single_paragraph_mode ()"><code class="function">pango_layout_set_single_paragraph_mode()</code></a>.
@@ -1541,8 +1578,8 @@ Obtains the value set by <a class="link" href="pango-Layout-Objects.html#pango-l
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the layout does not break paragraphs at
-paragraph separator characters, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+<code class="literal">TRUE</code> if the layout does not break paragraphs at
+paragraph separator characters, <code class="literal">FALSE</code> otherwise.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1591,7 +1628,7 @@ using <a class="link" href="pango-Layout-Objects.html#pango-layout-set-justify" 
 <pre class="programlisting">#define PANGO_TYPE_ALIGNMENT (pango_alignment_get_type ())
 </pre>
 <p>
-The <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> type for <a class="link" href="pango-Layout-Objects.html#PangoAlignment"><span class="type">PangoAlignment</span></a>.
+The <span class="type">GObject</span> type for <a class="link" href="pango-Layout-Objects.html#PangoAlignment"><span class="type">PangoAlignment</span></a>.
 </p>
 </div>
 <hr>
@@ -1634,7 +1671,7 @@ certain font supports all the characters in the string.
 <a name="pango-layout-get-log-attrs"></a><h3>pango_layout_get_log_attrs ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_get_log_attrs          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Text-Processing.html#PangoLogAttr" title="PangoLogAttr"><span class="type">PangoLogAttr</span></a> **attrs</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *n_attrs</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gint</span> *n_attrs</code></em>);</pre>
 <p>
 Retrieves an array of logical attributes for each character in
 the <em class="parameter"><code>layout</code></em>.
@@ -1653,7 +1690,7 @@ the <em class="parameter"><code>layout</code></em>.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>attrs</code></em> :</span></p></td>
 <td>location to store a pointer to an array of logical attributes
-This value must be freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attrs][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
+This value must be freed with <code class="function">g_free()</code>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attrs][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -1673,7 +1710,7 @@ and the position after the last character.). <span class="annotation">[<acronym 
 <a name="pango-layout-get-log-attrs-readonly"></a><h3>pango_layout_get_log_attrs_readonly ()</h3>
 <pre class="programlisting">const <a class="link" href="pango-Text-Processing.html#PangoLogAttr" title="PangoLogAttr"><span class="returnvalue">PangoLogAttr</span></a> * pango_layout_get_log_attrs_readonly
                                                         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> *n_attrs</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gint</span> *n_attrs</code></em>);</pre>
 <p>
 Retrieves an array of logical attributes for each character in
 the <em class="parameter"><code>layout</code></em>.
@@ -1758,7 +1795,7 @@ then <code class="literal">pos-&gt;width</code> will be negative.
 <a name="pango-layout-index-to-line-x"></a><h3>pango_layout_index_to_line_x ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_index_to_line_x        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> index_</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> trailing</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> trailing</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *line</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *x_pos</code></em>);</pre>
 <p>
@@ -1789,13 +1826,13 @@ the leading of the grapheme.</td>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>line</code></em> :</span></p></td>
 <td>location to store resulting line index. (which will
-between 0 and pango_layout_get_line_count(layout) - 1), or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+between 0 and pango_layout_get_line_count(layout) - 1), or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>x_pos</code></em> :</span></p></td>
 <td>location to store resulting position within line
-(<a class="link" href="pango-Glyph-Storage.html#PANGO-SCALE:CAPS" title="PANGO_SCALE"><code class="literal">PANGO_SCALE</code></a> units per device unit), or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+(<a class="link" href="pango-Glyph-Storage.html#PANGO-SCALE:CAPS" title="PANGO_SCALE"><code class="literal">PANGO_SCALE</code></a> units per device unit), or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1804,7 +1841,7 @@ between 0 and pango_layout_get_line_count(layout) - 1), or <a href="http://libra
 <hr>
 <div class="refsect2">
 <a name="pango-layout-xy-to-index"></a><h3>pango_layout_xy_to_index ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_xy_to_index            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_xy_to_index            (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> x</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> y</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *index_</code></em>,
@@ -1817,7 +1854,7 @@ Y position is not inside the layout, the closest position is chosen
 X position is not within the layout, then the start or the
 end of the line is chosen as  described for <code class="function">pango_layout_x_to_index()</code>.
 If either the X or Y positions were not inside the layout, then the
-function returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>; on an exact hit, it returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
+function returns <code class="literal">FALSE</code>; on an exact hit, it returns <code class="literal">TRUE</code>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -1856,7 +1893,7 @@ grapheme. 0 represents the trailing edge of the grapheme. <span class="annotatio
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the coordinates were inside text, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+<code class="literal">TRUE</code> if the coordinates were inside text, <code class="literal">FALSE</code> otherwise.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1896,12 +1933,12 @@ direction of the layout are inserted.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>strong_pos</code></em> :</span></p></td>
 <td>location to store the strong cursor position
-(may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+(may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>weak_pos</code></em> :</span></p></td>
-<td>location to store the weak cursor position (may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the weak cursor position (may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1911,7 +1948,7 @@ direction of the layout are inserted.
 <div class="refsect2">
 <a name="pango-layout-move-cursor-visually"></a><h3>pango_layout_move_cursor_visually ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_move_cursor_visually   (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> strong</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> strong</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> old_index</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> old_trailing</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> direction</code></em>,
@@ -1972,7 +2009,7 @@ value indicates motion to the left.</td>
 <td><p><span class="term"><em class="parameter"><code>new_index</code></em> :</span></p></td>
 <td>location to store the new cursor byte index. A value of -1
 indicates that the cursor has been moved off the beginning
-of the layout. A value of <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#G-MAXINT:CAPS"><code class="literal">G_MAXINT</code></a> indicates that
+of the layout. A value of <code class="literal">G_MAXINT</code> indicates that
 the cursor has been moved off the end of the layout. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span>
 </td>
 </tr>
@@ -2022,14 +2059,14 @@ coordinates begin at the top left corner of the layout.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of the
-layout as drawn or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is
+layout as drawn or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the result is
 not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the layout or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the
+extents of the layout or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the
 result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -2063,14 +2100,14 @@ passes them as first argument to <a class="link" href="pango-Glyph-Storage.html#
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of the
-layout as drawn or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is
+layout as drawn or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the result is
 not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the layout or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the
+extents of the layout or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the
 result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -2101,12 +2138,12 @@ is simply a convenience function around <a class="link" href="pango-Layout-Objec
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
-<td>location to store the logical width, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical width, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
-<td>location to store the logical height, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical height, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2138,12 +2175,12 @@ is simply a convenience function around
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
-<td>location to store the logical width, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical width, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
-<td>location to store the logical height, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical height, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2229,7 +2266,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the
+<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the
 index is out of range. This layout line can
 be ref'ed and retained, but will become invalid
 if changes are made to the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
@@ -2269,7 +2306,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the
+<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the
 index is out of range. This layout line can
 be ref'ed and retained, but will become invalid
 if changes are made to the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>.
@@ -2283,7 +2320,7 @@ No changes should be made to the line. <span class="annotation">[<acronym title=
 <hr>
 <div class="refsect2">
 <a name="pango-layout-get-lines"></a><h3>pango_layout_get_lines ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            pango_layout_get_lines              (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            pango_layout_get_lines              (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Returns the lines of the <em class="parameter"><code>layout</code></em> as a list.
 </p>
@@ -2304,7 +2341,7 @@ to modify the contents of the lines (glyphs, glyph widths, etc.).
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> containing
+<td>a <span class="type">GSList</span> containing
 the lines in the layout. This points to internal data of the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>
 and must be used with care. It will become invalid on any change to the layout's
 text or properties. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Pango.LayoutLine][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
@@ -2316,7 +2353,7 @@ text or properties. <span class="annotation">[<acronym title="Generics and defin
 <hr>
 <div class="refsect2">
 <a name="pango-layout-get-lines-readonly"></a><h3>pango_layout_get_lines_readonly ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="returnvalue">GSList</span></a> *            pango_layout_get_lines_readonly     (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">GSList</span> *            pango_layout_get_lines_readonly     (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> *layout</code></em>);</pre>
 <p>
 Returns the lines of the <em class="parameter"><code>layout</code></em> as a list.
 </p>
@@ -2338,7 +2375,7 @@ to modify the contents of the lines (glyphs, glyph widths, etc.).
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a <a href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"><span class="type">GSList</span></a> containing
+<td>a <span class="type">GSList</span> containing
 the lines in the layout. This points to internal data of the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> and
 must be used with care. It will become invalid on any change to the layout's
 text or properties.  No changes should be made to the lines. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Pango.LayoutLine][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
@@ -2389,14 +2426,14 @@ Copies a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span 
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, which should
-be freed with <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-free" title="pango_layout_iter_free ()"><code class="function">pango_layout_iter_free()</code></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
-<em class="parameter"><code>iter</code></em> was <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-free" title="pango_layout_iter_free ()"><code class="function">pango_layout_iter_free()</code></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if
+<em class="parameter"><code>iter</code></em> was <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -2416,7 +2453,7 @@ Frees an iterator that's no longer in use.
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr></tbody>
 </table></div>
@@ -2424,10 +2461,10 @@ Frees an iterator that's no longer in use.
 <hr>
 <div class="refsect2">
 <a name="pango-layout-iter-next-run"></a><h3>pango_layout_iter_next_run ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_iter_next_run          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_iter_next_run          (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Moves <em class="parameter"><code>iter</code></em> forward to the next run in visual order. If <em class="parameter"><code>iter</code></em> was
-already at the end of the layout, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+already at the end of the layout, returns <code class="literal">FALSE</code>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -2450,10 +2487,10 @@ already at the end of the layout, returns <a href="http://library.gnome.org/deve
 <hr>
 <div class="refsect2">
 <a name="pango-layout-iter-next-char"></a><h3>pango_layout_iter_next_char ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_iter_next_char         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_iter_next_char         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Moves <em class="parameter"><code>iter</code></em> forward to the next character in visual order. If <em class="parameter"><code>iter</code></em> was already at
-the end of the layout, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+the end of the layout, returns <code class="literal">FALSE</code>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -2476,10 +2513,10 @@ the end of the layout, returns <a href="http://library.gnome.org/devel/glib/unst
 <hr>
 <div class="refsect2">
 <a name="pango-layout-iter-next-cluster"></a><h3>pango_layout_iter_next_cluster ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_iter_next_cluster      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_iter_next_cluster      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Moves <em class="parameter"><code>iter</code></em> forward to the next cluster in visual order. If <em class="parameter"><code>iter</code></em>
-was already at the end of the layout, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+was already at the end of the layout, returns <code class="literal">FALSE</code>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -2502,10 +2539,10 @@ was already at the end of the layout, returns <a href="http://library.gnome.org/
 <hr>
 <div class="refsect2">
 <a name="pango-layout-iter-next-line"></a><h3>pango_layout_iter_next_line ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_iter_next_line         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_iter_next_line         (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Moves <em class="parameter"><code>iter</code></em> forward to the start of the next line. If <em class="parameter"><code>iter</code></em> is
-already on the last line, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
+already on the last line, returns <code class="literal">FALSE</code>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -2528,7 +2565,7 @@ already on the last line, returns <a href="http://library.gnome.org/devel/glib/u
 <hr>
 <div class="refsect2">
 <a name="pango-layout-iter-at-last-line"></a><h3>pango_layout_iter_at_last_line ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_iter_at_last_line      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_iter_at_last_line      (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Determines whether <em class="parameter"><code>iter</code></em> is on the last line of the layout.
 </p>
@@ -2546,7 +2583,7 @@ Determines whether <em class="parameter"><code>iter</code></em> is on the last l
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if <em class="parameter"><code>iter</code></em> is on the last line.</td>
+<code class="literal">TRUE</code> if <em class="parameter"><code>iter</code></em> is on the last line.</td>
 </tr>
 </tbody>
 </table></div>
@@ -2559,7 +2596,7 @@ Determines whether <em class="parameter"><code>iter</code></em> is on the last l
 Gets the current byte index. Note that iterating forward by char
 moves in visual order, not logical order, so indexes may not be
 sequential. Also, the index may be equal to the length of the text
-in the layout, if on the <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> run (see <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-get-run" title="pango_layout_iter_get_run ()"><code class="function">pango_layout_iter_get_run()</code></a>).
+in the layout, if on the <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run (see <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-get-run" title="pango_layout_iter_get_run ()"><code class="function">pango_layout_iter_get_run()</code></a>).
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -2611,8 +2648,8 @@ coordinates (origin at top left of the entire layout).
 <pre class="programlisting"><a class="link" href="pango-Layout-Objects.html#PangoLayoutRun" title="PangoLayoutRun"><span class="returnvalue">PangoLayoutRun</span></a> *    pango_layout_iter_get_run           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Gets the current run. When iterating by run, at the end of each
-line, there's a position with a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> run, so this function can return
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. The <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
+line, there's a position with a <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run, so this function can return
+<a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. The <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
 at least one run, even lines consisting of only a newline.
 </p>
 <p>
@@ -2644,8 +2681,8 @@ to modify the contents of the run (glyphs, glyph widths, etc.).
 <pre class="programlisting"><a class="link" href="pango-Layout-Objects.html#PangoLayoutRun" title="PangoLayoutRun"><span class="returnvalue">PangoLayoutRun</span></a> *    pango_layout_iter_get_run_readonly  (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Gets the current run. When iterating by run, at the end of each
-line, there's a position with a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> run, so this function can return
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. The <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
+line, there's a position with a <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run, so this function can return
+<a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. The <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
 at least one run, even lines consisting of only a newline.
 </p>
 <p>
@@ -2817,12 +2854,12 @@ Gets the extents of the current cluster, in layout coordinates
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
-<td>rectangle to fill with ink extents, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with ink extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
-<td>rectangle to fill with logical extents, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with logical extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2851,12 +2888,12 @@ Gets the extents of the current run in layout coordinates
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
-<td>rectangle to fill with ink extents, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with ink extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
-<td>rectangle to fill with logical extents, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with logical extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2890,12 +2927,12 @@ entire layout).
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>y0_</code></em> :</span></p></td>
-<td>start of line, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>start of line, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>y1_</code></em> :</span></p></td>
-<td>end of line, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>end of line, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2909,7 +2946,7 @@ entire layout).
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *logical_rect</code></em>);</pre>
 <p>
 Obtains the extents of the current line. <em class="parameter"><code>ink_rect</code></em> or <em class="parameter"><code>logical_rect</code></em>
-can be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if you aren't interested in them. Extents are in layout
+can be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if you aren't interested in them. Extents are in layout
 coordinates (origin is the top-left corner of the entire
 <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>).  Thus the extents returned by this function will be
 the same width/height but not at the same x/y as the extents
@@ -2928,12 +2965,12 @@ returned from <a class="link" href="pango-Layout-Objects.html#pango-layout-line-
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
-<td>rectangle to fill with ink extents, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with ink extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
-<td>rectangle to fill with logical extents, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with logical extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2948,7 +2985,7 @@ returned from <a class="link" href="pango-Layout-Objects.html#pango-layout-line-
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *logical_rect</code></em>);</pre>
 <p>
 Obtains the extents of the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> being iterated
-over. <em class="parameter"><code>ink_rect</code></em> or <em class="parameter"><code>logical_rect</code></em> can be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if you
+over. <em class="parameter"><code>ink_rect</code></em> or <em class="parameter"><code>logical_rect</code></em> can be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if you
 aren't interested in them.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -2965,13 +3002,13 @@ aren't interested in them.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle to fill with ink extents,
-or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle to fill with logical
-extents, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -3028,7 +3065,7 @@ Increase the reference count of a <a class="link" href="pango-Layout-Objects.htm
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>line</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
@@ -3085,13 +3122,13 @@ of the rectangles.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of
-the glyph string as drawn, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+the glyph string as drawn, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the glyph string, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+extents of the glyph string, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -3124,13 +3161,13 @@ passes them as first argument to <a class="link" href="pango-Glyph-Storage.html#
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of
-the glyph string as drawn, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+the glyph string as drawn, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the glyph string, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+extents of the glyph string, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -3141,7 +3178,7 @@ extents of the glyph string, or <a href="http://library.gnome.org/devel/glib/uns
 <a name="pango-layout-line-index-to-x"></a><h3>pango_layout_line_index_to_x ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_layout_line_index_to_x        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a> *line</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> index_</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> trailing</code></em>,
+                                                         <em class="parameter"><code><span class="type">gboolean</span> trailing</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *x_pos</code></em>);</pre>
 <p>
 Converts an index within a line to a X position.
@@ -3178,7 +3215,7 @@ if 0, the leading of the grapheme.</td>
 <hr>
 <div class="refsect2">
 <a name="pango-layout-line-x-to-index"></a><h3>pango_layout_line_x_to_index ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_layout_line_x_to_index        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a> *line</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_layout_line_x_to_index        (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a> *line</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> x_pos</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *index_</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *trailing</code></em>);</pre>
@@ -3227,7 +3264,7 @@ grapheme. 0 represents the leading edge of the grapheme. <span class="annotation
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> if <em class="parameter"><code>x_pos</code></em> was outside the line, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if inside</td>
+<code class="literal">FALSE</code> if <em class="parameter"><code>x_pos</code></em> was outside the line, <code class="literal">TRUE</code> if inside</td>
 </tr>
 </tbody>
 </table></div>
@@ -3280,7 +3317,7 @@ trailing edge of the last character.</td>
 The array will be of length <code class="literal">2*n_ranges</code>,
 with each range starting at <code class="literal">(*ranges)[2*n]</code>
 and of width <code class="literal">(*ranges)[2*n + 1] - (*ranges)[2*n]</code>.
-This array must be freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>. The coordinates are relative
+This array must be freed with <code class="function">g_free()</code>. The coordinates are relative
 to the layout and are in Pango units. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_ranges][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>

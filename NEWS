@@ -1,3 +1,48 @@
+Overview of changes between 1.32.5 and 1.32.6
+=============================================
+- Make pango threadsafe
+- Pass down BOT/EOT flags to HarfBuzz
+- 690279 - broken relocation of modules
+- 691263 - Build with automake-1.13 broken
+
+Overview of changes between 1.32.4 and 1.32.5
+=============================================
+- 689843 - Drop last ues of G_CONST_RETURN
+- 689864 - build failure
+- 689882 - pango-font.h:381: error: comma at end of enumerator list
+- 686512 - pango_cairo_font_get_scaled_font failed under wine
+- 690081 - pangofc-fontmap: Remove bad use of the comma operator
+- 679299 - Allow incrementally parsing pango markup
+
+Overview of changes between 1.32.3 and 1.32.4
+=============================================
+- Require harfbuzz 0.9.9
+- 340066 - Add serials tracking changes in PangoFontMap/PangoContext/PangoLayout
+- Automatically relayout PangoLayout if PangoContext has changed
+- Fix rendering of rotated frames
+- 576156 - Remove Thai/Lao Prepend/Extend properties
+- Fix grapheme properties of joiner / nonjoiner
+- Fix grapheme properties of U+FFxx range
+- Fix line break of surrogate characters
+- Fix grapheme boundaries of surrogates and unassigned default ignorables
+- Update bidi tables to Unicode 6.2.0
+- 689648 - Use -Bsymbolic-functions by default if available
+- Fix Win32 and CoreText cairo backends to take cairo CTM into account
+
+Overview of changes between 1.32.2 and 1.32.3
+=============================================
+- make gobject-introspection PANGO_GLYPH happy
+- provide a phony define for LANGUAGE
+- adjust to harfbuzz 0.97 api
+
+Overview of changes between 1.32.1 and 1.32.2
+=============================================
+- 685021 - Fix load_fontset() for Win32 backend
+- pango-viewer: Flush cairo surface when done
+- 687470 - Xft: Fix a deadlock on display close
+- Add missing colors from the web palette
+- Rename configure.in to configure.ac
+
 Overview of changes between 1.32.0 and 1.32.1
 =============================================
 - Fixup grapheme clusters

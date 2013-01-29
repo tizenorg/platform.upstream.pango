@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>OpenType Font Handling</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.77.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
 <link rel="home" href="index.html" title="Pango Reference Manual">
 <link rel="up" href="lowlevel.html" title="Low Level Functionality">
 <link rel="prev" href="PangoFcDecoder.html" title="PangoFcDecoder">
@@ -63,45 +63,45 @@ struct              <a class="link" href="pango-OpenType-Font-Handling.html#Pang
 #define             <a class="link" href="pango-OpenType-Font-Handling.html#PANGO-OT-TAG-DEFAULT-LANGUAGE:CAPS" title="PANGO_OT_TAG_DEFAULT_LANGUAGE">PANGO_OT_TAG_DEFAULT_LANGUAGE</a>
 #define             <a class="link" href="pango-OpenType-Font-Handling.html#PANGO-OT-TAG-DEFAULT-SCRIPT:CAPS" title="PANGO_OT_TAG_DEFAULT_SCRIPT">PANGO_OT_TAG_DEFAULT_SCRIPT</a>
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="returnvalue">PangoOTInfo</span></a> *       <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-get" title="pango_ot_info_get ()">pango_ot_info_get</a>                   (<em class="parameter"><code><span class="type">FT_Face</span> face</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-find-script" title="pango_ot_info_find_script ()">pango_ot_info_find_script</a>           (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-find-script" title="pango_ot_info_find_script ()">pango_ot_info_find_script</a>           (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> script_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *script_index</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-find-language" title="pango_ot_info_find_language ()">pango_ot_info_find_language</a>         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *script_index</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-find-language" title="pango_ot_info_find_language ()">pango_ot_info_find_language</a>         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> language_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *language_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *required_feature_index</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-find-feature" title="pango_ot_info_find_feature ()">pango_ot_info_find_feature</a>          (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *language_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *required_feature_index</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-find-feature" title="pango_ot_info_find_feature ()">pango_ot_info_find_feature</a>          (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> feature_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> language_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *feature_index</code></em>);
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> language_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *feature_index</code></em>);
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="returnvalue">PangoOTTag</span></a> *        <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-list-scripts" title="pango_ot_info_list_scripts ()">pango_ot_info_list_scripts</a>          (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>);
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="returnvalue">PangoOTTag</span></a> *        <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-list-languages" title="pango_ot_info_list_languages ()">pango_ot_info_list_languages</a>        (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> language_tag</code></em>);
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="returnvalue">PangoOTTag</span></a> *        <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-list-features" title="pango_ot_info_list_features ()">pango_ot_info_list_features</a>         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> language_index</code></em>);
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> language_index</code></em>);
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="returnvalue">PangoOTBuffer</span></a> *     <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-buffer-new" title="pango_ot_buffer_new ()">pango_ot_buffer_new</a>                 (<em class="parameter"><code><a class="link" href="PangoFcFont.html" title="PangoFcFont"><span class="type">PangoFcFont</span></a> *font</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-buffer-destroy" title="pango_ot_buffer_destroy ()">pango_ot_buffer_destroy</a>             (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-buffer-clear" title="pango_ot_buffer_clear ()">pango_ot_buffer_clear</a>               (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-buffer-add-glyph" title="pango_ot_buffer_add_glyph ()">pango_ot_buffer_add_glyph</a>           (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> glyph</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> properties</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> cluster</code></em>);
+                                                         <em class="parameter"><code><span class="type">guint</span> glyph</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> properties</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> cluster</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-buffer-set-rtl" title="pango_ot_buffer_set_rtl ()">pango_ot_buffer_set_rtl</a>             (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> rtl</code></em>);
+                                                         <em class="parameter"><code><span class="type">gboolean</span> rtl</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-buffer-set-zero-width-marks" title="pango_ot_buffer_set_zero_width_marks ()">pango_ot_buffer_set_zero_width_marks</a>
                                                         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> zero_width_marks</code></em>);
+                                                         <em class="parameter"><code><span class="type">gboolean</span> zero_width_marks</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-buffer-get-glyphs" title="pango_ot_buffer_get_glyphs ()">pango_ot_buffer_get_glyphs</a>          (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTGlyph" title="struct PangoOTGlyph"><span class="type">PangoOTGlyph</span></a> **glyphs</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> *n_glyphs</code></em>);
@@ -119,29 +119,29 @@ const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><s
                                                          <em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-add-feature" title="pango_ot_ruleset_add_feature ()">pango_ot_ruleset_add_feature</a>        (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> feature_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> property_bit</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-maybe-add-feature" title="pango_ot_ruleset_maybe_add_feature ()">pango_ot_ruleset_maybe_add_feature</a>  (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> feature_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">gulong</span> property_bit</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-maybe-add-feature" title="pango_ot_ruleset_maybe_add_feature ()">pango_ot_ruleset_maybe_add_feature</a>  (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> feature_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> property_bit</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-maybe-add-features" title="pango_ot_ruleset_maybe_add_features ()">pango_ot_ruleset_maybe_add_features</a> (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
+                                                         <em class="parameter"><code><span class="type">gulong</span> property_bit</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-maybe-add-features" title="pango_ot_ruleset_maybe_add_features ()">pango_ot_ruleset_maybe_add_features</a> (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTFeatureMap" title="struct PangoOTFeatureMap"><span class="type">PangoOTFeatureMap</span></a> *features</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_features</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-get-feature-count" title="pango_ot_ruleset_get_feature_count ()">pango_ot_ruleset_get_feature_count</a>  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_gsub_features</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_gpos_features</code></em>);
+                                                         <em class="parameter"><code><span class="type">guint</span> n_features</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-get-feature-count" title="pango_ot_ruleset_get_feature_count ()">pango_ot_ruleset_get_feature_count</a>  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *n_gsub_features</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *n_gpos_features</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-substitute" title="pango_ot_ruleset_substitute ()">pango_ot_ruleset_substitute</a>         (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-position" title="pango_ot_ruleset_position ()">pango_ot_ruleset_position</a>           (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>);
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="returnvalue">PangoOTRulesetDescription</span></a> * <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-description-copy" title="pango_ot_ruleset_description_copy ()">pango_ot_ruleset_description_copy</a>
                                                         (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-description-equal" title="pango_ot_ruleset_description_equal ()">pango_ot_ruleset_description_equal</a>  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc1</code></em>,
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-description-equal" title="pango_ot_ruleset_description_equal ()">pango_ot_ruleset_description_equal</a>  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc1</code></em>,
                                                          <em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc2</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-description-free" title="pango_ot_ruleset_description_free ()">pango_ot_ruleset_description_free</a>   (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-description-hash" title="pango_ot_ruleset_description_hash ()">pango_ot_ruleset_description_hash</a>   (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc</code></em>);
+<span class="returnvalue">guint</span>               <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-description-hash" title="pango_ot_ruleset_description_hash ()">pango_ot_ruleset_description_hash</a>   (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc</code></em>);
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="returnvalue">PangoOTTag</span></a>          <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-tag-from-language" title="pango_ot_tag_from_language ()">pango_ot_tag_from_language</a>          (<em class="parameter"><code><a class="link" href="pango-Scripts-and-Languages.html#PangoLanguage"><span class="type">PangoLanguage</span></a> *language</code></em>);
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="returnvalue">PangoOTTag</span></a>          <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-tag-from-script" title="pango_ot_tag_from_script ()">pango_ot_tag_from_script</a>            (<em class="parameter"><code><a class="link" href="pango-Scripts-and-Languages.html#PangoScript"><span class="type">PangoScript</span></a> script</code></em>);
 <a class="link" href="pango-Scripts-and-Languages.html#PangoLanguage"><span class="returnvalue">PangoLanguage</span></a> *     <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-tag-to-language" title="pango_ot_tag_to_language ()">pango_ot_tag_to_language</a>            (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> language_tag</code></em>);
@@ -151,11 +151,11 @@ const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><s
 <div class="refsect1">
 <a name="pango-OpenType-Font-Handling.object-hierarchy"></a><h2>Object Hierarchy</h2>
 <pre class="synopsis">
-  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+  GObject
    +----PangoOTInfo
 </pre>
 <pre class="synopsis">
-  <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+  GObject
    +----PangoOTRuleset
 </pre>
 </div>
@@ -228,28 +228,28 @@ It contains the following fields.
 </colgroup>
 <tbody>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> <em class="structfield"><code><a name="PangoOTGlyph.glyph"></a>glyph</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">guint32</span> <em class="structfield"><code><a name="PangoOTGlyph.glyph"></a>glyph</code></em>;</span></p></td>
 <td>the glyph itself.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="PangoOTGlyph.properties"></a>properties</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">guint</span> <em class="structfield"><code><a name="PangoOTGlyph.properties"></a>properties</code></em>;</span></p></td>
 <td>the properties value, identifying which features should be
 applied on this glyph.  See <code class="function">pango_ruleset_add_feature()</code>.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="PangoOTGlyph.cluster"></a>cluster</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">guint</span> <em class="structfield"><code><a name="PangoOTGlyph.cluster"></a>cluster</code></em>;</span></p></td>
 <td>the cluster that this glyph belongs to.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="PangoOTGlyph.component"></a>component</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">gushort</span> <em class="structfield"><code><a name="PangoOTGlyph.component"></a>component</code></em>;</span></p></td>
 <td>a component value, set by the OpenType layout engine.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gushort"><span class="type">gushort</span></a> <em class="structfield"><code><a name="PangoOTGlyph.ligID"></a>ligID</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">gushort</span> <em class="structfield"><code><a name="PangoOTGlyph.ligID"></a>ligID</code></em>;</span></p></td>
 <td>a ligature index value, set by the OpenType layout engine.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="PangoOTGlyph.internal"></a>internal</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">guint</span> <em class="structfield"><code><a name="PangoOTGlyph.internal"></a>internal</code></em>;</span></p></td>
 <td>for Pango internal use</td>
 </tr>
 </tbody>
@@ -308,28 +308,28 @@ or create a new one using <a class="link" href="pango-OpenType-Font-Handling.htm
 </tr>
 <tr>
 <td><p><span class="term">const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTFeatureMap" title="struct PangoOTFeatureMap"><span class="type">PangoOTFeatureMap</span></a> *<em class="structfield"><code><a name="PangoOTRulesetDescription.static-gsub-features"></a>static_gsub_features</code></em>;</span></p></td>
-<td>static map of GSUB features, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>static map of GSUB features, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="PangoOTRulesetDescription.n-static-gsub-features"></a>n_static_gsub_features</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">guint</span> <em class="structfield"><code><a name="PangoOTRulesetDescription.n-static-gsub-features"></a>n_static_gsub_features</code></em>;</span></p></td>
 <td>length of <em class="parameter"><code>static_gsub_features</code></em>, or 0.</td>
 </tr>
 <tr>
 <td><p><span class="term">const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTFeatureMap" title="struct PangoOTFeatureMap"><span class="type">PangoOTFeatureMap</span></a> *<em class="structfield"><code><a name="PangoOTRulesetDescription.static-gpos-features"></a>static_gpos_features</code></em>;</span></p></td>
-<td>static map of GPOS features, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>static map of GPOS features, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="PangoOTRulesetDescription.n-static-gpos-features"></a>n_static_gpos_features</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">guint</span> <em class="structfield"><code><a name="PangoOTRulesetDescription.n-static-gpos-features"></a>n_static_gpos_features</code></em>;</span></p></td>
 <td>length of <em class="parameter"><code>static_gpos_features</code></em>, or 0.</td>
 </tr>
 <tr>
 <td><p><span class="term">const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTFeatureMap" title="struct PangoOTFeatureMap"><span class="type">PangoOTFeatureMap</span></a> *<em class="structfield"><code><a name="PangoOTRulesetDescription.other-features"></a>other_features</code></em>;</span></p></td>
-<td>map of extra features to add to both GSUB and GPOS, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+<td>map of extra features to add to both GSUB and GPOS, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.
 Unlike the static maps, this pointer need not live beyond
 the life of function calls taking this struct.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="PangoOTRulesetDescription.n-other-features"></a>n_other_features</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">guint</span> <em class="structfield"><code><a name="PangoOTRulesetDescription.n-other-features"></a>n_other_features</code></em>;</span></p></td>
 <td>length of <em class="parameter"><code>other_features</code></em>, or 0.</td>
 </tr>
 </tbody>
@@ -392,7 +392,7 @@ represented as a char array instead of a <a class="link" href="pango-OpenType-Fo
 <td>feature tag in represented as four-letter ASCII string.</td>
 </tr>
 <tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> <em class="structfield"><code><a name="PangoOTFeatureMap.property-bit"></a>property_bit</code></em>;</span></p></td>
+<td><p><span class="term"><span class="type">gulong</span> <em class="structfield"><code><a name="PangoOTFeatureMap.property-bit"></a>property_bit</code></em>;</span></p></td>
 <td>the property bit to use for this feature.  See
 <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-add-feature" title="pango_ot_ruleset_add_feature ()"><code class="function">pango_ot_ruleset_add_feature()</code></a> for details.</td>
 </tr>
@@ -569,10 +569,10 @@ the same lifetime as <em class="parameter"><code>face</code></em>.</td>
 <hr>
 <div class="refsect2">
 <a name="pango-ot-info-find-script"></a><h3>pango_ot_info_find_script ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_ot_info_find_script           (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_ot_info_find_script           (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> script_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *script_index</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">guint</span> *script_index</code></em>);</pre>
 <p>
 Finds the index of a script.  If not found, tries to find the 'DFLT'
 and then 'dflt' scripts and return the index of that in <em class="parameter"><code>script_index</code></em>.
@@ -605,12 +605,12 @@ fallback to the 'DFLT'/'dflt' script.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>script_index</code></em> :</span></p></td>
-<td>location to store the index of the script, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>location to store the index of the script, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the script was found.</td>
+<code class="literal">TRUE</code> if the script was found.</td>
 </tr>
 </tbody>
 </table></div>
@@ -618,12 +618,12 @@ fallback to the 'DFLT'/'dflt' script.
 <hr>
 <div class="refsect2">
 <a name="pango-ot-info-find-language"></a><h3>pango_ot_info_find_language ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_ot_info_find_language         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_ot_info_find_language         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> language_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *language_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *required_feature_index</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">guint</span> *language_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *required_feature_index</code></em>);</pre>
 <p>
 Finds the index of a language and its required feature index.
 If the language is not found, sets <em class="parameter"><code>language_index</code></em> to
@@ -658,17 +658,17 @@ automatically fall back to the default language system.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>language_index</code></em> :</span></p></td>
-<td>location to store the index of the language, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>location to store the index of the language, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>required_feature_index</code></em> :</span></p></td>
 <td>location to store the required feature index of
-the language, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+the language, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the language was found.</td>
+<code class="literal">TRUE</code> if the language was found.</td>
 </tr>
 </tbody>
 </table></div>
@@ -676,12 +676,12 @@ the language, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Stan
 <hr>
 <div class="refsect2">
 <a name="pango-ot-info-find-feature"></a><h3>pango_ot_info_find_feature ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_ot_info_find_feature          (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_ot_info_find_feature          (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> feature_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> language_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *feature_index</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> language_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *feature_index</code></em>);</pre>
 <p>
 Finds the index of a feature.  If the feature is not found, sets
 <em class="parameter"><code>feature_index</code></em> to PANGO_OT_NO_FEATURE, which is safe to pass to
@@ -691,7 +691,7 @@ Finds the index of a feature.  If the feature is not found, sets
 In the future, this may set <em class="parameter"><code>feature_index</code></em> to an special value that if used
 in <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-ruleset-add-feature" title="pango_ot_ruleset_add_feature ()"><code class="function">pango_ot_ruleset_add_feature()</code></a> will ask Pango to synthesize the
 requested feature based on Unicode properties and data.  However, this
-function will still return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> in those cases.  So, users may want to
+function will still return <code class="literal">FALSE</code> in those cases.  So, users may want to
 ignore the return value of this function in certain cases.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -723,12 +723,12 @@ or <a class="link" href="pango-OpenType-Font-Handling.html#PANGO-OT-DEFAULT-LANG
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>feature_index</code></em> :</span></p></td>
-<td>location to store the index of the feature, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>location to store the index of the feature, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the feature was found.</td>
+<code class="literal">TRUE</code> if the feature was found.</td>
 </tr>
 </tbody>
 </table></div>
@@ -758,7 +758,7 @@ Obtains the list of available scripts.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a newly-allocated zero-terminated array containing the tags of the
-available scripts.  Should be freed using <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</td>
+available scripts.  Should be freed using <code class="function">g_free()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -768,7 +768,7 @@ available scripts.  Should be freed using <a href="http://library.gnome.org/deve
 <a name="pango-ot-info-list-languages"></a><h3>pango_ot_info_list_languages ()</h3>
 <pre class="programlisting"><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="returnvalue">PangoOTTag</span></a> *        pango_ot_info_list_languages        (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> language_tag</code></em>);</pre>
 <p>
 Obtains the list of available languages for a given script.
@@ -798,7 +798,7 @@ Obtains the list of available languages for a given script.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a newly-allocated zero-terminated array containing the tags of the
-available languages.  Should be freed using <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</td>
+available languages.  Should be freed using <code class="function">g_free()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -809,8 +809,8 @@ available languages.  Should be freed using <a href="http://library.gnome.org/de
 <pre class="programlisting"><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="returnvalue">PangoOTTag</span></a> *        pango_ot_info_list_features         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTInfo"><span class="type">PangoOTInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> script_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> language_index</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">guint</span> script_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> language_index</code></em>);</pre>
 <p>
 Obtains the list of features for the given language of the given script.
 </p>
@@ -845,7 +845,7 @@ language of the script.</td>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a newly-allocated zero-terminated array containing the tags of the
-available features.  Should be freed using <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</td>
+available features.  Should be freed using <code class="function">g_free()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -921,9 +921,9 @@ Empties a <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer"
 <div class="refsect2">
 <a name="pango-ot-buffer-add-glyph"></a><h3>pango_ot_buffer_add_glyph ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_ot_buffer_add_glyph           (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> glyph</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> properties</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> cluster</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">guint</span> glyph</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> properties</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> cluster</code></em>);</pre>
 <p>
 Appends a glyph to a <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a>, with <em class="parameter"><code>properties</code></em> identifying which
 features should be applied on this glyph.  See <code class="function">pango_ruleset_add_feature()</code>.
@@ -960,7 +960,7 @@ features should be applied on this glyph.  See <code class="function">pango_rule
 <div class="refsect2">
 <a name="pango-ot-buffer-set-rtl"></a><h3>pango_ot_buffer_set_rtl ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_ot_buffer_set_rtl             (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> rtl</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gboolean</span> rtl</code></em>);</pre>
 <p>
 Sets whether glyphs will be rendered right-to-left.  This setting
 is needed for proper horizontal positioning of right-to-left scripts.
@@ -979,7 +979,7 @@ is needed for proper horizontal positioning of right-to-left scripts.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>rtl</code></em> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for right-to-left text</td>
+<code class="literal">TRUE</code> for right-to-left text</td>
 </tr>
 </tbody>
 </table></div>
@@ -990,7 +990,7 @@ is needed for proper horizontal positioning of right-to-left scripts.
 <a name="pango-ot-buffer-set-zero-width-marks"></a><h3>pango_ot_buffer_set_zero_width_marks ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_ot_buffer_set_zero_width_marks
                                                         (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTBuffer" title="PangoOTBuffer"><span class="type">PangoOTBuffer</span></a> *buffer</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> zero_width_marks</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gboolean</span> zero_width_marks</code></em>);</pre>
 <p>
 Sets whether characters with a mark class should be forced to zero width.
 This setting is needed for proper positioning of Arabic accents,
@@ -1011,7 +1011,7 @@ fonts.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>zero_width_marks</code></em> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if characters with a mark class should
+<code class="literal">TRUE</code> if characters with a mark class should
 be forced to zero width.</td>
 </tr>
 </tbody>
@@ -1042,12 +1042,12 @@ as buffer is not modified.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>glyphs</code></em> :</span></p></td>
-<td>location to store the array of glyphs, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>location to store the array of glyphs, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>n_glyphs</code></em> :</span></p></td>
-<td>location to store the number of glyphs, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>location to store the number of glyphs, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 </tbody>
@@ -1143,7 +1143,7 @@ Creates a new <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRul
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a>, which
-should be freed with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</td>
+should be freed with <code class="function">g_object_unref()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1220,7 +1220,7 @@ finds and uses the 'DFLT' script and the default language-system.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a>, which
-should be freed with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</td>
+should be freed with <code class="function">g_object_unref()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1262,7 +1262,7 @@ long as <em class="parameter"><code>info</code></em> is.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a>, which
-should be freed with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</td>
+should be freed with <code class="function">g_object_unref()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1273,8 +1273,8 @@ should be freed with <a href="http://library.gnome.org/devel/gobject/unstable/go
 <a name="pango-ot-ruleset-add-feature"></a><h3>pango_ot_ruleset_add_feature ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_ot_ruleset_add_feature        (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> feature_index</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> property_bit</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">guint</span> feature_index</code></em>,
+                                                         <em class="parameter"><code><span class="type">gulong</span> property_bit</code></em>);</pre>
 <p>
 Adds a feature to the ruleset.
 </p>
@@ -1308,10 +1308,10 @@ the glyphs that this feature should be applied to, or
 <hr>
 <div class="refsect2">
 <a name="pango-ot-ruleset-maybe-add-feature"></a><h3>pango_ot_ruleset_maybe_add_feature ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_ot_ruleset_maybe_add_feature  (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_ot_ruleset_maybe_add_feature  (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> feature_tag</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> property_bit</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gulong</span> property_bit</code></em>);</pre>
 <p>
 This is a convenience function that first tries to find the feature
 using <a class="link" href="pango-OpenType-Font-Handling.html#pango-ot-info-find-feature" title="pango_ot_info_find_feature ()"><code class="function">pango_ot_info_find_feature()</code></a> and the ruleset script and language
@@ -1349,8 +1349,8 @@ the glyphs that this feature should be applied to, or
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the feature was found and added to ruleset,
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+<code class="literal">TRUE</code> if the feature was found and added to ruleset,
+<code class="literal">FALSE</code> otherwise.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1359,10 +1359,10 @@ the glyphs that this feature should be applied to, or
 <hr>
 <div class="refsect2">
 <a name="pango-ot-ruleset-maybe-add-features"></a><h3>pango_ot_ruleset_maybe_add_features ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               pango_ot_ruleset_maybe_add_features (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
+<pre class="programlisting"><span class="returnvalue">guint</span>               pango_ot_ruleset_maybe_add_features (<em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTableType" title="enum PangoOTTableType"><span class="type">PangoOTTableType</span></a> table_type</code></em>,
                                                          <em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTFeatureMap" title="struct PangoOTFeatureMap"><span class="type">PangoOTFeatureMap</span></a> *features</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_features</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">guint</span> n_features</code></em>);</pre>
 <p>
 This is a convenience function that 
 for each feature in the feature map array <em class="parameter"><code>features</code></em>
@@ -1403,9 +1403,9 @@ and added to <em class="parameter"><code>ruleset</code></em>.</td>
 <hr>
 <div class="refsect2">
 <a name="pango-ot-ruleset-get-feature-count"></a><h3>pango_ot_ruleset_get_feature_count ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               pango_ot_ruleset_get_feature_count  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_gsub_features</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_gpos_features</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">guint</span>               pango_ot_ruleset_get_feature_count  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRuleset"><span class="type">PangoOTRuleset</span></a> *ruleset</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *n_gsub_features</code></em>,
+                                                         <em class="parameter"><code><span class="type">guint</span> *n_gpos_features</code></em>);</pre>
 <p>
 Gets the number of GSUB and GPOS features in the ruleset.
 </p>
@@ -1421,11 +1421,11 @@ Gets the number of GSUB and GPOS features in the ruleset.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>n_gsub_features</code></em> :</span></p></td>
-<td>location to store number of GSUB features, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>location to store number of GSUB features, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>n_gpos_features</code></em> :</span></p></td>
-<td>location to store number of GPOS features, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>location to store number of GPOS features, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
@@ -1522,7 +1522,7 @@ should be freed with <a class="link" href="pango-OpenType-Font-Handling.html#pan
 <hr>
 <div class="refsect2">
 <a name="pango-ot-ruleset-description-equal"></a><h3>pango_ot_ruleset_description_equal ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_ot_ruleset_description_equal  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc1</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_ot_ruleset_description_equal  (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc1</code></em>,
                                                          <em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc2</code></em>);</pre>
 <p>
 Compares two ruleset descriptions for equality.
@@ -1532,7 +1532,7 @@ script, language, and all feature sets should be equal.  For static feature
 sets, the array addresses are compared directly, while for other
 features, the list of features is compared one by one.
 (Two ruleset descriptions may result in identical rulesets
-being created, but still compare <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.)
+being created, but still compare <code class="literal">FALSE</code>.)
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -1551,8 +1551,8 @@ being created, but still compare <a href="http://library.gnome.org/devel/glib/un
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if two ruleset descriptions are identical,
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</td>
+<code class="literal">TRUE</code> if two ruleset descriptions are identical,
+<code class="literal">FALSE</code> otherwise.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1582,10 +1582,10 @@ Frees a ruleset description allocated by
 <hr>
 <div class="refsect2">
 <a name="pango-ot-ruleset-description-hash"></a><h3>pango_ot_ruleset_description_hash ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               pango_ot_ruleset_description_hash   (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">guint</span>               pango_ot_ruleset_description_hash   (<em class="parameter"><code>const <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> *desc</code></em>);</pre>
 <p>
 Computes a hash of a <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTRulesetDescription" title="struct PangoOTRulesetDescription"><span class="type">PangoOTRulesetDescription</span></a> structure suitable
-to be used, for example, as an argument to <a href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#g-hash-table-new"><code class="function">g_hash_table_new()</code></a>.
+to be used, for example, as an argument to <code class="function">g_hash_table_new()</code>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -1620,7 +1620,7 @@ Finds the OpenType language-system tag best describing <em class="parameter"><co
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>language</code></em> :</span></p></td>
-<td>A <a class="link" href="pango-Scripts-and-Languages.html#PangoLanguage"><span class="type">PangoLanguage</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>A <a class="link" href="pango-Scripts-and-Languages.html#PangoLanguage"><span class="type">PangoLanguage</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
@@ -1628,7 +1628,7 @@ Finds the OpenType language-system tag best describing <em class="parameter"><co
 <td>
 <a class="link" href="pango-OpenType-Font-Handling.html#PangoOTTag" title="PangoOTTag"><span class="type">PangoOTTag</span></a> best matching <em class="parameter"><code>language</code></em> or
 <a class="link" href="pango-OpenType-Font-Handling.html#PANGO-OT-TAG-DEFAULT-LANGUAGE:CAPS" title="PANGO_OT_TAG_DEFAULT_LANGUAGE"><code class="literal">PANGO_OT_TAG_DEFAULT_LANGUAGE</code></a> if none found or if <em class="parameter"><code>language</code></em>
-is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+is <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 </tbody>
 </table></div>

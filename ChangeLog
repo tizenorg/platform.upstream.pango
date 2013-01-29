@@ -1,4 +1,1029 @@
-commit bf602b1896abf175a006e8222456306471e45e36
+commit 0df2e9592be488dcb3f3edfdfae64086e924eb92
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Thu Jan 10 06:30:23 2013 -0500
+
+    1.35.6
+
+ NEWS         | 7 +++++++
+ configure.ac | 2 +-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+commit 48423ef827f5fcedac92e1e73c29f0bb94eeadda
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Thu Jan 10 06:24:15 2013 -0500
+
+    Bump fontconfig dep to 2.10.91
+
+    This is the first version of fontconfig that is thread-safe.
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 95d13cec4da1571ea8b649fa3b972eea3f4b40db
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Jan 8 12:50:01 2013 -0600
+
+    Put g_type_init() back in
+
+ tests/test-pangocairo-threads.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 112cd3cfdd03854aefc3c88107aa1084879b251c
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Jan 8 11:43:55 2013 -0600
+
+    Remove unused macros
+
+ tests/testboundaries.c | 24 ------------------------
+ 1 file changed, 24 deletions(-)
+
+commit 3d18d7c1e75100fbe640b954ff2ae3b6dc03fe99
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Jan 8 11:42:37 2013 -0600
+
+    Minor
+
+ tests/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 88e0d1599cb0307fe93cf31b36f654303422b411
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 21:05:41 2013 -0500
+
+    Avoid compiler warnings in testiter.c
+
+    Drop an unused variable, and don't call the deprecated
+    pango_cairo_font_map_create_context().
+
+ tests/testiter.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit ea9d405f1c5bd964ca52f2f07d49c0a49177e478
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 21:05:07 2013 -0500
+
+    Avoid a compiler warning
+
+    ifdef out a function whose only use is already ifdef'ed out.
+
+ tests/testboundaries.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit c89e5e952fe1a3349af43e5e608ac9eef87811cf
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 21:04:26 2013 -0500
+
+    Ignore deprecations in test-ot-tags
+
+    This entire test is about the deprecated OpenType API.
+    Not much we can do except ignoring deprecations.
+
+ tests/test-ot-tags.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 18dd09645a2dc27a79264dbefaddac4689a9ab87
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 21:03:29 2013 -0500
+
+    Don't use deprecated pango_fc_font_get_unknown_glyph
+
+    Replace it with PANGO_GET_UNKNOWN_GLYPH.
+
+ pango/pangoxft-font.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2dc0c3dbb1c389c3a3ba12a5c5c85f21dca46e84
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 21:01:45 2013 -0500
+
+    Don't use the deprecated pango_ft2_font_get_face
+
+    Replace it with pango_fc_font_lock/unlock_face calls.
+
+ pango/pangoft2-render.c |  6 +++++-
+ pango/pangoft2.c        | 17 ++++++++++++-----
+ 2 files changed, 17 insertions(+), 6 deletions(-)
+
+commit b9bdbfdbb454bd172820344244b881cb4dc7826e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 21:01:07 2013 -0500
+
+    Avoid deprecation warnings
+
+ pango/pangoft2-fontmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 3b075896608f252a9cfba76a1d7d40f9fe5b24c4
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 20:28:30 2013 -0500
+
+    Fix another compiler warning
+
+    gcc doesn't like #ifndef LANGUAGE(x, y, z).
+
+ pango/pango-language-sample-table.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit cc1661bac933a078913ad0bb6ff9d727b585afb0
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 20:26:53 2013 -0500
+
+    Fix a compiler warning
+
+    Add the new paragraph_text/length parameters to the script_shape
+    implementation in the fallback engine.
+
+ pango/pango-engine.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 922c0d4ea0516419422b1d77b5b25176cc72f691
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Jan 7 20:19:49 2013 -0500
+
+    Don't call g_type_init if GLib is new enough
+
+    g_type_init has been deprecated in GLib 2.35.x. Use a
+    version check here to avoid depending on unstable GLib.
+
+ pango-view/viewer-main.c   | 2 ++
+ pango/modules.c            | 2 ++
+ pango/pangoft2-fontmap.c   | 2 ++
+ pango/pangowin32-fontmap.c | 2 ++
+ pango/pangoxft-fontmap.c   | 2 ++
+ pango/querymodules.c       | 2 ++
+ 6 files changed, 12 insertions(+)
+
+commit 4dd5a5e18d4d3184ce4c97e0bcd9e97ebb267831
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Jan 7 15:29:15 2013 -0600
+
+    Fix last leak in test-pangocairo-threads
+
+ tests/test-pangocairo-threads.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 96f6c065deae8093f3c27e040ac1586de6113309
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Jan 7 02:13:11 2013 -0600
+
+    Fix test leaks
+
+    Valgrinding....  Apparently somewhere some memory corruption happens.
+    Argh...
+
+ tests/test-pangocairo-threads.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+commit 87ed96661e6217727f59fe372b47ff66ccbf578b
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Jan 7 02:10:03 2013 -0600
+
+    Fix warning in g_object_ref (NULL)
+
+ pango/pangocairo-fontmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 50c692acd35b2c0cfe6125f820e5480f4b59ef19
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Jan 7 01:19:49 2013 -0600
+
+    Make test-pangocairo-threads stress fontconfig more
+
+ tests/test-pangocairo-threads.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+commit f45cdd9a4fef1096b071e6bad4cc40e06f48ba46
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Jan 6 23:15:44 2013 -0600
+
+    Bug 691263 - Build with automake-1.13 broken
+
+    Replace long obsolete AM_CONFIG_HEADER with proper AC_CONFIG_HEADERS.
+    automake-1.13 errors out upon seeing former.
+
+    Signed-off-by: Marko Lindqvist <cazfi74@gmail.com>
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit eeebdac3e8b2bfdeba1069f61b3a8ee6382be1b1
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Fri Jan 4 00:43:58 2013 -0600
+
+    Enable test-pangocairo-threads by default
+
+    Using 100 threads and 100 iterations per thread.
+
+    Only passes with fontconfig master.  We will get a release made and
+    required soon...
+
+ tests/Makefile.am               | 2 +-
+ tests/test-pangocairo-threads.c | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 080c1eaf78e0d4eff2c81720a750845bad47c709
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Fri Jan 4 00:38:17 2013 -0600
+
+    Improve test-pangocairo-threads
+
+    Can be run standalone now, compares the output of all threads
+    and fails
+    if they mismatch.
+
+ tests/test-pangocairo-threads.c | 62
+ ++++++++++++++++++++++++++++++++---------
+ 1 file changed, 49 insertions(+), 13 deletions(-)
+
+commit 4ab0d57a7f7bfcd8a4b893d23f7a4923806a9113
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Fri Jan 4 00:23:42 2013 -0600
+
+    Refactor test-pangocairo-threads.c
+
+ tests/test-pangocairo-threads.c | 44
+ ++++++++++++++++++++++++-----------------
+ 1 file changed, 26 insertions(+), 18 deletions(-)
+
+commit 6978bb5c26147bea96af083c282dc95c67cfb257
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Fri Jan 4 00:19:23 2013 -0600
+
+    Improve test-pangocairo-threads
+
+ tests/test-pangocairo-threads.c | 28 +++++++++++++++++++---------
+ 1 file changed, 19 insertions(+), 9 deletions(-)
+
+commit d64005ea687a7263dc070c1314a4f211a2994fc9
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jan 3 23:40:02 2013 -0600
+
+    Update test-pangocairo-threads to new threads API
+
+ tests/test-pangocairo-threads.c | 32 +++++++++++++-------------------
+ 1 file changed, 13 insertions(+), 19 deletions(-)
+
+commit 1037c5dcb51cd0865360533da7e97638dda35f7f
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jan 3 20:06:23 2013 -0600
+
+    Update docs to reflect per-thread default fontmap
+
+ pango/pangocairo-fontmap.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+commit dd90b07699fe5bf0ea5dfee7e907662e8ca8280b
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jan 3 03:52:09 2013 -0600
+
+    Make pango threadsafe!
+
+    By way of declaring fontmaps NOT threadsafe, and making
+    pango_cairo_font_map_get_default() return a thread-private fontmap.
+
+    test-pangocairo-threads doesn't crash anymore, if used with fontconfig
+    master.
+
+ pango/pangocairo-fontmap.c | 33 ++++++++++-----------------------
+ 1 file changed, 10 insertions(+), 23 deletions(-)
+
+commit 00997204f7df5f4e2f75f8c1c2f72130f302e7c6
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jan 3 03:51:10 2013 -0600
+
+    Add test-pangocairo-threads.c
+
+    Currently is not run automatically.  But run it with args "10 100" and
+    see it crash...
+
+ tests/Makefile.am               |  3 +-
+ tests/test-pangocairo-threads.c | 74
+ +++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 76 insertions(+), 1 deletion(-)
+
+commit 97b14f5ca62d37311798ecdd39ea4368785a2fa8
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Nov 7 10:58:40 2012 -0800
+
+    Link to gthread-2.0
+
+ configure.ac      | 7 +------
+ pango/Makefile.am | 2 +-
+ 2 files changed, 2 insertions(+), 7 deletions(-)
+
+commit 5e020e7ac951add45ff47dda38b6f5ed873bfbca
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jan 3 03:19:15 2013 -0600
+
+    Revert "Bug 689342 - Lifetime of patterns in pattern_hash may use
+    too much memory"
+
+    This reverts commit 7ed3cb89923c376d8b30ae3f977ab9e1a231e430, after
+    resolving conflicts.
+
+    The patch introduced some lifecycle management issues that could
+    easily
+    cause crashing.  Reverting till the issues are resolved.
+
+ pango/pangofc-fontmap.c | 229
+ +++++++++++++-----------------------------------
+ 1 file changed, 61 insertions(+), 168 deletions(-)
+
+commit 3c4520764353d358e395431fdbefb60480f08a6f
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 30 21:44:56 2012 -0600
+
+    Whitespace
+
+ pango/pangofc-fontmap.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+commit a4f56b5d8b3c3009fea7dafc3804fe573045bb32
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 30 20:52:10 2012 -0600
+
+    Fix most of "failed to choose font" warnings
+
+    If we are in fallback mode, with a font that has to space glyph, then
+    looking up engine/font for any character not in the font was failing
+    badly.  In that case, if there's only one engine (which is the case
+    these days), just choose it.
+
+ pango/pango-context.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit f0cd936cf62c552bc6b17f6ecb70c2de783a9e80
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 30 18:50:42 2012 -0600
+
+    Don't RenderPrepare the FcFontMatch result
+
+    After commit 7c1d6208a4b42ef3a3cce0d8dffb214c7a321e5e, the first
+    matched
+    font was being prepared twice, causing misconfiguration.
+
+ pango/pangofc-fontmap.c | 25 ++++++++++++++++++-------
+ 1 file changed, 18 insertions(+), 7 deletions(-)
+
+commit 8c1a6ef147edceb05921bb892d620bdced277662
+Author: John Ralls <jralls@ceridwen.us>
+Date:   Sat Dec 29 13:36:33 2012 -0800
+
+    Revert "Make PANGO_GLYPH flags an enum to make gobject-introspection
+    happy."
+
+    This reverts commit 7274bd56db3ce2f02594687a307d22aa99c787c4.
+    Whatever the problem was with g-ir-scanner, it's resolved.
+
+ pango/pango-font.h | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit 7ed3cb89923c376d8b30ae3f977ab9e1a231e430
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Dec 20 00:51:55 2012 -0500
+
+    Bug 689342 - Lifetime of patterns in pattern_hash may use too
+    much memory
+
+    Refcount cached patterns.
+
+ pango/pangofc-fontmap.c | 207
+ +++++++++++++++++++++++++++++++++++++-----------
+ 1 file changed, 161 insertions(+), 46 deletions(-)
+
+commit 6ee53b4e4567b4d7f2b8799d00ecea223ab4b28f
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Dec 19 12:51:32 2012 -0500
+
+    Link basicfc module to HarfBuzz
+
+    FDO Bug 58496 - Basic module doesn't link against HarfBuzz
+
+ modules/basic/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2df1807564ba146a207b8e4087f18161e7beaa0a
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Dec 18 13:59:33 2012 -0500
+
+    Bug 690279 - broken relocation of modules
+
+    Fix OS X relocation.
+
+ pango/modules.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+commit 28cbfde6a0829283c22ab586907096ae2ad72dc0
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Dec 18 13:30:04 2012 -0500
+
+    [hb] Pass down BOT/EOT flags to HarfBuzz
+
+ modules/basic/basic-fc.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit 97c470ebebb34ce3e5720a3a1003cf1c07e49308
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Dec 17 23:51:46 2012 -0500
+
+    Hint advances correctly
+
+ modules/basic/basic-fc.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+commit 7f491a59f3674a19d84e01be098595e5ad40fc1d
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Dec 17 19:49:49 2012 -0500
+
+    1.32.5
+
+ NEWS | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 7908fa27aaed4677536e011966b38c724532f116
+Author: Jasper St. Pierre <jstpierre@mecheye.net>
+Date:   Fri Dec 14 13:01:46 2012 -0500
+
+    markup: Remove error from markup parser constructor
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=679299
+
+ pango/pango-attributes.h |  3 +--
+ pango/pango-markup.c     | 16 +++++++++-------
+ 2 files changed, 10 insertions(+), 9 deletions(-)
+
+commit 29020c71a21e3c666cf8bc92972d8c0ef46b9a9e
+Author: Jasper St. Pierre <jstpierre@mecheye.net>
+Date:   Mon Jul 2 22:07:33 2012 -0400
+
+    markup: Allow incrementally parsing pango markup
+
+    This is intended for applications that need to parse pango
+    markup from some sort of GIO stream.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=679299
+
+ docs/pango-sections.txt  |   2 +
+ docs/pango_markup.sgml   |   5 +-
+ pango/pango-attributes.h |   8 ++
+ pango/pango-markup.c     | 230
+ ++++++++++++++++++++++++++++++++++-------------
+ pango/pango.def          |   2 +
+ 5 files changed, 181 insertions(+), 66 deletions(-)
+
+commit 25d42226b50862a44ac91eba10511465fca61332
+Author: Jasper St. Pierre <jstpierre@mecheye.net>
+Date:   Mon Jul 2 15:10:21 2012 -0400
+
+    markup: Always start with a <markup> tag
+
+    It doesn't do anything bad, and will help us when we move to a
+    stream-based
+    approach.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=679299
+
+ pango/pango-markup.c | 26 ++++++++++----------------
+ 1 file changed, 10 insertions(+), 16 deletions(-)
+
+commit c3078a06ce707762699c8cef3f2c7815ce47d333
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Thu Dec 13 17:14:06 2012 +0800
+
+    Update Visual C++ 2010 solutions
+
+    Cosmetic changes, so that the .sln files will have the same headers
+    across
+    the board
+
+ build/win32/vs10/pango.sln    | 2 +-
+ build/win32/vs10/pango_fc.sln | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 7c1d6208a4b42ef3a3cce0d8dffb214c7a321e5e
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Dec 12 15:04:06 2012 -0500
+
+    Bug 690081 - pangofc-fontmap: Remove bad use of the comma operator
+
+    Essentially our FcFontRenderPrepare() for fallback fonts was never
+    actually being called.  Donno how this was "working"...
+
+ pango/pangofc-fontmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4f75120c8446e7d9bb75393f02d93908f0ea517b
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 9 20:23:00 2012 -0500
+
+    Bug 686512 - pango_cairo_font_get_scaled_font failed under wine
+
+ pango/pangocairo-font.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 0493b1beb113118b9573f10a87f43814a78a788a
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 9 19:49:29 2012 -0500
+
+    Bug 689882 - pango-font.h:381: error: comma at end of enumerator list
+
+ pango/pango-font.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 69b07369009d3337b1ec2c97e397a2ece9bbab6c
+Author: John Ralls <jralls@ceridwen.us>
+Date:   Sat Nov 3 11:46:59 2012 -0700
+
+    Fix relative module paths
+
+    So that the created absolute path is where the modules are installed
+    instead of where the modules file is installed (i.e.,
+    lib/pango/1.8.0/modules instead of etc/pango).
+
+ pango/modules.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
+
+commit f03a630db5b346eb28284442e655b0e9ff1c5298
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Fri Dec 7 16:18:59 2012 -0500
+
+    Bug 689864 - build failure
+
+ pango/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 13bc45cdc7de772cde80dc4d5f58fef251229e1b
+Author: Colin Walters <walters@verbum.org>
+Date:   Fri Dec 7 09:23:17 2012 -0500
+
+    Drop last use of deprecated G_CONST_RETURN
+
+    This was blowing up the cogl build since it uses G_DISABLE_DEPRECATED.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=689843
+
+ pango/pango-fontmap.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3a59eb51590dcde9cb88b1473b4ca1d6868e8826
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Thu Dec 6 19:32:00 2012 +0100
+
+    post release version bump
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 70ba9bb3b9c3ffee88d32db4abd9309ab714eeae
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Thu Dec 6 18:36:58 2012 +0100
+
+    Disable check.docs for now
+
+    This is broken for now and we can't distcheck without it.
+    Disabling this for now until we figure out how to fix this.
+
+ docs/check.docs | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+commit f987affae249704ca3e216701e8d9ce3c1117801
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Thu Dec 6 16:50:54 2012 +0100
+
+    Update NEWS for 1.32.4
+
+ NEWS | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+commit f8ab6c41a6f6a0e633e57b2a2ea5acd253a8cb81
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Thu Dec 6 16:35:59 2012 +0100
+
+    Bump harfbuzz requirement to 0.9.9
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d169449e7179ef0028fe8932ee4306bacb099fd2
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Wed Dec 5 14:04:20 2012 +0100
+
+    Track changes in layout and dependencies via serials
+
+    We track changes in the PangoContext and automatically call
+    pango_layout_context_changed() when needed, plus we track
+    changes in the layout and let apps know via pango_layout_get_serial
+    when the layout changed and needs to be redrawn.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=340066
+
+ docs/pango-sections.txt      |  1 +
+ docs/tmpl/layout.sgml        |  9 +++++
+ pango/pango-context.c        |  1 -
+ pango/pango-layout-private.h |  3 ++
+ pango/pango-layout.c         | 94
+ +++++++++++++++++++++++++++++++++++---------
+ pango/pango-layout.h         |  1 +
+ pango/pango.def              |  1 +
+ 7 files changed, 91 insertions(+), 19 deletions(-)
+
+commit 3070717bc6e4c2a7bf83508ae5bf7a03eb77bf4b
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Wed Dec 5 13:56:06 2012 +0100
+
+    Track changes in PangoContext via a serial
+
+    Whenever a PangoContext or its fontmap changes we bump the
+    contexts serial, you can get it via pango_context_get_serial()
+    to see find out if the context changed since the last time and
+    you need to relayout.
+
+    You can also force the context to be "changed" by calling
+    pango_context_changed().
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=340066
+
+ docs/pango-sections.txt    |   2 +
+ docs/tmpl/main.sgml        |  17 ++++++++
+ pango/pango-context.c      | 106
+ +++++++++++++++++++++++++++++++++++++++++++--
+ pango/pango-context.h      |   3 +-
+ pango/pango.def            |   2 +
+ pango/pangocairo-context.c |  16 ++++---
+ 6 files changed, 135 insertions(+), 11 deletions(-)
+
+commit 3f3a095a1809375ef600dc3a947b3ff2df08f22c
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Wed Dec 5 13:29:48 2012 +0100
+
+    Track changes in FontMaps using a serial
+
+    This adds the pango_font_map_get_serial method that lets you see
+    if a fontmap has changes since the last check. It adds implementations
+    to all current fontmaps.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=340066
+
+ docs/pango-sections.txt            |  1 +
+ docs/tmpl/fonts.sgml               | 13 ++++++++++++-
+ pango/pango-fontmap.c              | 30 ++++++++++++++++++++++++++++++
+ pango/pango-fontmap.h              |  8 +++++---
+ pango/pango.def                    |  1 +
+ pango/pangocairo-coretext.h        |  1 +
+ pango/pangocairo-coretextfontmap.c | 15 +++++++++++++++
+ pango/pangocairo-fc.h              |  1 +
+ pango/pangocairo-fcfontmap.c       | 22 ++++++++++++++++++++--
+ pango/pangocairo-win32.h           |  1 +
+ pango/pangocairo-win32fontmap.c    | 14 ++++++++++++++
+ pango/pangocoretext-fontmap.c      | 10 ++++++++++
+ pango/pangocoretext-private.h      |  1 +
+ pango/pangoft2-fontmap.c           | 20 ++++++++++++++++++++
+ pango/pangoxft-fontmap.c           | 25 ++++++++++++++++++++++++-
+ 15 files changed, 156 insertions(+), 7 deletions(-)
+
+commit b359bb484bc7d27a835cfd6d9ffcaed582ebf2ae
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Dec 5 20:27:47 2012 -0500
+
+    Fix Win32 and CoreText cairo backends to take cairo CTM into account
+
+ pango/pangocairo-coretextfont.c | 2 ++
+ pango/pangocairo-win32font.c    | 3 +++
+ 2 files changed, 5 insertions(+)
+
+commit d1a8997ac29764dd160a4cad7b291669ae6f5b36
+Author: Colin Walters <walters@verbum.org>
+Date:   Tue Dec 4 12:46:04 2012 -0500
+
+    build: Use -Bsymbolic-functions by default if available
+
+    Using -Bsymbolic-functions to avoid internal PLT indirection is an
+    easy win.  This is the same code that both GLib and GTK+ have.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=689648
+
+ configure.ac | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 076e8857cd60080e64dbc47f85c981b13281fa69
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 18:48:09 2012 +0200
+
+    Update bidi tables to Unicode 6.2.0
+
+ pango/mini-fribidi/fribidi_tab_char_type_2.i | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+commit 0a13924b81c83dacc82015ef2e0a9fb4f7bf902b
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 18:08:55 2012 +0200
+
+    Add GraphemeBreakTest.txt to the tree
+
+    All tests in that file pass, lets keep it that way.
+
+    This is as of Unicode 6.1.0.  6.2 needs more work.
+
+ tests/GraphemeBreakTest.txt | 361
+ ++++++++++++++++++++++++++++++++++++++++++++
+ tests/Makefile.am           |   3 +-
+ 2 files changed, 363 insertions(+), 1 deletion(-)
+
+commit 3bb4240fcfbdcf1cf7890c4a0fb30d0afe743e44
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 18:06:59 2012 +0200
+
+    Minor
+
+ tests/testboundaries_ucd.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 816200e8b3221f630f424c167a3ee8ea4ebc4ba1
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 18:05:35 2012 +0200
+
+    Fix grapheme boundaries of surrogates and unassigned default
+    ignorables
+
+ pango/break.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+commit 3bb3a981e6eea19eaa9a5f9a347c78e691e11f96
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:27:52 2012 +0200
+
+    Fix line break of surrogate characters
+
+ pango/break.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit da1fa444b9c1c766daaf04357b207a21cef7be8a
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:14:01 2012 +0200
+
+    Fix grapheme properties of U+FFxx range
+
+    Oops!
+
+ pango/break.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6512b1961d7f622d4bb2d329d079e7251f80522e
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:10:19 2012 +0200
+
+    Fix grapheme properties of joiner / nonjoiner
+
+    Oops!
+
+ pango/break.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c5d5bca53393f56b011b714acbee0f942dce9848
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:28:47 2012 +0200
+
+    Fix warning
+
+ tests/testboundaries_ucd.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit c9c8131034e761011442082b72e8c85434e1ca91
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:45:50 2012 +0200
+
+    Fix test-ot-tags expectations after harfbuzz transition
+
+ tests/test-ot-tags.c | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
+
+commit 49dfd2cfb00fe42e81c7aafee07eaa48a55edaae
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:43:09 2012 +0200
+
+    Remove runtests.sh
+
+ configure.ac         |  3 ---
+ tests/Makefile.am    |  8 +++-----
+ tests/runtests.sh.in | 55
+ ----------------------------------------------------
+ 3 files changed, 3 insertions(+), 63 deletions(-)
+
+commit 1b5ff16fcbcf4d43cad74b28f0dc63244f2b578c
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:39:58 2012 +0200
+
+    Build test programs in "make all"
+
+ tests/Makefile.am | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 39d6327293373b477c24700dc410159ff8b55ab2
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Sun Dec 2 17:38:55 2012 +0200
+
+    Fix build for tests
+
+ tests/Makefile.am | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 9a182f7360adce9ffc258cf259f93bdbf54e5a29
+Author: Theppitak Karoonboonyanan <thep@linux.thai.net>
+Date:   Sun Dec 2 15:47:49 2012 +0700
+
+    Remove Thai/Lao Prepend/Extend properties
+
+    In UAX#29 revision 19 (reissued for Unicode 6.1.0), Prepend and Extend
+    GCB properties have been dropped for Thai/Lao. So, drop the hard
+    coding
+    accordingly.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=576156
+
+ pango/break.c | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+commit a7432c1df678d075c0f34c90f9ea9c30dbe2e38e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Thu Nov 29 23:32:03 2012 -0500
+
+    Fix a copy-paste error
+
+    This was spotted by Coverity.
+
+ pango/pangocairo-render.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 47a9748fd457bbdd53c4219bf24ffc1de76ee5b9
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Nov 21 01:22:10 2012 -0500
+
+    Require harfbuzz 0.9.7
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 93123e2a00779b840f7876013135ac2a2dbd4b46
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Nov 19 20:35:16 2012 -0500
+
+    Post-release version bump
+
+ configure.ac | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a708724fe791a1483cf5d0ac4578c9f314dd7790
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Nov 19 20:14:06 2012 -0500
+
+    1.32.3
+
+ NEWS | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 1dbd8421c696438bc2cda4aa4ddc4c5af895c5a4
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Nov 15 00:21:08 2012 -0800
+
+    Adjust to HarfBuzz 0.9.7 API
+
+ pango/pango-ot-buffer.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit b1d54a4178eeab6e7c7f96fd38bb9ebc2caae46e
+Author: John Ralls <jralls@ceridwen.us>
+Date:   Mon Nov 12 19:40:09 2012 -0800
+
+    Provide a phony define for the LANGUAGE macro
+
+    Gobject-introspection encounters it without the definitions in the
+    including code and fails.
+
+ pango/pango-language-sample-table.h | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 7274bd56db3ce2f02594687a307d22aa99c787c4
+Author: John Ralls <jralls@ceridwen.us>
+Date:   Mon Nov 12 19:38:30 2012 -0800
+
+    Make PANGO_GLYPH flags an enum to make gobject-introspection happy.
+
+    See bug 688356
+
+ pango/pango-font.h | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+commit 3ca4601eca20b1d295a2f7145e05167c83a55120
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Tue Nov 13 19:46:09 2012 -0500
+
+    Post-release version bump
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 062fab4456fc5be82b6e70937f5ba2937e88a9a1
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Tue Nov 13 19:14:42 2012 -0500
+
+    1.32.2
+
+ NEWS         | 8 ++++++++
+ configure.ac | 2 +-
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+commit 02009ef657e884a4e94754a9da25277230b7c889
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Tue Nov 13 19:13:41 2012 -0500
+
+    Rename configure.in to configure.ac
+
+    autoconf is going to drop support for .in at some point.
+
+ configure.ac           | 948
+ +++++++++++++++++++++++++++++++++++++++++++++++++
+ configure.in           | 948
+ -------------------------------------------------
+ pango-view/Makefile.am |   2 +-
+ 3 files changed, 949 insertions(+), 949 deletions(-)
+
+commit d2c319b9ded8cce864914d9f1fd704a7aff3112f
+Author: Benjamin Otte <otte@redhat.com>
+Date:   Tue Nov 13 21:17:05 2012 +0100
+
+    colors: Update colors to SVG/CSS palette
+
+    Colors that were defined to different values in Pango than they
+    were in
+    the CSS specification have been updated to conform to the CSS specs.
+    See http://dev.w3.org/csswg/css3-color/#svg-color for the color
+    values.
+
+ pango/pango-color-table.h | 12 ++++++------
+ tools/rgb.txt             | 10 +++++-----
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+commit d3c698aea6622056cbd51f9840f412dbc03a9a68
+Author: Benjamin Otte <otte@redhat.com>
+Date:   Fri Nov 9 18:55:16 2012 +0100
+
+    colors: Add missing colors from the web palette
+
+    Color names taken from
+      http://dev.w3.org/csswg/css3-color/#svg-color
+
+ pango/pango-color-table.h | 1198
+ +++++++++++++++++++++++----------------------
+ tools/rgb.txt             |  397 +++++++--------
+ 2 files changed, 805 insertions(+), 790 deletions(-)
+
+commit b520a7a6346492b9ad950981ba9d3d516302173b
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Tue Nov 13 15:12:01 2012 -0500
+
+    Xft: Fix a deadlock on display close
+
+    We can't call pango_xft_shutdown display while holding
+    the same lock it is taking.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=687470
+
+ pango/pangoxft-fontmap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit fc31c06d5623653defdfde33ebbab44f9e5e89d0
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Nov 7 10:58:40 2012 -0800
+
+    Flush cairo surface when done
+
+ pango-view/viewer-pangocairo.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 8c1752d5e58616ca3013bd7bf5941d8025f0d975
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Mon Oct 15 12:38:26 2012 +0800
+
+    Bug 685021: "Add" load_fontset() for Win32 backend
+
+    We now need a load_fontset() implementation for the Windows backend
+    as the
+    pango.aliases handling is moved to pangowin32-fontmap.c since commit
+    831611158, so that it will go through the pango.aliases file and load
+    the appropriate fontset needed to display various texts.
+
+    This basically copies pango_font_map_load_fontset() from
+    pango-fontmap.c
+    and adds the old (pre-commit 831611158)
+    pango_font_map_fontset_add_fonts(),
+    but using pango_win32_font_map_load_font() in place of
+    pango_font_map_load_font().
+
+ pango/pangowin32-fontmap.c | 157
+ +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 157 insertions(+)
+
+commit 6739145cd2c251e2d290499265f16256c78aac43
 Author: Matthias Clasen <mclasen@redhat.com>
 Date:   Thu Sep 27 20:15:05 2012 -0400
 
@@ -7,6 +1032,20 @@ Date:   Thu Sep 27 20:15:05 2012 -0400
  NEWS         | 5 +++++
  configure.in | 2 +-
  2 files changed, 6 insertions(+), 1 deletion(-)
+
+commit 076e796f52437ab3f20d39c8cdb7c5ddc059acc1
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Thu Sep 27 20:24:37 2012 -0400
+
+    Don't wipe docs in dist-hook-local
+
+    It is just super-annoying that one cannot even do 'make dist'
+    and get a working tarball. There has to be a better to do this;
+    for now, just remove this, no other gtk-doc-using module is
+    doing this.
+
+ docs/Makefile.am | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
 
 commit 0d34c10108585b4cfed042aa2ef501780b2d2193
 Author: Behdad Esfahbod <behdad@behdad.org>

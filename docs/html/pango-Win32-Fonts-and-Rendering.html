@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Win32 Fonts and Rendering</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.77.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
 <link rel="home" href="index.html" title="Pango Reference Manual">
 <link rel="up" href="rendering.html" title="Rendering with Pango">
 <link rel="prev" href="rendering.html" title="Rendering with Pango">
@@ -42,8 +42,8 @@
 <span class="returnvalue">void</span>                <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-render" title="pango_win32_render ()">pango_win32_render</a>                  (<em class="parameter"><code><span class="type">HDC</span> hdc</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a> *glyphs</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> x</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> y</code></em>);
+                                                         <em class="parameter"><code><span class="type">gint</span> x</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> y</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-render-transformed" title="pango_win32_render_transformed ()">pango_win32_render_transformed</a>      (<em class="parameter"><code><span class="type">HDC</span> hdc</code></em>,
                                                          <em class="parameter"><code>const <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a> *matrix</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
@@ -59,14 +59,14 @@
                                                          <em class="parameter"><code><span class="type">int</span> x</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> y</code></em>);
 <a class="link" href="pango-Glyph-Storage.html#PangoGlyph" title="PangoGlyph"><span class="returnvalue">PangoGlyph</span></a>          <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-get-unknown-glyph" title="pango_win32_get_unknown_glyph ()">pango_win32_get_unknown_glyph</a>       (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> wc</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-get-glyph-index" title="pango_win32_font_get_glyph_index ()">pango_win32_font_get_glyph_index</a>    (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> wc</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-select-font" title="pango_win32_font_select_font ()">pango_win32_font_select_font</a>        (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
+                                                         <em class="parameter"><code><span class="type">gunichar</span> wc</code></em>);
+<span class="returnvalue">gint</span>                <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-get-glyph-index" title="pango_win32_font_get_glyph_index ()">pango_win32_font_get_glyph_index</a>    (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
+                                                         <em class="parameter"><code><span class="type">gunichar</span> wc</code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-select-font" title="pango_win32_font_select_font ()">pango_win32_font_select_font</a>        (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
                                                          <em class="parameter"><code><span class="type">HDC</span> hdc</code></em>);
 <span class="returnvalue">void</span>                <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-done-font" title="pango_win32_font_done_font ()">pango_win32_font_done_font</a>          (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>);
 <span class="returnvalue">double</span>              <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-get-metrics-factor" title="pango_win32_font_get_metrics_factor ()">pango_win32_font_get_metrics_factor</a> (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>);
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-get-debug-flag" title="pango_win32_get_debug_flag ()">pango_win32_get_debug_flag</a>          (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">gboolean</span>            <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-get-debug-flag" title="pango_win32_get_debug_flag ()">pango_win32_get_debug_flag</a>          (<em class="parameter"><code><span class="type">void</span></code></em>);
 <span class="returnvalue">HDC</span>                 <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-get-dc" title="pango_win32_get_dc ()">pango_win32_get_dc</a>                  (<em class="parameter"><code><span class="type">void</span></code></em>);
                     <a class="link" href="pango-Win32-Fonts-and-Rendering.html#PangoWin32FontCache" title="PangoWin32FontCache">PangoWin32FontCache</a>;
 <a class="link" href="pango-Win32-Fonts-and-Rendering.html#PangoWin32FontCache" title="PangoWin32FontCache"><span class="returnvalue">PangoWin32FontCache</span></a> * <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-cache-new" title="pango_win32_font_cache_new ()">pango_win32_font_cache_new</a>        (<em class="parameter"><code><span class="type">void</span></code></em>);
@@ -104,7 +104,7 @@ Win32 systems and to render text in conjunction with Win32 APIs.
 </pre>
 <p>
 A string constant identifying the Win32 renderer. The associated quark (see
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#g-quark-from-string"><code class="function">g_quark_from_string()</code></a>) is used to identify the renderer in <a class="link" href="pango-Modules.html#pango-find-map" title="pango_find_map ()"><code class="function">pango_find_map()</code></a>.
+<code class="function">g_quark_from_string()</code>) is used to identify the renderer in <a class="link" href="pango-Modules.html#pango-find-map" title="pango_find_map ()"><code class="function">pango_find_map()</code></a>.
 </p>
 </div>
 <hr>
@@ -137,8 +137,8 @@ Retrieves a <a class="link" href="pango-Text-Processing.html#PangoContext"><span
 <pre class="programlisting"><span class="returnvalue">void</span>                pango_win32_render                  (<em class="parameter"><code><span class="type">HDC</span> hdc</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a> *glyphs</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> x</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> y</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gint</span> x</code></em>,
+                                                         <em class="parameter"><code><span class="type">gint</span> y</code></em>);</pre>
 <p>
 Render a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a> onto a Windows DC
 </p>
@@ -200,7 +200,7 @@ transformation matrix to that passed in to this function.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to use an identity transformation</td>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to use an identity transformation</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>font</code></em> :</span></p></td>
@@ -301,7 +301,7 @@ Render a <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span 
 <div class="refsect2">
 <a name="pango-win32-get-unknown-glyph"></a><h3>pango_win32_get_unknown_glyph ()</h3>
 <pre class="programlisting"><a class="link" href="pango-Glyph-Storage.html#PangoGlyph" title="PangoGlyph"><span class="returnvalue">PangoGlyph</span></a>          pango_win32_get_unknown_glyph       (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> wc</code></em>);</pre>
+                                                         <em class="parameter"><code><span class="type">gunichar</span> wc</code></em>);</pre>
 <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
 <h3 class="title">Warning</h3>
 <p><code class="literal">pango_win32_get_unknown_glyph</code> is deprecated and should not be used in newly-written code.</p>
@@ -339,8 +339,8 @@ Use <a class="link" href="pango-Glyph-Storage.html#PANGO-GET-UNKNOWN-GLYPH:CAPS"
 <hr>
 <div class="refsect2">
 <a name="pango-win32-font-get-glyph-index"></a><h3>pango_win32_font_get_glyph_index ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                pango_win32_font_get_glyph_index    (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
-                                                         <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Unicode-Manipulation.html#gunichar"><span class="type">gunichar</span></a> wc</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gint</span>                pango_win32_font_get_glyph_index    (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
+                                                         <em class="parameter"><code><span class="type">gunichar</span> wc</code></em>);</pre>
 <p>
 Obtains the index of the glyph for <em class="parameter"><code>wc</code></em> in <em class="parameter"><code>font</code></em>, or 0, if not
 covered.
@@ -369,7 +369,7 @@ covered.
 <hr>
 <div class="refsect2">
 <a name="pango-win32-font-select-font"></a><h3>pango_win32_font_select_font ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_win32_font_select_font        (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_win32_font_select_font        (<em class="parameter"><code><a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> *font</code></em>,
                                                          <em class="parameter"><code><span class="type">HDC</span> hdc</code></em>);</pre>
 <p>
 Selects the font into the specified DC and changes the mapping mode
@@ -400,7 +400,7 @@ into Pango units.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the operation succeeded.</td>
+<code class="literal">TRUE</code> if the operation succeeded.</td>
 </tr>
 </tbody>
 </table></div>
@@ -453,7 +453,7 @@ units.</td>
 <hr>
 <div class="refsect2">
 <a name="pango-win32-get-debug-flag"></a><h3>pango_win32_get_debug_flag ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            pango_win32_get_debug_flag          (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>            pango_win32_get_debug_flag          (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
 Returns whether debugging is turned on.
 </p>
@@ -465,7 +465,7 @@ Returns whether debugging is turned on.
 <tbody><tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if debugging is turned on.</td>
+<code class="literal">TRUE</code> if debugging is turned on.</td>
 </tr></tbody>
 </table></div>
 <p class="since">Since 1.2</p>
@@ -563,7 +563,7 @@ stored
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>The font structure, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the font could
+<td>The font structure, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the font could
 not be loaded. In order to free this structure, you must call
 <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-cache-unload" title="pango_win32_font_cache_unload ()"><code class="function">pango_win32_font_cache_unload()</code></a>.</td>
 </tr>
@@ -597,7 +597,7 @@ stored
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>The font structure, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the font could
+<td>The font structure, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the font could
 not be loaded. In order to free this structure, you must call
 <a class="link" href="pango-Win32-Fonts-and-Rendering.html#pango-win32-font-cache-unload" title="pango_win32_font_cache_unload ()"><code class="function">pango_win32_font_cache_unload()</code></a>.</td>
 </tr>
@@ -710,7 +710,7 @@ to come across fonts with odd names.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>A newly allocated LOGFONTA struct. It must be
-freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</td>
+freed with <code class="function">g_free()</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -735,7 +735,7 @@ Determine the LOGFONTW struct for the specified font.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>A newly allocated LOGFONTW struct. It must be
-freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</td>
+freed with <code class="function">g_free()</code>.</td>
 </tr>
 </tbody>
 </table></div>

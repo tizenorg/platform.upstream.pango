@@ -63,7 +63,7 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
 subdir = modules/basic
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
-	$(top_srcdir)/configure.in
+	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -147,7 +147,8 @@ am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) \
 am__DEPENDENCIES_3 = $(am__DEPENDENCIES_2) \
 	$(top_builddir)/pango/libpangoft2-$(PANGO_API_VERSION).la \
 	$(am__DEPENDENCIES_1)
-pango_basic_fc_la_DEPENDENCIES = $(am__DEPENDENCIES_3)
+pango_basic_fc_la_DEPENDENCIES = $(am__DEPENDENCIES_3) \
+	$(am__DEPENDENCIES_1)
 am_pango_basic_fc_la_OBJECTS = basic-fc.lo
 pango_basic_fc_la_OBJECTS = $(am_pango_basic_fc_la_OBJECTS)
 pango_basic_fc_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
@@ -427,7 +428,7 @@ moduledir = $(libdir)/pango/$(PANGO_MODULE_VERSION)/modules
 module_LTLIBRARIES = $(am__append_3) $(am__append_5) $(am__append_8)
 noinst_LTLIBRARIES = $(am__append_2) $(am__append_4) $(am__append_7)
 pango_basic_fc_la_LDFLAGS = -module $(MODULE_LIBTOOL_OPTIONS)
-pango_basic_fc_la_LIBADD = $(pangoft2libs)
+pango_basic_fc_la_LIBADD = $(pangoft2libs) $(HARFBUZZ_LIBS)
 pango_basic_fc_la_SOURCES = basic-fc.c
 libpango_basic_fc_la_SOURCES = basic-fc.c
 libpango_basic_fc_la_CFLAGS = -DPANGO_MODULE_PREFIX=_pango_basic_fc

@@ -18,6 +18,8 @@
 <ANCHOR id="pango-item-split" href="pango/pango-Text-Processing.html#pango-item-split">
 <ANCHOR id="pango-reorder-items" href="pango/pango-Text-Processing.html#pango-reorder-items">
 <ANCHOR id="pango-context-new" href="pango/pango-Text-Processing.html#pango-context-new">
+<ANCHOR id="pango-context-changed" href="pango/pango-Text-Processing.html#pango-context-changed">
+<ANCHOR id="pango-context-get-serial" href="pango/pango-Text-Processing.html#pango-context-get-serial">
 <ANCHOR id="pango-context-set-font-map" href="pango/pango-Text-Processing.html#pango-context-set-font-map">
 <ANCHOR id="pango-context-get-font-map" href="pango/pango-Text-Processing.html#pango-context-get-font-map">
 <ANCHOR id="pango-context-get-font-description" href="pango/pango-Text-Processing.html#pango-context-get-font-description">
@@ -263,6 +265,7 @@
 <ANCHOR id="pango-font-map-load-fontset" href="pango/pango-Fonts.html#pango-font-map-load-fontset">
 <ANCHOR id="pango-font-map-list-families" href="pango/pango-Fonts.html#pango-font-map-list-families">
 <ANCHOR id="pango-font-map-get-shape-engine-type" href="pango/pango-Fonts.html#pango-font-map-get-shape-engine-type">
+<ANCHOR id="pango-font-map-get-serial" href="pango/pango-Fonts.html#pango-font-map-get-serial">
 <ANCHOR id="PangoFontset-struct" href="pango/pango-Fonts.html#PangoFontset-struct">
 <ANCHOR id="PANGO-TYPE-FONTSET:CAPS" href="pango/pango-Fonts.html#PANGO-TYPE-FONTSET:CAPS">
 <ANCHOR id="PangoFontsetClass" href="pango/pango-Fonts.html#PangoFontsetClass">
@@ -322,6 +325,8 @@
 <ANCHOR id="PangoAttrShape" href="pango/pango-Text-Attributes.html#PangoAttrShape">
 <ANCHOR id="PangoAttrSize" href="pango/pango-Text-Attributes.html#PangoAttrSize">
 <ANCHOR id="pango-parse-markup" href="pango/pango-Text-Attributes.html#pango-parse-markup">
+<ANCHOR id="pango-markup-parser-new" href="pango/pango-Text-Attributes.html#pango-markup-parser-new">
+<ANCHOR id="pango-markup-parser-finish" href="pango/pango-Text-Attributes.html#pango-markup-parser-finish">
 <ANCHOR id="pango-attr-type-register" href="pango/pango-Text-Attributes.html#pango-attr-type-register">
 <ANCHOR id="pango-attr-type-get-name" href="pango/pango-Text-Attributes.html#pango-attr-type-get-name">
 <ANCHOR id="pango-attribute-init" href="pango/pango-Text-Attributes.html#pango-attribute-init">
@@ -434,6 +439,7 @@
 <ANCHOR id="pango-layout-copy" href="pango/pango-Layout-Objects.html#pango-layout-copy">
 <ANCHOR id="pango-layout-get-context" href="pango/pango-Layout-Objects.html#pango-layout-get-context">
 <ANCHOR id="pango-layout-context-changed" href="pango/pango-Layout-Objects.html#pango-layout-context-changed">
+<ANCHOR id="pango-layout-get-serial" href="pango/pango-Layout-Objects.html#pango-layout-get-serial">
 <ANCHOR id="pango-layout-set-text" href="pango/pango-Layout-Objects.html#pango-layout-set-text">
 <ANCHOR id="pango-layout-get-text" href="pango/pango-Layout-Objects.html#pango-layout-get-text">
 <ANCHOR id="pango-layout-get-character-count" href="pango/pango-Layout-Objects.html#pango-layout-get-character-count">

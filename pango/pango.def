@@ -58,6 +58,7 @@ EXPORTS
 	pango_color_to_string
 	pango_config_key_get
 	pango_config_key_get_system
+	pango_context_changed
 	pango_context_get_base_dir
 	pango_context_get_base_gravity
 	pango_context_get_font_description
@@ -67,6 +68,7 @@ EXPORTS
 	pango_context_get_language
 	pango_context_get_matrix
 	pango_context_get_metrics
+	pango_context_get_serial
 	pango_context_get_type
 	pango_context_list_families
 	pango_context_load_font
@@ -151,6 +153,7 @@ EXPORTS
 	pango_font_get_type
 	pango_font_map_create_context
 	pango_font_map_get_shape_engine_type
+	pango_font_map_get_serial
 	pango_font_map_get_type
 	pango_font_map_list_families
 	pango_font_map_load_font
@@ -252,6 +255,7 @@ EXPORTS
 	pango_layout_get_log_attrs_readonly
 	pango_layout_get_pixel_extents
 	pango_layout_get_pixel_size
+	pango_layout_get_serial
 	pango_layout_get_single_paragraph_mode
 	pango_layout_get_size
 	pango_layout_get_spacing
@@ -317,6 +321,8 @@ EXPORTS
 	pango_lookup_aliases
 	pango_map_get_engine
 	pango_map_get_engines
+	pango_markup_parser_new
+	pango_markup_parser_finish
 	pango_matrix_concat
 	pango_matrix_copy
 	pango_matrix_free
