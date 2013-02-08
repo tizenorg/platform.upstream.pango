@@ -3,7 +3,7 @@
 %bcond_with introspection
 
 Name:           pango
-Version:        1.32.6
+Version:        1.33.7
 Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
@@ -88,7 +88,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package devel
 Summary:        Library for Layout and Rendering of Text -- Development Files
-Group:          Development/Libraries/GNOME
+Group:          Development/Gnome
 Requires:       libpango = %{version}
 %if %{with introspection}
 Requires:       typelib-Pango = %{version}
