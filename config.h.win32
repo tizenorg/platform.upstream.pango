@@ -121,7 +121,7 @@
 #define PACKAGE_NAME "pango"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "pango 1.32.6"
+#define PACKAGE_STRING "pango 1.33.7"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "pango"
@@ -130,22 +130,22 @@
 #define PACKAGE_URL ""
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.32.6"
+#define PACKAGE_VERSION "1.33.7"
 
 /* PANGO binary age */
-#define PANGO_BINARY_AGE 3206
+#define PANGO_BINARY_AGE 3307
 
 /* PANGO interface age */
-#define PANGO_INTERFACE_AGE 6
+#define PANGO_INTERFACE_AGE 0
 
 /* PANGO major version */
 #define PANGO_VERSION_MAJOR 1
 
 /* PANGO micro version */
-#define PANGO_VERSION_MICRO 6
+#define PANGO_VERSION_MICRO 7
 
 /* PANGO minor version */
-#define PANGO_VERSION_MINOR 32
+#define PANGO_VERSION_MINOR 33
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -154,4 +154,4 @@
 /* #undef USE_LA_MODULES */
 
 /* Version number of package */
-#define VERSION "1.32.6"
+#define VERSION "1.33.7"

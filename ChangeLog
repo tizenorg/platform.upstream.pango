@@ -1,3 +1,117 @@
+commit 87261d826da5444e18aa1e44bb412c53454a806f
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun Feb 3 14:31:45 2013 -0500
+
+    Updates for 1.33.7
+
+ NEWS | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 51eb009ef98636f4da697d3843ae3a23fb24610e
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Sun Feb 3 14:29:00 2013 -0500
+
+    Belatedly start an unstable series
+
+    I really messed up with 1.32.6, which had lots of new, unstable
+    stuff in it.
+
+ configure.ac | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 470190802cf4589c30b4fe281c229ed75f5ea5c1
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Tue Jan 22 13:23:58 2013 +0800
+
+    pangocairo.def: Export pango_cairo_win32_font_map_get_type
+
+    This is needed to build the introspection files for PangoCairo
+    on Windows.
+
+ pango/pangocairo.def | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 49fd80e8f2f901b037053e067e10b81b2c8b8c60
+Author: Chun-wei Fan <fanchunwei@src.gnome.org>
+Date:   Fri Jan 18 17:36:35 2013 +0800
+
+    Prepare Visual Studio 2010 projects for Visual Studio 2012
+
+    This adds a PlatformToolset tag in the project configs so that we can
+    provide support for Visual Studio 2012 with relative ease as the
+    format
+    of the VS 2012 projects are only slightly different from their VS 2010
+    counterparts. We can then use a script like the one used in GLib[1] to
+    copy the VS2010 projects and replace the necessary tags to create the
+    VS2012 projects.
+
+    This also cleans up the projects and property sheets, as there were
+    some unwanted/unneeded entries in them.
+
+    [1]:
+    http://git.gnome.org/browse/glib/commit/?id=76cecf061b377d30e5422cdddb1fb9d19c52421d
+
+ build/win32/vs10/install.vcxproj         | 11 +++++++++--
+ build/win32/vs10/pango.vcxprojin         |  9 ++++++++-
+ build/win32/vs10/pangocairo.vcxprojin    |  7 +++++--
+ build/win32/vs10/pangocairo_fc.vcxprojin |  7 +++++--
+ build/win32/vs10/pangoft2.vcxprojin      |  6 +++++-
+ build/win32/vs10/pangowin32.vcxproj      | 11 +++++++++--
+ 6 files changed, 41 insertions(+), 10 deletions(-)
+
+commit 10cc6557ba24239570ee9a7bcaa0a553aae9df95
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jan 17 17:11:19 2013 -0600
+
+    Revert "Don't use the deprecated pango_ft2_font_get_face"
+
+    This reverts commit 2dc0c3dbb1c389c3a3ba12a5c5c85f21dca46e84.
+
+    This doesn't make sense.  It ends up in infinite recursion because
+    pangofc is calling lock_face on pangoft2, which would recursively
+    call it on pangofc...
+
+    Was causing hang at startup of Inkscape.
+
+    If the deprecated warnings are an issue, they need to be dealt with
+    in some other way.
+
+ pango/pangoft2-render.c |  6 +-----
+ pango/pangoft2.c        | 17 +++++------------
+ 2 files changed, 6 insertions(+), 17 deletions(-)
+
+commit f4987f06ee85a87b8e787bf0881de6a2223e8fd5
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Jan 15 19:42:47 2013 -0600
+
+    "prgname" and "fontfeatures" are accepted for upstream Fontconfig now
+
+ pango/pangofc-fontmap.h | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit db410d8ebdbc5b697430617e761da6b5ce4940dd
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Thu Jan 10 16:25:11 2013 -0600
+
+    Let people enable font features through fontconfig snippets
+
+    Like this:
+
+    <match target="font">
+      <edit name="pangofontfeatures" mode="append">
+        <string>smcp</string>
+        <string>ss20</string>
+      </edit>
+    </match>
+
+    Finally we are starting to see new features coming out of the
+    HarfBuzz integration...
+
+ docs/pango-sections.txt  |  1 +
+ modules/basic/basic-fc.c | 24 +++++++++++++++++++++++-
+ pango/pangofc-fontmap.h  | 14 ++++++++++++++
+ 3 files changed, 38 insertions(+), 1 deletion(-)
+
 commit 0df2e9592be488dcb3f3edfdfae64086e924eb92
 Author: Matthias Clasen <mclasen@redhat.com>
 Date:   Thu Jan 10 06:30:23 2013 -0500
