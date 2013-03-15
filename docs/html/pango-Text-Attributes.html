@@ -8,7 +8,7 @@
 <link rel="up" href="pango.html" title="Basic Pango Interfaces">
 <link rel="prev" href="pango-Fonts.html" title="Fonts">
 <link rel="next" href="pango-Tab-Stops.html" title="Tab Stops">
-<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -780,22 +780,22 @@ for <em class="parameter"><code>error</code></em>.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>attr_list</code></em> :</span></p></td>
-<td>address of return location for a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>address of return location for a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
-<td>address of return location for text with tags stripped, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>address of return location for text with tags stripped, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>accel_char</code></em> :</span></p></td>
-<td>address of return location for accelerator char, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>address of return location for accelerator char, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
-<td>address of return location for errors, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>address of return location for errors, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
@@ -811,49 +811,6 @@ for <em class="parameter"><code>error</code></em>.
 <div class="refsect2">
 <a name="pango-markup-parser-new"></a><h3>pango_markup_parser_new ()</h3>
 <pre class="programlisting"><span class="returnvalue">GMarkupParseContext</span> * pango_markup_parser_new           (<em class="parameter"><code><span class="type">gunichar</span> accel_marker</code></em>);</pre>
-<p>
-Parses marked-up text (see
-<a href="PangoMarkupFormat.html">markup format</a>) to create
-a plain-text string and an attribute list.
-</p>
-<p>
-If <em class="parameter"><code>accel_marker</code></em> is nonzero, the given character will mark the
-character following it as an accelerator. For example, <em class="parameter"><code>accel_marker</code></em>
-might be an ampersand or underscore. All characters marked
-as an accelerator will receive a <a class="link" href="pango-Text-Attributes.html#PANGO-UNDERLINE-LOW:CAPS"><code class="literal">PANGO_UNDERLINE_LOW</code></a> attribute,
-and the first character so marked will be returned in <em class="parameter"><code>accel_char</code></em>,
-when calling <code class="function">finish()</code>. Two <em class="parameter"><code>accel_marker</code></em> characters following each
-other produce a single literal <em class="parameter"><code>accel_marker</code></em> character.
-</p>
-<p>
-To feed markup to the parser, use <code class="function">g_markup_parse_context_parse()</code>
-on the returned <span class="type">GMarkupParseContext</span>. When done with feeding markup
-to the parser, use <a class="link" href="pango-Text-Attributes.html#pango-markup-parser-finish" title="pango_markup_parser_finish ()"><code class="function">pango_markup_parser_finish()</code></a> to get the data out
-of it, and then use <code class="function">g_markup_parse_context_free()</code> to free it.
-</p>
-<p>
-This function is designed for applications that read pango markup
-from streams. To simply parse a string containing pango markup,
-the simpler <a class="link" href="pango-Text-Attributes.html#pango-parse-markup" title="pango_parse_markup ()"><code class="function">pango_parse_markup()</code></a> API is recommended instead.
-</p>
-<div class="variablelist"><table border="0" class="variablelist">
-<colgroup>
-<col align="left" valign="top">
-<col>
-</colgroup>
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>accel_marker</code></em> :</span></p></td>
-<td>character that precedes an accelerator, or 0 for none</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a <span class="type">GMarkupParseContext</span> that should be
-destroyed with <code class="function">g_markup_parse_context_free()</code>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
-</td>
-</tr>
-</tbody>
-</table></div>
 <p class="since">Since 1.31.0</p>
 </div>
 <hr>
@@ -864,51 +821,6 @@ destroyed with <code class="function">g_markup_parse_context_free()</code>. <spa
                                                          <em class="parameter"><code><span class="type">char</span> **text</code></em>,
                                                          <em class="parameter"><code><span class="type">gunichar</span> *accel_char</code></em>,
                                                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
-<p>
-After feeding a pango markup parser some data with <code class="function">g_markup_parse_context_parse()</code>,
-use this function to get the list of pango attributes and text out of the
-markup. This function will not free <em class="parameter"><code>context</code></em>, use <code class="function">g_markup_parse_context_free()</code>
-to do so.
-</p>
-<div class="variablelist"><table border="0" class="variablelist">
-<colgroup>
-<col align="left" valign="top">
-<col>
-</colgroup>
-<tbody>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
-<td>A valid parse context that was returned from <a class="link" href="pango-Text-Attributes.html#pango-markup-parser-new" title="pango_markup_parser_new ()"><code class="function">pango_markup_parser_new()</code></a>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>attr_list</code></em> :</span></p></td>
-<td>address of return location for a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
-<td>address of return location for text with tags stripped, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>accel_char</code></em> :</span></p></td>
-<td>address of return location for accelerator char, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
-<td>address of return location for errors, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
-</td>
-</tr>
-<tr>
-<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>
-<code class="literal">FALSE</code> if <em class="parameter"><code>error</code></em> is set, otherwise <code class="literal">TRUE</code>
-</td>
-</tr>
-</tbody>
-</table></div>
 <p class="since">Since 1.31.0</p>
 </div>
 <hr>
@@ -960,7 +872,7 @@ that means) that should not be modified or freed.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the type ID name (which may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>), or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>type</code></em> is
+<td>the type ID name (which may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>), or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>type</code></em> is
 a built-in Pango attribute type or invalid.</td>
 </tr>
 </tbody>
@@ -1654,14 +1566,14 @@ rendering the glyph.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>copy_func</code></em> :</span></p></td>
 <td>function to copy <em class="parameter"><code>data</code></em> when the
-attribute is copied. If <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>, <em class="parameter"><code>data</code></em> is simply
+attribute is copied. If <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, <em class="parameter"><code>data</code></em> is simply
 copied as a pointer. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>destroy_func</code></em> :</span></p></td>
 <td>function to free <em class="parameter"><code>data</code></em> when the
-attribute is freed, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+attribute is freed, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -1980,7 +1892,7 @@ forms is '#fff' '#ffffff' '#fffffffff' and '#ffffffffffff')
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Text-Attributes.html#PangoColor"><span class="type">PangoColor</span></a> structure in which to store the result, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Text-Attributes.html#PangoColor"><span class="type">PangoColor</span></a> structure in which to store the result, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
@@ -2014,14 +1926,14 @@ by assignment in C).
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
-<td>color to copy, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>color to copy, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Text-Attributes.html#PangoColor"><span class="type">PangoColor</span></a>, which should
-be freed with <a class="link" href="pango-Text-Attributes.html#pango-color-free" title="pango_color_free ()"><code class="function">pango_color_free()</code></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
-if <em class="parameter"><code>src</code></em> was <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Text-Attributes.html#pango-color-free" title="pango_color_free ()"><code class="function">pango_color_free()</code></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+if <em class="parameter"><code>src</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -2040,7 +1952,7 @@ Frees a color allocated by <a class="link" href="pango-Text-Attributes.html#pang
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
-<td>an allocated <a class="link" href="pango-Text-Attributes.html#PangoColor"><span class="type">PangoColor</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>an allocated <a class="link" href="pango-Text-Attributes.html#PangoColor"><span class="type">PangoColor</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr></tbody>
 </table></div>
@@ -2136,7 +2048,7 @@ Increase the reference count of the given attribute list by one.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
@@ -2163,7 +2075,7 @@ it contains.
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr></tbody>
 </table></div>
@@ -2183,7 +2095,7 @@ Copy <em class="parameter"><code>list</code></em> and return an identical new li
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
@@ -2191,7 +2103,7 @@ Copy <em class="parameter"><code>list</code></em> and return an identical new li
 <td>the newly allocated <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, with a
 reference count of one, which should
 be freed with <a class="link" href="pango-Text-Attributes.html#pango-attr-list-unref" title="pango_attr_list_unref ()"><code class="function">pango_attr_list_unref()</code></a>.
-Returns <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>list</code></em> was <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
+Returns <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>list</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -2379,7 +2291,7 @@ if an attribute should be filtered out. <span class="annotation">[<acronym title
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the new <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a> or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if
+<td>the new <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a> or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 no attributes of the given types were found. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
@@ -2583,7 +2495,7 @@ is used.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the current attribute of the given type, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if
+<td>the current attribute of the given type, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 no attribute of that type applies to the current
 location.</td>
 </tr>
@@ -2622,13 +2534,13 @@ so if you plan to keep it around, you must call:
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>language</code></em> :</span></p></td>
-<td>if non-<a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>, location to store language tag for item, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>if non-<a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, location to store language tag for item, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 if none is found. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>extra_attrs</code></em> :</span></p></td>
-<td>if non-<a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>,
+<td>if non-<a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>,
 location in which to store a list of non-font
 attributes at the the current position; only the highest priority
 value of each attribute will be added to this list. In order
@@ -2692,6 +2604,6 @@ Destroy a <a class="link" href="pango-Text-Attributes.html#PangoAttrIterator" ti
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18.1</div>
+          Generated by GTK-Doc V1.18</div>
 </body>
 </html>

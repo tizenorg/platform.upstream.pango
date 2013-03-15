@@ -130,16 +130,17 @@ host_triplet = @host@
 @HAVE_CAIRO_QUARTZ_TRUE@@HAVE_CORE_TEXT_TRUE@am__append_27 = -framework CoreFoundation -framework ApplicationServices
 @HAVE_CAIRO_QUARTZ_TRUE@@HAVE_CORE_TEXT_TRUE@am__append_28 = $(INCLUDED_CORE_TEXT_MODULES)
 @HAVE_CAIRO_FREETYPE_TRUE@am__append_29 = --include-uninstalled=$(builddir)/$(PANGOCAIRO_FONT_BACKEND_GI_MODULE)
+@HAVE_CAIRO_FREETYPE_TRUE@am__append_30 = $(PangoFT2_1_0_gir_LIBS)
 
 # ------------------- libpangowin32 -------------------
-@HAVE_WIN32_TRUE@am__append_30 = pangowin32.h
-@HAVE_WIN32_TRUE@am__append_31 = libpangowin32-1.0.la
-@PLATFORM_WIN32_TRUE@am__append_32 = -export-symbols $(srcdir)/pangowin32.def -Wl,pangowin32-win32-res.o
-@PLATFORM_WIN32_TRUE@am__append_33 = pangowin32-win32-res.o pangowin32.def
+@HAVE_WIN32_TRUE@am__append_31 = pangowin32.h
+@HAVE_WIN32_TRUE@am__append_32 = libpangowin32-1.0.la
+@PLATFORM_WIN32_TRUE@am__append_33 = -export-symbols $(srcdir)/pangowin32.def -Wl,pangowin32-win32-res.o
+@PLATFORM_WIN32_TRUE@am__append_34 = pangowin32-win32-res.o pangowin32.def
 bin_PROGRAMS = pango-querymodules$(EXEEXT)
-@HAVE_XFT_TRUE@am__append_34 = libpangoxft-$(PANGO_API_VERSION).la
-@HAVE_FREETYPE_TRUE@am__append_35 = libpangoft2-$(PANGO_API_VERSION).la
-@HAVE_WIN32_TRUE@am__append_36 = libpangowin32-$(PANGO_API_VERSION).la
+@HAVE_XFT_TRUE@am__append_35 = libpangoxft-$(PANGO_API_VERSION).la
+@HAVE_FREETYPE_TRUE@am__append_36 = libpangoft2-$(PANGO_API_VERSION).la
+@HAVE_WIN32_TRUE@am__append_37 = libpangowin32-$(PANGO_API_VERSION).la
 DIST_COMMON = $(top_srcdir)/build/Makefile-msvcproj.am \
 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(srcdir)/pango.rc.in $(srcdir)/pangoft2.rc.in \
@@ -273,8 +274,8 @@ libpangoxft_1_0_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 PROGRAMS = $(bin_PROGRAMS)
 am_pango_querymodules_OBJECTS = querymodules.$(OBJEXT)
 pango_querymodules_OBJECTS = $(am_pango_querymodules_OBJECTS)
-pango_querymodules_DEPENDENCIES = $(am__append_34) $(am__append_35) \
-	$(am__append_36) libpango-$(PANGO_API_VERSION).la \
+pango_querymodules_DEPENDENCIES = $(am__append_35) $(am__append_36) \
+	$(am__append_37) libpango-$(PANGO_API_VERSION).la \
 	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -782,7 +783,7 @@ pangoincludedir = $(includedir)/pango-1.0/pango
 
 # ------------------- libpango -------------------
 lib_LTLIBRARIES = libpango-1.0.la $(am__append_5) $(am__append_10) \
-	$(am__append_15) $(am__append_31)
+	$(am__append_15) $(am__append_32)
 libpango_1_0_la_LDFLAGS = $(LIBRARY_LIBTOOL_OPTIONS) $(am__append_1)
 libpango_1_0_la_LIBADD = $(GLIB_LIBS) $(libm) $(INCLUDED_LANG_MODULES) \
 	mini-fribidi/libmini-fribidi.la
@@ -852,7 +853,7 @@ pango_headers = \
 
 pangoinclude_HEADERS = $(pango_headers) pango-features.h \
 	pango-enum-types.h $(am__append_4) $(am__append_9) \
-	$(am__append_14) $(am__append_26) $(am__append_30)
+	$(am__append_14) $(am__append_26) $(am__append_31)
 pango_introspection_files = \
         $(libpango_1_0_la_SOURCES) \
 	    $(pango_headers) \
@@ -912,7 +913,7 @@ pangoft2_introspection_files = \
 PangoFT2_1_0_gir_PACKAGES = freetype2
 PangoFT2_1_0_gir_EXPORT_PACKAGES = pangoft2
 PangoFT2_1_0_gir_INCLUDES = GObject-2.0 cairo-1.0 freetype2-2.0 fontconfig-2.0
-PangoFT2_1_0_gir_LIBS = libpangoft2-1.0.la
+PangoFT2_1_0_gir_LIBS = $(Pango_1_0_gir_LIBS) libpangoft2-1.0.la
 PangoFT2_1_0_gir_CFLAGS = -I$(top_builddir) -I$(top_srcdir)
 PangoFT2_1_0_gir_SCANNERFLAGS = --include-uninstalled=$(builddir)/Pango-1.0.gir --c-include "pango/pangoft2.h"
 PangoFT2_1_0_gir_FILES = $(filter-out %-private.h, $(addprefix $(srcdir)/,$(pangoft2_introspection_files)))
@@ -943,7 +944,7 @@ pangoxft_introspection_files = \
 PangoXft_1_0_gir_PACKAGES = gobject-2.0 freetype2
 PangoXft_1_0_gir_EXPORT_PACKAGES = pangoxft
 PangoXft_1_0_gir_INCLUDES = GObject-2.0 xft-2.0 xlib-2.0
-PangoXft_1_0_gir_LIBS = libpangoxft-1.0.la
+PangoXft_1_0_gir_LIBS = $(PangoFT2_1_0_gir_LIBS) libpangoxft-1.0.la
 PangoXft_1_0_gir_CFLAGS = -I$(top_builddir) -I$(top_srcdir) $(PANGO_CFLAGS)
 PangoXft_1_0_gir_SCANNERFLAGS = --include-uninstalled=$(builddir)/Pango-1.0.gir --include-uninstalled=$(builddir)/PangoFT2-1.0.gir --c-include "pango/pangoxft.h"
 PangoXft_1_0_gir_FILES = $(filter-out %-private.h, $(addprefix $(srcdir)/,$(pangoxft_introspection_files)))
@@ -974,14 +975,15 @@ pangocairo_introspection_files = \
 PangoCairo_1_0_gir_PACKAGES = gobject-2.0 cairo
 PangoCairo_1_0_gir_EXPORT_PACKAGES = pangocairo
 PangoCairo_1_0_gir_INCLUDES = GObject-2.0 cairo-1.0
-PangoCairo_1_0_gir_LIBS = libpango-1.0.la libpangocairo-1.0.la
+PangoCairo_1_0_gir_LIBS = $(Pango_1_0_gir_LIBS) libpangocairo-1.0.la \
+	$(am__append_30)
 PangoCairo_1_0_gir_CFLAGS = -I$(top_builddir) -I$(top_srcdir) $(PANGO_CFLAGS)
 PangoCairo_1_0_gir_SCANNERFLAGS =  \
 	--include-uninstalled=$(builddir)/Pango-1.0.gir --c-include \
 	"pango/pangocairo.h" $(am__append_29)
 PangoCairo_1_0_gir_FILES = $(filter-out %-private.h, $(addprefix $(srcdir)/,$(pangocairo_introspection_files)))
 libpangowin32_1_0_la_LDFLAGS = $(LIBRARY_LIBTOOL_OPTIONS) \
-	$(am__append_32)
+	$(am__append_33)
 libpangowin32_1_0_la_LIBADD = \
 	libpango-$(PANGO_API_VERSION).la	\
 	$(INCLUDED_WIN32_MODULES)		\
@@ -989,7 +991,7 @@ libpangowin32_1_0_la_LIBADD = \
 	$(WIN32_LIBS)
 
 libpangowin32_1_0_la_DEPENDENCIES = libpango-$(PANGO_API_VERSION).la \
-	$(INCLUDED_WIN32_MODULES) $(am__append_33)
+	$(INCLUDED_WIN32_MODULES) $(am__append_34)
 libpangowin32_1_0_la_SOURCES = \
 	modules.h		\
 	module-defs-win32.c	\
@@ -1008,8 +1010,8 @@ libpangowin32_1_0_la_SOURCES = \
 pango_querymodules_SOURCES = \
 	querymodules.c
 
-pango_querymodules_LDADD = $(am__append_34) $(am__append_35) \
-	$(am__append_36) libpango-$(PANGO_API_VERSION).la $(GLIB_LIBS)
+pango_querymodules_LDADD = $(am__append_35) $(am__append_36) \
+	$(am__append_37) libpango-$(PANGO_API_VERSION).la $(GLIB_LIBS)
 EXTRA_DIST = \
 	pango-enum-types.h			\
 	pango-enum-types.h.template		\

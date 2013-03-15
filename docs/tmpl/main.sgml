@@ -470,11 +470,9 @@ about the attributes of a single character.
 
 </para>
 
-@item_text: 
-@item_length: 
-@paragraph_text: 
-@paragraph_length: 
-@analysis: 
-@glyphs: 
-
-
+@item_text:
+@item_length:
+@paragraph_text:
+@paragraph_length:
+@analysis:
+@glyphs:

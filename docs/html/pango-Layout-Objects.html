@@ -8,7 +8,7 @@
 <link rel="up" href="pango.html" title="Basic Pango Interfaces">
 <link rel="prev" href="PangoMarkupFormat.html" title="Text Attribute Markup">
 <link rel="next" href="pango-Scripts-and-Languages.html" title="Scripts and Languages">
-<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -625,7 +625,7 @@ null-terminated</td>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>accel_char</code></em> :</span></p></td>
 <td>return location
-for first located accelerator, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+for first located accelerator, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym> caller-allocates][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -653,7 +653,7 @@ References <em class="parameter"><code>attrs</code></em>, so the caller can unre
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>attrs</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, can be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+<td>a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, can be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -708,7 +708,7 @@ the layout's context is used.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
-<td>the new <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to unset the
+<td>the new <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to unset the
 current font description. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -737,7 +737,7 @@ Gets the font description for the layout, if any.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to the layout's font description,
-or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the font description from the layout's
+or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if the font description from the layout's
 context is inherited. This value is owned by the layout
 and must not be modified or freed.</td>
 </tr>
@@ -1475,7 +1475,7 @@ positioned within the horizontal space available.
                                                          <em class="parameter"><code><a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a> *tabs</code></em>);</pre>
 <p>
 Sets the tabs to use for <em class="parameter"><code>layout</code></em>, overriding the default tabs
-(by default, tabs are every 8 spaces). If <em class="parameter"><code>tabs</code></em> is <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>, the default
+(by default, tabs are every 8 spaces). If <em class="parameter"><code>tabs</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, the default
 tabs are reinstated. <em class="parameter"><code>tabs</code></em> is copied into the layout; you must
 free your copy of <em class="parameter"><code>tabs</code></em> yourself.
 </p>
@@ -1492,7 +1492,7 @@ free your copy of <em class="parameter"><code>tabs</code></em> yourself.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>tabs</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>a <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1505,7 +1505,7 @@ free your copy of <em class="parameter"><code>tabs</code></em> yourself.
 <p>
 Gets the current <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a> used by this layout. If no
 <a class="link" href="pango-Tab-Stops.html#PangoTabArray"><span class="type">PangoTabArray</span></a> has been set, then the default tabs are in use
-and <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> is returned. Default tabs are every 8 spaces.
+and <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> is returned. Default tabs are every 8 spaces.
 The return value should be freed with <a class="link" href="pango-Tab-Stops.html#pango-tab-array-free" title="pango_tab_array_free ()"><code class="function">pango_tab_array_free()</code></a>.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -1521,7 +1521,7 @@ The return value should be freed with <a class="link" href="pango-Tab-Stops.html
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a copy of the tabs for this layout, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
+<td>a copy of the tabs for this layout, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1826,13 +1826,13 @@ the leading of the grapheme.</td>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>line</code></em> :</span></p></td>
 <td>location to store resulting line index. (which will
-between 0 and pango_layout_get_line_count(layout) - 1), or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+between 0 and pango_layout_get_line_count(layout) - 1), or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>x_pos</code></em> :</span></p></td>
 <td>location to store resulting position within line
-(<a class="link" href="pango-Glyph-Storage.html#PANGO-SCALE:CAPS" title="PANGO_SCALE"><code class="literal">PANGO_SCALE</code></a> units per device unit), or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+(<a class="link" href="pango-Glyph-Storage.html#PANGO-SCALE:CAPS" title="PANGO_SCALE"><code class="literal">PANGO_SCALE</code></a> units per device unit), or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1933,12 +1933,12 @@ direction of the layout are inserted.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>strong_pos</code></em> :</span></p></td>
 <td>location to store the strong cursor position
-(may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+(may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>weak_pos</code></em> :</span></p></td>
-<td>location to store the weak cursor position (may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the weak cursor position (may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>). <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2059,14 +2059,14 @@ coordinates begin at the top left corner of the layout.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of the
-layout as drawn or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the result is
+layout as drawn or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is
 not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the layout or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the
+extents of the layout or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the
 result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -2100,14 +2100,14 @@ passes them as first argument to <a class="link" href="pango-Glyph-Storage.html#
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of the
-layout as drawn or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the result is
+layout as drawn or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is
 not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the layout or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> to indicate that the
+extents of the layout or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the
 result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -2138,12 +2138,12 @@ is simply a convenience function around <a class="link" href="pango-Layout-Objec
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
-<td>location to store the logical width, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical width, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym> caller-allocates][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
-<td>location to store the logical height, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical height, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym> caller-allocates][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2175,12 +2175,12 @@ is simply a convenience function around
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
-<td>location to store the logical width, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical width, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
-<td>location to store the logical height, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the logical height, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2266,7 +2266,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the
+<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if the
 index is out of range. This layout line can
 be ref'ed and retained, but will become invalid
 if changes are made to the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
@@ -2306,7 +2306,7 @@ to modify the contents of the line (glyphs, glyph widths, etc.).
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if the
+<td>the requested <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if the
 index is out of range. This layout line can
 be ref'ed and retained, but will become invalid
 if changes are made to the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>.
@@ -2426,14 +2426,14 @@ Copies a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span 
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, which should
-be freed with <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-free" title="pango_layout_iter_free ()"><code class="function">pango_layout_iter_free()</code></a>, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if
-<em class="parameter"><code>iter</code></em> was <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-free" title="pango_layout_iter_free ()"><code class="function">pango_layout_iter_free()</code></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if
+<em class="parameter"><code>iter</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -2453,7 +2453,7 @@ Frees an iterator that's no longer in use.
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr></tbody>
 </table></div>
@@ -2596,7 +2596,7 @@ Determines whether <em class="parameter"><code>iter</code></em> is on the last l
 Gets the current byte index. Note that iterating forward by char
 moves in visual order, not logical order, so indexes may not be
 sequential. Also, the index may be equal to the length of the text
-in the layout, if on the <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run (see <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-get-run" title="pango_layout_iter_get_run ()"><code class="function">pango_layout_iter_get_run()</code></a>).
+in the layout, if on the <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> run (see <a class="link" href="pango-Layout-Objects.html#pango-layout-iter-get-run" title="pango_layout_iter_get_run ()"><code class="function">pango_layout_iter_get_run()</code></a>).
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -2648,8 +2648,8 @@ coordinates (origin at top left of the entire layout).
 <pre class="programlisting"><a class="link" href="pango-Layout-Objects.html#PangoLayoutRun" title="PangoLayoutRun"><span class="returnvalue">PangoLayoutRun</span></a> *    pango_layout_iter_get_run           (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Gets the current run. When iterating by run, at the end of each
-line, there's a position with a <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run, so this function can return
-<a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. The <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
+line, there's a position with a <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> run, so this function can return
+<a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. The <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
 at least one run, even lines consisting of only a newline.
 </p>
 <p>
@@ -2681,8 +2681,8 @@ to modify the contents of the run (glyphs, glyph widths, etc.).
 <pre class="programlisting"><a class="link" href="pango-Layout-Objects.html#PangoLayoutRun" title="PangoLayoutRun"><span class="returnvalue">PangoLayoutRun</span></a> *    pango_layout_iter_get_run_readonly  (<em class="parameter"><code><a class="link" href="pango-Layout-Objects.html#PangoLayoutIter"><span class="type">PangoLayoutIter</span></a> *iter</code></em>);</pre>
 <p>
 Gets the current run. When iterating by run, at the end of each
-line, there's a position with a <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run, so this function can return
-<a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. The <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
+line, there's a position with a <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> run, so this function can return
+<a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. The <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> run at the end of each line ensures that all lines have
 at least one run, even lines consisting of only a newline.
 </p>
 <p>
@@ -2824,7 +2824,7 @@ down to the level of clusters.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle to fill with
-logical extents. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
+logical extents. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym> caller-allocates]</span>
 </td>
 </tr>
 </tbody>
@@ -2854,12 +2854,12 @@ Gets the extents of the current cluster, in layout coordinates
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
-<td>rectangle to fill with ink extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with ink extents, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
-<td>rectangle to fill with logical extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with logical extents, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2888,12 +2888,12 @@ Gets the extents of the current run in layout coordinates
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
-<td>rectangle to fill with ink extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with ink extents, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
-<td>rectangle to fill with logical extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with logical extents, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2927,12 +2927,12 @@ entire layout).
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>y0_</code></em> :</span></p></td>
-<td>start of line, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>start of line, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>y1_</code></em> :</span></p></td>
-<td>end of line, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>end of line, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2946,7 +2946,7 @@ entire layout).
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *logical_rect</code></em>);</pre>
 <p>
 Obtains the extents of the current line. <em class="parameter"><code>ink_rect</code></em> or <em class="parameter"><code>logical_rect</code></em>
-can be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if you aren't interested in them. Extents are in layout
+can be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if you aren't interested in them. Extents are in layout
 coordinates (origin is the top-left corner of the entire
 <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a>).  Thus the extents returned by this function will be
 the same width/height but not at the same x/y as the extents
@@ -2965,12 +2965,12 @@ returned from <a class="link" href="pango-Layout-Objects.html#pango-layout-line-
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
-<td>rectangle to fill with ink extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with ink extents, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
-<td>rectangle to fill with logical extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to fill with logical extents, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2985,7 +2985,7 @@ returned from <a class="link" href="pango-Layout-Objects.html#pango-layout-line-
                                                          <em class="parameter"><code><a class="link" href="pango-Glyph-Storage.html#PangoRectangle" title="struct PangoRectangle"><span class="type">PangoRectangle</span></a> *logical_rect</code></em>);</pre>
 <p>
 Obtains the extents of the <a class="link" href="pango-Layout-Objects.html#PangoLayout"><span class="type">PangoLayout</span></a> being iterated
-over. <em class="parameter"><code>ink_rect</code></em> or <em class="parameter"><code>logical_rect</code></em> can be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a> if you
+over. <em class="parameter"><code>ink_rect</code></em> or <em class="parameter"><code>logical_rect</code></em> can be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if you
 aren't interested in them.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -3002,13 +3002,13 @@ aren't interested in them.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle to fill with ink extents,
-or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle to fill with logical
-extents, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+extents, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -3065,7 +3065,7 @@ Increase the reference count of a <a class="link" href="pango-Layout-Objects.htm
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>line</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, may be <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Layout-Objects.html#PangoLayoutLine"><span class="type">PangoLayoutLine</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
 </td>
 </tr>
 <tr>
@@ -3122,13 +3122,13 @@ of the rectangles.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of
-the glyph string as drawn, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+the glyph string as drawn, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the glyph string, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+extents of the glyph string, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -3161,13 +3161,13 @@ passes them as first argument to <a class="link" href="pango-Glyph-Storage.html#
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of
-the glyph string as drawn, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+the glyph string as drawn, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical
-extents of the glyph string, or <a href="/home/mclasen/gnome/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL--CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+extents of the glyph string, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -3332,6 +3332,6 @@ to the layout and are in Pango units. <span class="annotation">[<acronym title="
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18.1</div>
+          Generated by GTK-Doc V1.18</div>
 </body>
 </html>

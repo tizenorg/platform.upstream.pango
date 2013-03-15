@@ -125,13 +125,6 @@ Fontconfig-based backend involves deriving from both
 @Returns: 
 
 
-<!-- ##### MACRO PANGO_FC_FONT_FEATURES ##### -->
-<para>
-
-</para>
-
-
-
 <!-- ##### MACRO PANGO_FC_GRAVITY ##### -->
 <para>
 

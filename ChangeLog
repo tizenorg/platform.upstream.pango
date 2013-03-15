@@ -1,3 +1,139 @@
+commit d8e1a928075e7c7096821978d44cc2bc207f42c9
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Mar 4 21:22:51 2013 -0500
+
+    1.33.8
+
+ NEWS         | 10 ++++++++++
+ configure.ac |  2 +-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+commit 91ca088e6d233c9904bafd3a449d4f83ac9d05a0
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Mar 4 17:54:32 2013 -0500
+
+    Bug 694882 - build broken - introspection of pangoxft2 and pangoxft
+    miss libpang-1.0.la in _gir_LIBS
+
+ pango/Makefile.am | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+commit 25ad29b488d3e2ae10e4fee25602409fa39207f1
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Mar 4 17:45:03 2013 -0500
+
+    Revert "Fix Win32 and CoreText cairo backends to take cairo CTM
+    into account"
+
+    This reverts commit b359bb484bc7d27a835cfd6d9ffcaed582ebf2ae.
+
+    Bug 694918 - Pango layout is rendered in wrong size if we have
+    non-identity cairo transformation matrix
+
+    I was wrong blindly copying this logic from pangocairo-fc into
+    pangocairo-win32 and pangocairo-quartz.
+
+    The reason we need the it in pangofc is because the fontsize we
+    get back from fontconfig is multiplied by the ctm scale factor,
+    so we undo it when loading the font.  The same is NOT true about
+    the non-fc backends, so the copying was totally wrong.
+
+ pango/pangocairo-coretextfont.c | 2 --
+ pango/pangocairo-win32font.c    | 3 ---
+ 2 files changed, 5 deletions(-)
+
+commit 786781e6eb44444632a3b7fab5c8ef8cbaccb4fa
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Wed Feb 27 20:05:51 2013 -0500
+
+    Bug 694830 - Fails make check: +pango_font_map_changed
+
+ pango/pango.def | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 0b79a1f80bcb85e0e1971d86336881eaa47c8a21
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Tue Feb 26 10:48:08 2013 +0100
+
+    PangoFc: change FontMap in pango_fc_font_map_clear_cache()
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=694626
+
+ pango/pangofc-fontmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit c5f43d1869373d9e05588c9a13841b5416583e29
+Author: Alexander Larsson <alexl@redhat.com>
+Date:   Tue Feb 26 10:46:28 2013 +0100
+
+    Add pango_font_map_changed()
+
+    This is needed as a base class sometimes needs to invalidate
+    the fontmap.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=694626
+
+ pango/pango-fontmap.c              | 23 +++++++++++++++++++++++
+ pango/pango-fontmap.h              |  3 ++-
+ pango/pangocairo-coretextfontmap.c | 11 +++++++++++
+ pango/pangocairo-fcfontmap.c       | 11 +++++++++++
+ pango/pangocairo-win32fontmap.c    | 11 +++++++++++
+ pango/pangocoretext-fontmap.c      | 11 +++++++++++
+ pango/pangoft2-fontmap.c           | 12 ++++++++++++
+ pango/pangoxft-fontmap.c           | 12 ++++++++++++
+ 8 files changed, 93 insertions(+), 1 deletion(-)
+
+commit 6de9b3b340e30856daefc418dc59545afbe62bf0
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Feb 25 23:48:16 2013 -0500
+
+    Bug 668154 - GTK+ Crashes on Non BMP utf-8 charpoints
+
+ modules/basic/basic-win32.c | 45
+ ++++++++++++++++++---------------------------
+ 1 file changed, 18 insertions(+), 27 deletions(-)
+
+commit 0654dfb2ddc66fe70cd5582ccc0ec08ba8154ac6
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Mon Feb 25 23:37:16 2013 -0500
+
+    [win32] Fix assertion and warnings
+
+    When win32 fontmap goes away, font->fontmap becomes NULL.  Deal
+    with that.  Technically speaking, we need to port this to GWeakRef
+    like the other fontmaps do.  But this would do for now.
+
+ pango/pangowin32-fontmap.c |  4 +++-
+ pango/pangowin32.c         | 12 +++++++++---
+ 2 files changed, 12 insertions(+), 4 deletions(-)
+
+commit b740729a6dfe58b0d8673a48ae96626ff851c122
+Author: Behdad Esfahbod <behdad@behdad.org>
+Date:   Tue Feb 19 02:43:32 2013 -0500
+
+    Whitelist pango_cairo_win32_font_map_get_type
+
+    .def files are mostly used on Win32.  Whitelist the win32 font map
+    function in the check.
+
+    Bug 694095 - Fails make check: -pango_cairo_win32_font_map_get_type
+
+ pango/check.defs | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+commit 595edcf53d9aadbe70b9715e29461bcf01dd4d60
+Author: Jasper St. Pierre <jstpierre@mecheye.net>
+Date:   Sun Feb 17 19:28:58 2013 -0500
+
+    win32: Remove stale static module definitions
+
+    These have now been put into Harfbuzz upstream
+
+ pango/module-defs-fc.c.win32 |  8 -------
+ pango/module-defs.h.win32    | 55
+ ++++----------------------------------------
+ 2 files changed, 5 insertions(+), 58 deletions(-)
+
 commit 87261d826da5444e18aa1e44bb412c53454a806f
 Author: Matthias Clasen <mclasen@redhat.com>
 Date:   Sun Feb 3 14:31:45 2013 -0500
