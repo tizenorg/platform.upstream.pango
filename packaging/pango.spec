@@ -3,7 +3,7 @@
 %bcond_with introspection
 
 Name:           pango
-Version:        1.33.8
+Version:        1.33.9
 Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
