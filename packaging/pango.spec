@@ -8,7 +8,7 @@ Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
 Url:            http://www.pango.org/
-Group:          System/Libraries
+Group:          System/i18n
 Source:         http://download.gnome.org/sources/pango/1.32/%{name}-%{version}.tar.xz
 Source2:        macros.pango
 Source99:       baselibs.conf
@@ -36,7 +36,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package -n libpango
 Summary:        Library for Layout and Rendering of Text
-Group:          System/Libraries
+Group:          System/i18n
 Provides:       %{name} = %{version}
 Obsoletes:      %{name} < %{version}
 Requires(post): %{name}-tools
@@ -50,7 +50,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package -n typelib-Pango
 Summary:        Library for Layout and Rendering of Text -- Introspection bindings
-Group:          System/Libraries
+Group:          i18n
 
 %description -n typelib-Pango
 Pango is a library for layout and rendering of text, with an emphasis
@@ -63,7 +63,7 @@ This package provides the GObject Introspection bindings for Pango.
 
 %package tools
 Summary:        Library for Layout and Rendering of Text -- Tools
-Group:          System/Libraries
+Group:          System/i18n
 
 %description tools
 Pango is a library for layout and rendering of text, with an emphasis
@@ -74,7 +74,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package module-thai-lang
 Summary:        Library for Layout and Rendering of Text -- Module for the Thai Language
-Group:          System/Libraries
+Group:          i18n
 Provides:       locale(pango:th_TH)
 Requires(post): %{name}-tools
 Requires(postun): %{name}-tools
@@ -88,7 +88,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package devel
 Summary:        Library for Layout and Rendering of Text -- Development Files
-Group:          Development/Gnome
+Group:          Development/Libraries
 Requires:       libpango = %{version}
 %if %{with introspection}
 Requires:       typelib-Pango = %{version}
