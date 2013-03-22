@@ -460,6 +460,18 @@ the <em class="parameter"><code>pattern</code></em>; otherwise the resulting pat
 <a name="PANGO-FC-FONT-FEATURES:CAPS"></a><h3>PANGO_FC_FONT_FEATURES</h3>
 <pre class="programlisting">#define PANGO_FC_FONT_FEATURES "fontfeatures"
 </pre>
+<p>
+String representing a fontconfig property name that Pango reads from font
+patterns to populate list of OpenType features to be enabled for the font
+by default.
+</p>
+<p>
+The property will have a number of string elements, each of which is the
+OpenType feature tag of one feature to enable.
+</p>
+<p>
+This is equivalent to FC_FONT_FEATURES in versions of fontconfig that have that.
+</p>
 <p class="since">Since 1.34</p>
 </div>
 <hr>

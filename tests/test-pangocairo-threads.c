@@ -35,7 +35,7 @@ draw (cairo_t *cr, PangoLayout *layout, unsigned int i)
   cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
 
   cairo_identity_matrix (cr);
-  cairo_scale (cr, (100 + i) / 10.,  (100 + i) / 10.);
+  cairo_scale (cr, (100 + i) / 100.,  (100 + i) / 100.);
   pango_cairo_update_layout (cr, layout);
 
   pango_cairo_show_layout (cr, layout);
@@ -89,7 +89,7 @@ main (int argc, char **argv)
       char buf[10];
       cairo_surface_t *surface = create_surface ();
       g_ptr_array_add (surfaces, surface);
-      snprintf (buf, sizeof (buf), "%d", i);
+      g_snprintf (buf, sizeof (buf), "%d", i);
       g_ptr_array_add (threads,
 		       g_thread_new (buf,
 				     thread_func,

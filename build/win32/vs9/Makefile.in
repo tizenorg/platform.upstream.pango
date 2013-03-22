@@ -261,19 +261,20 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 EXTRA_DIST = \
-	pango.sln \
-	pango_fc.sln \
-	pango.vspropsin \
-	pango.vsprops \
-	pango.vcprojin \
-	pango.vcproj \
-	pangoft2.vcprojin \
-	pangoft2.vcproj \
-	pangocairo.vcprojin \
-	pangocairo.vcproj \
-	pangowin32.vcproj \
+	pango.sln	\
+	pango_fc.sln	\
+	pango.vspropsin	\
+	pango.vsprops	\
+	pango.vcprojin	\
+	pango.vcproj	\
+	pangoft2.vcprojin	\
+	pangoft2.vcproj	\
+	pangocairo.vcprojin	\
+	pangocairo.vcproj	\
+	pangowin32.vcproj	\
 	install.vcproj	\
-	stdint.h \
+	stdint.h	\
+	gengir.vcproj	\
 	README.txt
 
 DISTCLEANFILES = pango.vsprops

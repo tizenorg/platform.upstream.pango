@@ -811,6 +811,49 @@ for <em class="parameter"><code>error</code></em>.
 <div class="refsect2">
 <a name="pango-markup-parser-new"></a><h3>pango_markup_parser_new ()</h3>
 <pre class="programlisting"><span class="returnvalue">GMarkupParseContext</span> * pango_markup_parser_new           (<em class="parameter"><code><span class="type">gunichar</span> accel_marker</code></em>);</pre>
+<p>
+Parses marked-up text (see
+<a href="PangoMarkupFormat.html">markup format</a>) to create
+a plain-text string and an attribute list.
+</p>
+<p>
+If <em class="parameter"><code>accel_marker</code></em> is nonzero, the given character will mark the
+character following it as an accelerator. For example, <em class="parameter"><code>accel_marker</code></em>
+might be an ampersand or underscore. All characters marked
+as an accelerator will receive a <a class="link" href="pango-Text-Attributes.html#PANGO-UNDERLINE-LOW:CAPS"><code class="literal">PANGO_UNDERLINE_LOW</code></a> attribute,
+and the first character so marked will be returned in <em class="parameter"><code>accel_char</code></em>,
+when calling <code class="function">finish()</code>. Two <em class="parameter"><code>accel_marker</code></em> characters following each
+other produce a single literal <em class="parameter"><code>accel_marker</code></em> character.
+</p>
+<p>
+To feed markup to the parser, use <code class="function">g_markup_parse_context_parse()</code>
+on the returned <span class="type">GMarkupParseContext</span>. When done with feeding markup
+to the parser, use <a class="link" href="pango-Text-Attributes.html#pango-markup-parser-finish" title="pango_markup_parser_finish ()"><code class="function">pango_markup_parser_finish()</code></a> to get the data out
+of it, and then use <code class="function">g_markup_parse_context_free()</code> to free it.
+</p>
+<p>
+This function is designed for applications that read pango markup
+from streams. To simply parse a string containing pango markup,
+the simpler <a class="link" href="pango-Text-Attributes.html#pango-parse-markup" title="pango_parse_markup ()"><code class="function">pango_parse_markup()</code></a> API is recommended instead.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>accel_marker</code></em> :</span></p></td>
+<td>character that precedes an accelerator, or 0 for none</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a <span class="type">GMarkupParseContext</span> that should be
+destroyed with <code class="function">g_markup_parse_context_free()</code>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
 <p class="since">Since 1.31.0</p>
 </div>
 <hr>
@@ -821,6 +864,51 @@ for <em class="parameter"><code>error</code></em>.
                                                          <em class="parameter"><code><span class="type">char</span> **text</code></em>,
                                                          <em class="parameter"><code><span class="type">gunichar</span> *accel_char</code></em>,
                                                          <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>
+After feeding a pango markup parser some data with <code class="function">g_markup_parse_context_parse()</code>,
+use this function to get the list of pango attributes and text out of the
+markup. This function will not free <em class="parameter"><code>context</code></em>, use <code class="function">g_markup_parse_context_free()</code>
+to do so.
+</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>A valid parse context that was returned from <a class="link" href="pango-Text-Attributes.html#pango-markup-parser-new" title="pango_markup_parser_new ()"><code class="function">pango_markup_parser_new()</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>attr_list</code></em> :</span></p></td>
+<td>address of return location for a <a class="link" href="pango-Text-Attributes.html#PangoAttrList"><span class="type">PangoAttrList</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
+<td>address of return location for text with tags stripped, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>accel_char</code></em> :</span></p></td>
+<td>address of return location for accelerator char, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>address of return location for errors, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<code class="literal">FALSE</code> if <em class="parameter"><code>error</code></em> is set, otherwise <code class="literal">TRUE</code>
+</td>
+</tr>
+</tbody>
+</table></div>
 <p class="since">Since 1.31.0</p>
 </div>
 <hr>
