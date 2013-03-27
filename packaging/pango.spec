@@ -3,7 +3,7 @@
 %bcond_with introspection
 
 Name:           pango
-Version:        1.33.9
+Version:        1.34.0
 Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
@@ -50,7 +50,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package -n typelib-Pango
 Summary:        Library for Layout and Rendering of Text -- Introspection bindings
-Group:          i18n
+Group:          System/i18n
 
 %description -n typelib-Pango
 Pango is a library for layout and rendering of text, with an emphasis
@@ -74,7 +74,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package module-thai-lang
 Summary:        Library for Layout and Rendering of Text -- Module for the Thai Language
-Group:          i18n
+Group:          System/i18n
 Provides:       locale(pango:th_TH)
 Requires(post): %{name}-tools
 Requires(postun): %{name}-tools
