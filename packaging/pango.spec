@@ -1,9 +1,8 @@
-# When updating the binary version, do not forget to also update baselibs.conf
 %define pango_binary_version 1.8.0
 %bcond_with introspection
 
 Name:           pango
-Version:        1.33.9
+Version:        1.34.0
 Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
