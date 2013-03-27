@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>PangoRenderer</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Pango Reference Manual">
 <link rel="up" href="lowlevel.html" title="Low Level Functionality">
 <link rel="prev" href="lowlevel.html" title="Low Level Functionality">
 <link rel="next" href="PangoFcFontMap.html" title="PangoFcFontMap">
-<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -144,7 +144,7 @@ render Pango objects such as <a class="link" href="pango-Glyph-Storage.html#Pang
 <tbody><tr>
 <td><p><span class="term"><a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a> *<em class="structfield"><code><a name="PangoRenderer-struct.matrix"></a>matrix</code></em>;</span></p></td>
 <td>the current transformation matrix for the Renderer; may
-be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, which should be treated the same as the identity matrix.</td>
+be <code class="literal">NULL</code>, which should be treated the same as the identity matrix.</td>
 </tr></tbody>
 </table></div>
 <p class="since">Since 1.8</p>
@@ -482,7 +482,7 @@ Note that <em class="parameter"><code>text</code></em> is the start of the text 
 indexed by <code class="literal"><em class="parameter"><code>glyph_item-&gt;item-&gt;offset</code></em></code>.
 </p>
 <p>
-If <em class="parameter"><code>text</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, this simply calls <a class="link" href="pango-pango-renderer.html#pango-renderer-draw-glyphs" title="pango_renderer_draw_glyphs ()"><code class="function">pango_renderer_draw_glyphs()</code></a>.
+If <em class="parameter"><code>text</code></em> is <code class="literal">NULL</code>, this simply calls <a class="link" href="pango-pango-renderer.html#pango-renderer-draw-glyphs" title="pango_renderer_draw_glyphs ()"><code class="function">pango_renderer_draw_glyphs()</code></a>.
 </p>
 <p>
 The default implementation of this method simply falls back to
@@ -501,7 +501,7 @@ The default implementation of this method simply falls back to
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>text</code></em> :</span></p></td>
-<td>the UTF-8 text that <em class="parameter"><code>glyph_item</code></em> refers to, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>the UTF-8 text that <em class="parameter"><code>glyph_item</code></em> refers to, or <code class="literal">NULL</code>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -850,7 +850,7 @@ Sets the color for part of the rendering.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>color</code></em> :</span></p></td>
-<td>the new color or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to unset the current color. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>the new color or <code class="literal">NULL</code> to unset the current color. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -882,7 +882,7 @@ Gets the current rendering color for the specified part.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the color for the specified part, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>the color for the specified part, or <code class="literal">NULL</code>
 if it hasn't been set and should be inherited from the
 environment.</td>
 </tr>
@@ -911,7 +911,7 @@ Sets the transformation matrix that will be applied when rendering.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to unset any existing matrix.
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <code class="literal">NULL</code> to unset any existing matrix.
 (No matrix set is the same as setting the identity matrix.). <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -940,7 +940,7 @@ rendering. See <a class="link" href="pango-pango-renderer.html#pango-renderer-se
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the matrix, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if no matrix has been set
+<td>the matrix, or <code class="literal">NULL</code> if no matrix has been set
 (which is the same as the identity matrix). The returned
 matrix is owned by Pango and must not be modified or
 freed.</td>
@@ -975,7 +975,7 @@ rendered.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the layout, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if no layout is being
+<td>the layout, or <code class="literal">NULL</code> if no layout is being
 rendered using <em class="parameter"><code>renderer</code></em> at this time. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
 </td>
 </tr>
@@ -1009,7 +1009,7 @@ rendered.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the layout line, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if no
+<td>the layout line, or <code class="literal">NULL</code> if no
 layout line is being rendered using <em class="parameter"><code>renderer</code></em> at this time. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
 </td>
 </tr>
@@ -1021,6 +1021,6 @@ layout line is being rendered using <em class="parameter"><code>renderer</code><
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18</div>
+          Generated by GTK-Doc V1.18.1</div>
 </body>
 </html>

@@ -1,3 +1,31 @@
+commit fde69a643f6dfb8f1974ab4829643ae0299b43b1
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Mar 25 22:09:54 2013 -0400
+
+    1.34.0
+
+ NEWS         | 4 ++++
+ configure.ac | 4 ++--
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+commit 48018bb55a19b405359e0a9b58b9a7a3b02e6863
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Mar 18 18:35:49 2013 -0400
+
+    1.33.10
+
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit f3dfc0ea485fd8bf745d53dd33c74fea617280a7
+Author: Matthias Clasen <mclasen@redhat.com>
+Date:   Mon Mar 18 18:31:03 2013 -0400
+
+    1.33.9
+
+ NEWS | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
 commit 324a5eec22d7f30dc911814a18f2993f4d4b0b12
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Mon Mar 18 16:37:01 2013 +0800

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Fonts</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Pango Reference Manual">
 <link rel="up" href="pango.html" title="Basic Pango Interfaces">
 <link rel="prev" href="pango-Glyph-Storage.html" title="Glyph Storage">
 <link rel="next" href="pango-Text-Attributes.html" title="Text Attributes">
-<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -678,14 +678,14 @@ Make a copy of a <a class="link" href="pango-Fonts.html#PangoFontDescription"><s
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, which should
-be freed with <a class="link" href="pango-Fonts.html#pango-font-description-free" title="pango_font_description_free ()"><code class="function">pango_font_description_free()</code></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
-if <em class="parameter"><code>desc</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Fonts.html#pango-font-description-free" title="pango_font_description_free ()"><code class="function">pango_font_description_free()</code></a>, or <code class="literal">NULL</code>
+if <em class="parameter"><code>desc</code></em> was <code class="literal">NULL</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -709,14 +709,14 @@ when the copy is only needed temporarily.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, which should
-be freed with <a class="link" href="pango-Fonts.html#pango-font-description-free" title="pango_font_description_free ()"><code class="function">pango_font_description_free()</code></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
-if <em class="parameter"><code>desc</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Fonts.html#pango-font-description-free" title="pango_font_description_free ()"><code class="function">pango_font_description_free()</code></a>, or <code class="literal">NULL</code>
+if <em class="parameter"><code>desc</code></em> was <code class="literal">NULL</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -799,7 +799,7 @@ Frees a font description.
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr></tbody>
 </table></div>
@@ -821,7 +821,7 @@ Frees an array of font descriptions.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>descs</code></em> :</span></p></td>
 <td>a pointer
-to an array of <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_descs][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+to an array of <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, may be <code class="literal">NULL</code>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_descs][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -914,7 +914,7 @@ Gets the family name field of a font description. See
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the family name field for the font description, or
-<a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if not previously set.  This has the same life-time
+<code class="literal">NULL</code> if not previously set.  This has the same life-time
 as the font description itself and should not be freed.</td>
 </tr>
 </tbody>
@@ -1402,7 +1402,7 @@ are not already set are affected. If <code class="literal">TRUE</code>, then fie
 already set will be replaced as well.
 </p>
 <p>
-If <em class="parameter"><code>desc_to_merge</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, this function performs nothing.
+If <em class="parameter"><code>desc_to_merge</code></em> is <code class="literal">NULL</code>, this function performs nothing.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -1417,7 +1417,7 @@ If <em class="parameter"><code>desc_to_merge</code></em> is <a href="/usr/share/
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>desc_to_merge</code></em> :</span></p></td>
-<td>the <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a> to merge from, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>the <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a> to merge from, or <code class="literal">NULL</code>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -1473,7 +1473,7 @@ are already exist.</td>
                                                          <em class="parameter"><code>const <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a> *new_match</code></em>);</pre>
 <p>
 Determines if the style attributes of <em class="parameter"><code>new_match</code></em> are a closer match
-for <em class="parameter"><code>desc</code></em> than those of <em class="parameter"><code>old_match</code></em> are, or if <em class="parameter"><code>old_match</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>,
+for <em class="parameter"><code>desc</code></em> than those of <em class="parameter"><code>old_match</code></em> are, or if <em class="parameter"><code>old_match</code></em> is <code class="literal">NULL</code>,
 determines if <em class="parameter"><code>new_match</code></em> is a match at all.
 Approximate matching is done for
 weight and style; other style attributes must match exactly.
@@ -1498,7 +1498,7 @@ Note that <em class="parameter"><code>old_match</code></em> must match <em class
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>old_match</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>a <a class="link" href="pango-Fonts.html#PangoFontDescription"><span class="type">PangoFontDescription</span></a>, or <code class="literal">NULL</code>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -1528,7 +1528,7 @@ describes one of style, variant, weight, stretch, or gravity, and SIZE
 is a decimal number (size in points) or optionally followed by the
 unit modifier "px" for absolute size. Any one of the options may
 be absent.  If FAMILY-LIST is absent, then the family_name field of
-the resulting font description will be initialized to <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.  If
+the resulting font description will be initialized to <code class="literal">NULL</code>.  If
 STYLE-OPTIONS is missing, then all style options will be set to the
 default values. If SIZE is missing, the size in the resulting font
 description will be set to 0.
@@ -1655,7 +1655,7 @@ Increase the reference count of a font metrics structure by one.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>metrics</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Fonts.html#PangoFontMetrics"><span class="type">PangoFontMetrics</span></a> structure, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Fonts.html#PangoFontMetrics"><span class="type">PangoFontMetrics</span></a> structure, may be <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
@@ -1681,7 +1681,7 @@ memory.
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>metrics</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Fonts.html#PangoFontMetrics"><span class="type">PangoFontMetrics</span></a> structure, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Fonts.html#PangoFontMetrics"><span class="type">PangoFontMetrics</span></a> structure, may be <code class="literal">NULL</code>
 </td>
 </tr></tbody>
 </table></div>
@@ -2118,7 +2118,7 @@ from the extents rectangle to more traditional font metrics. The units
 of the rectangles are in 1/PANGO_SCALE of a device unit.
 </p>
 <p>
-If <em class="parameter"><code>font</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, this function gracefully sets some sane values in the
+If <em class="parameter"><code>font</code></em> is <code class="literal">NULL</code>, this function gracefully sets some sane values in the
 output variables and returns.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -2139,13 +2139,13 @@ output variables and returns.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of the glyph
-as drawn or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+as drawn or <code class="literal">NULL</code> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical extents of
-the glyph or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+the glyph or <code class="literal">NULL</code> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2163,7 +2163,7 @@ be provided to indicate that the metrics should be retrieved that
 correspond to the script(s) used by that language.
 </p>
 <p>
-If <em class="parameter"><code>font</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>, this function gracefully sets some sane values in the
+If <em class="parameter"><code>font</code></em> is <code class="literal">NULL</code>, this function gracefully sets some sane values in the
 output variables and returns.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -2180,7 +2180,7 @@ output variables and returns.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>language</code></em> :</span></p></td>
 <td>language tag used to determine which script to get the metrics
-for, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate to get the metrics for the entire font. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+for, or <code class="literal">NULL</code> to indicate to get the metrics for the entire font. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -2202,7 +2202,7 @@ Gets the font map for which the font was created.
 Note that the font maintains a <em class="firstterm">weak</em> reference
 to the font map, so if all references to font map are dropped, the font
 map will be finalized even if there are fonts created with the font
-map that are still alive.  In that case this function will return <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.
+map that are still alive.  In that case this function will return <code class="literal">NULL</code>.
 It is the responsibility of the user to ensure that the font map is kept
 alive.  In most uses this is not an issue as a <a class="link" href="pango-Text-Processing.html#PangoContext"><span class="type">PangoContext</span></a> holds
 a reference to the font map.
@@ -2215,13 +2215,13 @@ a reference to the font map.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>font</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a>, or <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the <a class="link" href="pango-Fonts.html#PangoFontMap"><span class="type">PangoFontMap</span></a> for the font, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
-if <em class="parameter"><code>font</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+<td>the <a class="link" href="pango-Fonts.html#PangoFontMap"><span class="type">PangoFontMap</span></a> for the font, or <code class="literal">NULL</code>
+if <em class="parameter"><code>font</code></em> is <code class="literal">NULL</code>. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2377,7 +2377,7 @@ width and other aspects.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>faces</code></em> :</span></p></td>
 <td>location to store an array of pointers to <a class="link" href="pango-Fonts.html#PangoFontFace"><span class="type">PangoFontFace</span></a> objects,
-or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. This array should be freed with <code class="function">g_free()</code> when it is no
+or <code class="literal">NULL</code>. This array should be freed with <code class="function">g_free()</code> when it is no
 longer needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_faces][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span>
 </td>
 </tr>
@@ -2481,7 +2481,7 @@ owned by the face object and must not be modified or freed.</td>
                                                          <em class="parameter"><code><span class="type">int</span> *n_sizes</code></em>);</pre>
 <p>
 List the available sizes for a font. This is only applicable to bitmap
-fonts. For scalable fonts, stores <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> at the location pointed to by
+fonts. For scalable fonts, stores <code class="literal">NULL</code> at the location pointed to by
 <em class="parameter"><code>sizes</code></em> and 0 at the location pointed to by <em class="parameter"><code>n_sizes</code></em>. The sizes returned
 are in Pango units and are sorted in ascending order.
 </p>
@@ -2774,7 +2774,7 @@ to <a class="link" href="pango-Text-Processing.html#pango-context-new" title="pa
 If you are using Pango as part of a higher-level system,
 that system may have it's own way of create a <a class="link" href="pango-Text-Processing.html#PangoContext"><span class="type">PangoContext</span></a>.
 For instance, the GTK+ toolkit has, among others,
-<a href="http://developer.gnome.org/gdk2/gdk3-Pango-Interaction.html#gdk-pango-context-get-for-screen"><code class="function">gdk_pango_context_get_for_screen()</code></a>, and
+<a href="http://library.gnome.org/devel/gdk3/gdk2-Pango-Interaction.html#gdk-pango-context-get-for-screen"><code class="function">gdk_pango_context_get_for_screen()</code></a>, and
 <a href="http://developer.gnome.org/gtk2/GtkWidget.html#gtk-widget-get-pango-context"><code class="function">gtk_widget_get_pango_context()</code></a>.  Use those instead.
 </p>
 <div class="variablelist"><table border="0" class="variablelist">
@@ -2829,7 +2829,7 @@ Load the font in the fontmap that is the closest match for <em class="parameter"
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Fonts.html#PangoFont"><span class="type">PangoFont</span></a> loaded,
-or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if no font matched. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+or <code class="literal">NULL</code> if no font matched. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -2872,7 +2872,7 @@ a font matching <em class="parameter"><code>desc</code></em>.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Fonts.html#PangoFontset"><span class="type">PangoFontset</span></a>
-loaded, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if no font matched. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+loaded, or <code class="literal">NULL</code> if no font matched. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -3286,6 +3286,6 @@ Returns the number of fonts in the fontset.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18</div>
+          Generated by GTK-Doc V1.18.1</div>
 </body>
 </html>

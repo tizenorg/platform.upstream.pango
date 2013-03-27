@@ -67,7 +67,7 @@ DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog THANKS \
 	$(srcdir)/pangoxft-uninstalled.pc.in \
 	$(srcdir)/pangocairo-uninstalled.pc.in \
 	$(srcdir)/pango-zip.sh.in $(srcdir)/config.h.win32.in COPYING \
-	config.guess config.sub depcomp install-sh missing ltmain.sh
+	config.guess config.sub install-sh missing ltmain.sh
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
 	$(top_srcdir)/configure.ac

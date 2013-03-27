@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Glyph Storage</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Pango Reference Manual">
 <link rel="up" href="pango.html" title="Basic Pango Interfaces">
 <link rel="prev" href="pango-Text-Processing.html" title="Rendering">
 <link rel="next" href="pango-Fonts.html" title="Fonts">
-<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -526,12 +526,12 @@ as <em class="parameter"><code>nearest</code></em>.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>inclusive</code></em> :</span></p></td>
-<td>rectangle to round to pixels inclusively, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to round to pixels inclusively, or <code class="literal">NULL</code>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>nearest</code></em> :</span></p></td>
-<td>rectangle to round to nearest pixels, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>rectangle to round to nearest pixels, or <code class="literal">NULL</code>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -649,14 +649,14 @@ Copies a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, which should
-be freed with <a class="link" href="pango-Glyph-Storage.html#pango-matrix-free" title="pango_matrix_free ()"><code class="function">pango_matrix_free()</code></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if
-<em class="parameter"><code>matrix</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Glyph-Storage.html#pango-matrix-free" title="pango_matrix_free ()"><code class="function">pango_matrix_free()</code></a>, or <code class="literal">NULL</code> if
+<em class="parameter"><code>matrix</code></em> was <code class="literal">NULL</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -676,7 +676,7 @@ Free a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr></tbody>
 </table></div>
@@ -827,7 +827,7 @@ Transforms the point (<em class="parameter"><code>x</code></em>, <em class="para
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
@@ -878,7 +878,7 @@ to (<em class="parameter"><code>x2</code></em>,<em class="parameter"><code>y2</c
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
@@ -931,12 +931,12 @@ example).
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>rect</code></em> :</span></p></td>
-<td>in/out bounding box in Pango units, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>in/out bounding box in Pango units, or <code class="literal">NULL</code>. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -972,12 +972,12 @@ using <a class="link" href="pango-Glyph-Storage.html#pango-extents-to-pixels" ti
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, or <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>rect</code></em> :</span></p></td>
-<td>in/out bounding box in device units, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>in/out bounding box in device units, or <code class="literal">NULL</code>. <span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1001,13 +1001,13 @@ vector that the X coordinate is mapped to.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>matrix</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoMatrix"><span class="type">PangoMatrix</span></a>, may be <code class="literal">NULL</code>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the scale factor of <em class="parameter"><code>matrix</code></em> on the height of the font,
-or 1.0 if <em class="parameter"><code>matrix</code></em> is <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+or 1.0 if <em class="parameter"><code>matrix</code></em> is <code class="literal">NULL</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1330,14 +1330,14 @@ Copy a glyph string and associated storage.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a>, which
 should be freed with <a class="link" href="pango-Glyph-Storage.html#pango-glyph-string-free" title="pango_glyph_string_free ()"><code class="function">pango_glyph_string_free()</code></a>,
-or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>string</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+or <code class="literal">NULL</code> if <em class="parameter"><code>string</code></em> was <code class="literal">NULL</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1381,7 +1381,7 @@ Free a glyph string and associated storage.
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphString"><span class="type">PangoGlyphString</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr></tbody>
 </table></div>
@@ -1417,13 +1417,13 @@ of the rectangles.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the extents of the glyph string
-as drawn or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+as drawn or <code class="literal">NULL</code> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the logical extents of the
-glyph string or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+glyph string or <code class="literal">NULL</code> to indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1472,15 +1472,15 @@ indices such that start &lt;= index &lt; end)</td>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>ink_rect</code></em> :</span></p></td>
 <td>rectangle used to store the
-extents of the glyph string range as drawn or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to
-indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym> caller-allocates]</span>
+extents of the glyph string range as drawn or <code class="literal">NULL</code> to
+indicate that the result is not needed. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>logical_rect</code></em> :</span></p></td>
 <td>rectangle used to store the
-logical extents of the glyph string range or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a> to
-indicate that the result is not needed. <span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym> caller-allocates]</span>
+logical extents of the glyph string range or <code class="literal">NULL</code> to
+indicate that the result is not needed. <span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -1710,14 +1710,14 @@ Make a deep copy of an existing <a class="link" href="pango-Glyph-Storage.html#P
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>orig</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItem"><span class="type">PangoGlyphItem</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItem"><span class="type">PangoGlyphItem</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItem"><span class="type">PangoGlyphItem</span></a>, which should
-be freed with <a class="link" href="pango-Glyph-Storage.html#pango-glyph-item-free" title="pango_glyph_item_free ()"><code class="function">pango_glyph_item_free()</code></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
-if <em class="parameter"><code>orig</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Glyph-Storage.html#pango-glyph-item-free" title="pango_glyph_item_free ()"><code class="function">pango_glyph_item_free()</code></a>, or <code class="literal">NULL</code>
+if <em class="parameter"><code>orig</code></em> was <code class="literal">NULL</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1737,7 +1737,7 @@ Frees a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItem"><span cla
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>glyph_item</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItem"><span class="type">PangoGlyphItem</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItem"><span class="type">PangoGlyphItem</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr></tbody>
 </table></div>
@@ -1962,14 +1962,14 @@ Make a shallow copy of an existing <a class="link" href="pango-Glyph-Storage.htm
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>orig</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItemIter"><span class="type">PangoGlyphItemIter</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItemIter"><span class="type">PangoGlyphItemIter</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>the newly allocated <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItemIter"><span class="type">PangoGlyphItemIter</span></a>, which should
-be freed with <a class="link" href="pango-Glyph-Storage.html#pango-glyph-item-iter-free" title="pango_glyph_item_iter_free ()"><code class="function">pango_glyph_item_iter_free()</code></a>, or <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
-if <em class="parameter"><code>orig</code></em> was <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+be freed with <a class="link" href="pango-Glyph-Storage.html#pango-glyph-item-iter-free" title="pango_glyph_item_iter_free ()"><code class="function">pango_glyph_item_iter_free()</code></a>, or <code class="literal">NULL</code>
+if <em class="parameter"><code>orig</code></em> was <code class="literal">NULL</code>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -1989,7 +1989,7 @@ Frees a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItemIter"><span
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>iter</code></em> :</span></p></td>
-<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItemIter"><span class="type">PangoGlyphItemIter</span></a>, may be <a href="/usr/share/gtk-doc/html/liboil/liboil-liboiljunk.html#NULL:CAPS"><code class="literal">NULL</code></a>
+<td>a <a class="link" href="pango-Glyph-Storage.html#PangoGlyphItemIter"><span class="type">PangoGlyphItemIter</span></a>, may be <code class="literal">NULL</code>
 </td>
 </tr></tbody>
 </table></div>
@@ -2135,6 +2135,6 @@ first cluster.</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.18</div>
+          Generated by GTK-Doc V1.18.1</div>
 </body>
 </html>
