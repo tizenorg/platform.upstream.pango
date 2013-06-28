@@ -3,7 +3,7 @@
 %bcond_with introspection
 
 Name:           pango
-Version:        1.34.0
+Version:        1.34.1
 Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
@@ -108,6 +108,7 @@ to develop applications that require these.
 %setup -q
 
 %build
+NOCONFIGURE=1 ./autogen.sh
 %configure --disable-static --with-pic
 make %{?_smp_mflags}
 
@@ -215,5 +216,4 @@ fi
 %if %{with introspection}
 %{_datadir}/gir-1.0/*.gir
 %endif
-%doc %{_datadir}/gtk-doc/html/pango/
 %{_sysconfdir}/rpm/macros.pango

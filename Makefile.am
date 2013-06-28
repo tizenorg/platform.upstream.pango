@@ -1,6 +1,6 @@
 ## Process this file with automake to create Makefile.in.
 
-SUBDIRS= pango modules pango-view examples docs tools tests build
+SUBDIRS= pango modules pango-view examples  tools tests build
 
 EXTRA_DIST = 			\
 	autogen.sh		\
@@ -40,7 +40,6 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/INSTALL \
 	$(srcdir)/omf.make \
 	$(srcdir)/xmldocs.make \
-	$(srcdir)/gtk-doc.make \
 	$(srcdir)/ChangeLog
 
 ### ChangeLog generation

@@ -587,7 +587,7 @@ if $have_cairo ; then : ; else
    fi
 fi
 
-GTK_DOC_CHECK([1.15], [--flavour no-tmpl])
+dnl GTK_DOC_CHECK([1.15, [--flavour no-tmpl]])
 
 AC_ARG_ENABLE(man,
               AC_HELP_STRING([--enable-man],
@@ -941,7 +941,6 @@ modules/basic/Makefile
 modules/indic/Makefile
 modules/thai/Makefile
 examples/Makefile
-docs/Makefile
 docs/version.xml
 tools/Makefile
 tests/Makefile
