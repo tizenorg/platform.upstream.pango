@@ -99,7 +99,7 @@ FIXXREF_OPTIONS=--extra-dir=$(GLIB_PREFIX)/share/gtk-doc/html/glib \
 	--extra-dir=$(CAIRO_PREFIX)/share/gtk-doc/html/cairo
 endif
 
-include $(top_srcdir)/gtk-doc.make
+#include $(top_srcdir)/gtk-doc.make
 
 # This line really belongs in gtk-doc.mk
 $(REPORT_FILES): sgml-build.stamp
