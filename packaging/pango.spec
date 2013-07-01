@@ -12,6 +12,7 @@ Group:          System/i18n
 Source:         http://download.gnome.org/sources/pango/1.32/%{name}-%{version}.tar.xz
 Source2:        macros.pango
 Source99:       baselibs.conf
+Source1001: 	pango.manifest
 BuildRequires:  gcc-c++
 BuildRequires:  pkg-config
 BuildRequires:  pkgconfig(cairo)
@@ -106,6 +107,7 @@ to develop applications that require these.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 NOCONFIGURE=1 ./autogen.sh
@@ -175,6 +177,7 @@ fi
 %docs_package 
 
 %files -n libpango
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING
 %dir %{_libdir}/pango
@@ -189,6 +192,7 @@ fi
 
 %if %{with introspection}
 %files -n typelib-Pango
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_libdir}/girepository-1.0/Pango-1.0.typelib
 %{_libdir}/girepository-1.0/PangoCairo-1.0.typelib
@@ -198,6 +202,7 @@ fi
 
 
 %files tools
+%manifest %{name}.manifest
 %defattr(-, root, root)
 %{_bindir}/pango-querymodules*
 %{_bindir}/pango-view
@@ -205,10 +210,12 @@ fi
 # We have this module in a subpackage because it requires additional libraries.
 
 %files module-thai-lang
+%manifest %{name}.manifest
 %defattr(-, root, root)
 %{_libdir}/pango/%{pango_binary_version}/modules/pango-thai-lang.so
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-, root, root)
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*.pc
