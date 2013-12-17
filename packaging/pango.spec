@@ -1,7 +1,7 @@
 # When updating the binary version, do not forget to also update baselibs.conf
 %define pango_binary_version 1.8.0
 %bcond_with introspection
-%bcond_without x
+%bcond_with x
 
 Name:           pango
 Version:        1.34.1
@@ -26,7 +26,7 @@ BuildRequires:  pkgconfig(gobject-introspection-1.0)
 %endif
 BuildRequires:  pkgconfig(harfbuzz) >= 0.9.3
 BuildRequires:  pkgconfig(libthai) >= 0.1.9
-%if !%{without x}
+%if %{with x}
 BuildRequires:  pkgconfig(xft) >= 2.0.0
 BuildRequires:  pkgconfig(xrender)
 %endif
