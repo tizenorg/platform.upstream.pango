@@ -200,7 +200,9 @@ fi
 %{_libdir}/girepository-1.0/Pango-1.0.typelib
 %{_libdir}/girepository-1.0/PangoCairo-1.0.typelib
 %{_libdir}/girepository-1.0/PangoFT2-1.0.typelib
+%if %{with x}
 %{_libdir}/girepository-1.0/PangoXft-1.0.typelib
+%endif
 %endif
 
 
