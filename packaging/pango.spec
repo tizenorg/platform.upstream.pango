@@ -114,7 +114,17 @@ cp %{SOURCE1001} .
 
 %build
 NOCONFIGURE=1 ./autogen.sh
-%configure --disable-static --with-pic
+
+%configure \
+  --disable-static \
+  --with-pic \
+%if %{with x}
+  --with-xft \
+%else
+  --without-xft \
+%endif
+  #eol
+
 make %{?_smp_mflags}
 
 %install
