@@ -4,16 +4,17 @@
 %bcond_with x
 
 Name:           pango
-Version:        1.34.1
+Version:        1.36.6
 Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
 Url:            http://www.pango.org/
-Group:          System/i18n
+X-Vc-Url:       git://git.gnome.org/pango
+Group:          Graphics & UI Framework/Fonts
 Source:         http://download.gnome.org/sources/pango/1.32/%{name}-%{version}.tar.xz
 Source2:        macros.pango
 Source99:       baselibs.conf
-Source1001: 	pango.manifest
+Source1001:     pango.manifest
 BuildRequires:  gcc-c++
 BuildRequires:  pkg-config
 BuildRequires:  pkgconfig(cairo)
@@ -40,7 +41,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package -n libpango
 Summary:        Library for Layout and Rendering of Text
-Group:          System/i18n
+Group:          Graphics & UI Framework/Fonts
 Provides:       %{name} = %{version}
 Obsoletes:      %{name} < %{version}
 Requires(post): %{name}-tools
@@ -54,7 +55,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package -n typelib-Pango
 Summary:        Library for Layout and Rendering of Text -- Introspection bindings
-Group:          System/i18n
+Group:          Graphics & UI Framework/Fonts
 
 %description -n typelib-Pango
 Pango is a library for layout and rendering of text, with an emphasis
@@ -67,7 +68,7 @@ This package provides the GObject Introspection bindings for Pango.
 
 %package tools
 Summary:        Library for Layout and Rendering of Text -- Tools
-Group:          System/i18n
+Group:          Graphics & UI Framework/Fonts
 
 %description tools
 Pango is a library for layout and rendering of text, with an emphasis
@@ -78,7 +79,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package module-thai-lang
 Summary:        Library for Layout and Rendering of Text -- Module for the Thai Language
-Group:          System/i18n
+Group:          Graphics & UI Framework/Fonts
 Provides:       locale(pango:th_TH)
 Requires(post): %{name}-tools
 Requires(postun): %{name}-tools
@@ -92,7 +93,7 @@ Pango forms the core of text and font handling for GTK+.
 
 %package devel
 Summary:        Library for Layout and Rendering of Text -- Development Files
-Group:          Development/Libraries
+Group:          Graphics & UI Framework/Fonts
 Requires:       libpango = %{version}
 %if %{with introspection}
 Requires:       typelib-Pango = %{version}
@@ -113,19 +114,17 @@ to develop applications that require these.
 cp %{SOURCE1001} .
 
 %build
-NOCONFIGURE=1 ./autogen.sh
-
-%configure \
+%autogen \
   --disable-static \
   --with-pic \
 %if %{with x}
-  --with-xft \
+  --with-xft
 %else
-  --without-xft \
+  --without-xft
 %endif
-  #eol
 
-make %{?_smp_mflags}
+
+%__make %{?_smp_mflags}
 
 %install
 %make_install
@@ -154,7 +153,7 @@ cp %{SOURCE2} %{buildroot}%{_sysconfdir}/rpm
 # pango-tools.
 %endif
 if test -f %{_pango_querymodules}; then
-  %{_pango_querymodules_update_cache}
+    %{_pango_querymodules_update_cache}
 fi
 
 %if 0
