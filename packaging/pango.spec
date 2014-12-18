@@ -9,7 +9,7 @@ Release:        0
 License:        LGPL-2.1+
 Summary:        Library for Layout and Rendering of Text
 Url:            http://www.pango.org/
-X-Vc-Url:       git://git.gnome.org/pango
+#X-Vc-Url:      git://git.gnome.org/pango
 Group:          Graphics & UI Framework/Fonts
 Source:         http://download.gnome.org/sources/pango/1.32/%{name}-%{version}.tar.xz
 Source2:        macros.pango
@@ -94,9 +94,9 @@ Pango forms the core of text and font handling for GTK+.
 %package devel
 Summary:        Library for Layout and Rendering of Text -- Development Files
 Group:          Graphics & UI Framework/Fonts
-Requires:       libpango = %{version}
+Requires:       libpango = %{version}-%{release}
 %if %{with introspection}
-Requires:       typelib-Pango = %{version}
+Requires:       typelib-Pango = %{version}-%{release}
 %endif
 
 %description devel
